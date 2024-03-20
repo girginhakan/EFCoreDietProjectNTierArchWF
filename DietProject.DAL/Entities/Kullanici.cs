@@ -16,7 +16,8 @@ namespace DietProject.DAL.Entities
         public int KullaniciDetayId { get; set; }
 
         KullaniciDetay KullaniciDetay { get; set; }
-        public UserStatus UserStatus { get; set; }
+        public UserStatus UserStatus { get; set; } = UserStatus.NormalKullanici;
+
 
         List<KullaniciOgunYemekPorsiyon> KullaniciOgunYemekPorsiyonlar { get; set; }
 

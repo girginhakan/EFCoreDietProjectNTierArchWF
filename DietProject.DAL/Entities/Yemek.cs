@@ -13,7 +13,8 @@ namespace DietProject.DAL.Entities
         public string YemekAdi { get; set; }
         public string Aciklama { get; set; }
         public double Kalori { get; set; }
-        public Kategori kategori { get; set; }
+        public int KategoriId { get; set; }
+        public Kategori Kategori { get; set; }
         List<KullaniciOgunYemekPorsiyon> KullaniciOgunYemekPorsiyonlar { get; set; }    
 
     }
