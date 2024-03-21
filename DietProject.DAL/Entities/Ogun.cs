@@ -11,7 +11,7 @@ namespace DietProject.DAL.Entities
     {
         public string OgunAdi { get; set; }
         public string Aciklama { get; set; }
-        List<KullaniciOgunYemekPorsiyon> KullaniciOgunYemekPorsiyonlar { get; set; }
+        public List<KullaniciOgunYemekPorsiyon> KullaniciOgunYemekPorsiyonlar { get; set; }
 
     }
 }

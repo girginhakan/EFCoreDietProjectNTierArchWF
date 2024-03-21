@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace DietProject.BLL.Models
 {
-    public class KategoriModel
+    public class OgunModel
     {
-
-        // UI ile dal arasındaki geciş objeleri
-
         public int Id { get; set; }
-        public string KategoriAdi { get; set; }
+        public string OgunAdi { get; set; }
         public string Aciklama { get; set; }
-        public List<YemekModel> YemekModel { get; set; }
-
+        public KullaniciYemekOgunPorsiyonModel KullaniciYemekOgunPorsiyonModel { get; set; }
     }
 }

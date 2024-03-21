@@ -11,6 +11,6 @@ namespace DietProject.DAL.Entities
     {
         public string KategoriAdi { get; set; }
         public string Aciklama { get; set; }
-        List<Yemek> Yemekler { get; set;}
+        public List<Yemek> Yemekler { get; set;}
     }
 }

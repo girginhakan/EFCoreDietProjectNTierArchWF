@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 namespace DietProject.BLL.Manager.Abstract
 {
 
-    public abstract class Manager<TModel,TEntity> : IManager<TModel> where TModel : class where TEntity : class
+    public abstract class Manager<TModel,TEntity >: IManager<TModel> //, TMapperProfile>
+        where TModel : class 
+        where TEntity : class
+        //where TMapperProfile : Profile, new()
     {
         private IMapper _mapper;
         protected IRepository< TEntity> _repository;
@@ -22,7 +25,11 @@ namespace DietProject.BLL.Manager.Abstract
            
 
             _config = new MapperConfiguration(cfg =>
-            cfg.AddExpressionMapping().CreateMap<TModel, TEntity>().ReverseMap());
+            {
+                cfg.AddExpressionMapping().CreateMap<TModel, TEntity>().ReverseMap();
+                //cfg.AddProfile<TMapperProfile>();
+
+            });
 
             _mapper = new Mapper(_config);
         }

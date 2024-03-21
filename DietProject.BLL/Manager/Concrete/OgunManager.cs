@@ -1,5 +1,4 @@
 ﻿using DietProject.BLL.Manager.Abstract;
-using DietProject.BLL.MappingProfile;
 using DietProject.BLL.Models;
 using DietProject.DAL.Context;
 using DietProject.DAL.Entities;
@@ -12,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace DietProject.BLL.Manager.Concrete
 {
-    public class KategoriManager : Manager<KategoriModel,Kategori>
+    public class OgunManager : Manager<KategoriModel, Kategori>
     {
-        public KategoriManager()
+        public OgunManager()
         {
             _repository = new KategoriRepository(new DietProjectDbContext());
         }
