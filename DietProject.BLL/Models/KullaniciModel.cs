@@ -12,7 +12,7 @@ namespace DietProject.BLL.Models
         public string Eposta { get; set; }
         public string Sifre { get; set; }
         public int KullaniciDetayId { get; set; }
-        public KullaniciYemekOgunPorsiyonModel KullaniciYemekOgunPorsiyonModel { get; set; }
+        public List<KullaniciOgunYemekPorsiyonModel> KullaniciYemekOgunPorsiyonModel { get; set; }
         public KullaniciDetayModel KullaniciDetayModel { get; set; }
     }
 }
