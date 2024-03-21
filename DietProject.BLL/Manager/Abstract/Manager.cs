@@ -26,7 +26,7 @@ namespace DietProject.BLL.Manager.Abstract
 
             _config = new MapperConfiguration(cfg =>
             {
-                cfg.AddExpressionMapping().CreateMap<TModel, TEntity>().ReverseMap();
+                cfg.AddExpressionMapping().CreateMap<TModel, TEntity>().ReverseMap();//sad
                 //cfg.AddProfile<TMapperProfile>();
 
             });
