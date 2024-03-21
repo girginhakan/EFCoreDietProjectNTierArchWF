@@ -11,6 +11,6 @@ namespace DietProject.DAL.Enums
 
         Created = 1,
         Updated = 2,
-        Deleted = 3,
+        Deleted = 3
     }
 }

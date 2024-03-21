@@ -10,8 +10,10 @@ namespace DietProject.DAL.Entities
 {
     public class Kullanici : Entity
     {
+
         public int Id { get; set; }
-        public string Eposta { get; set; } //asd
+        public string Eposta { get; set; } 
+
         public string Sifre { get; set; }
         public int KullaniciDetayId { get; set; }
 
@@ -19,7 +21,7 @@ namespace DietProject.DAL.Entities
         public UserStatus UserStatus { get; set; } = UserStatus.NormalKullanici;
 
 
-        List<KullaniciOgunYemekPorsiyon> KullaniciOgunYemekPorsiyonlar { get; set; }
+        public List<KullaniciOgunYemekPorsiyon> KullaniciOgunYemekPorsiyonlar { get; set; }
 
     }
 }

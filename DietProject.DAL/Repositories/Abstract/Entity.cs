@@ -12,7 +12,7 @@ namespace DietProject.DAL.Repositories.Abstract
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public DateTime DeletedDate { get; set; }
+        public DateTime? DeletedDate { get; set; }
         public EntityStatus EntityStatus { get; set; }
 
 

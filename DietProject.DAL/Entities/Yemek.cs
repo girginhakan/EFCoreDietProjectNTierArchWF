@@ -9,7 +9,6 @@ namespace DietProject.DAL.Entities
 {
     public class Yemek:Entity
     {
-        public int Id { get; set; }
         public string YemekAdi { get; set; }
         public string Aciklama { get; set; }
         public double Kalori { get; set; }

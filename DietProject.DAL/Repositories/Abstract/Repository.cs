@@ -53,7 +53,7 @@ namespace DietProject.DAL.Repositories.Abstract
 
         
 
-        public IQueryable Search(Expression<Func<T, bool>> predicate)
+        public IQueryable<T> Search(Expression<Func<T, bool>> predicate)
         {
             var all= entities.AsNoTracking().Where(E=>E.EntityStatus != EntityStatus.Deleted);
             return all.Where(predicate);
