@@ -11,7 +11,7 @@ namespace DietProject.DAL.Entities
     public class Kullanici : Entity
     {
         public int Id { get; set; }
-        public string Eposta { get; set; }
+        public string Eposta { get; set; } //asd
         public string Sifre { get; set; }
         public int KullaniciDetayId { get; set; }
 
