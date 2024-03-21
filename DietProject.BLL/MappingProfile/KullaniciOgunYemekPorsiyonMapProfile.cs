@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DietProject.BLL.MappingProfile
 {
-    public class KullaniciYemekOgunPorsiyonMapProfile : Profile
+    public class KullaniciOgunYemekPorsiyonMapProfile : Profile
     {
-        public KullaniciYemekOgunPorsiyonMapProfile()
+        public KullaniciOgunYemekPorsiyonMapProfile()
         {
             
         }

@@ -14,6 +14,6 @@ namespace DietProject.BLL.Models
         public double Kalori { get; set; }
         public int KategoriId { get; set; }
         public KategoriModel KategoriModel { get; set; }
-        public KullaniciYemekOgunPorsiyonModel KullaniciYemekOgunPorsiyonModel { get; set; }
+        public List<KullaniciOgunYemekPorsiyonModel> KullaniciYemekOgunPorsiyonModel { get; set; }
     }
 }
