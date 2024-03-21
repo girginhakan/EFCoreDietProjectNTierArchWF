@@ -1,3 +1,5 @@
+using DietProject.BLL.Manager.Concrete;
+
 namespace DietProject.UI
 {
     internal static class Program
@@ -12,6 +14,8 @@ namespace DietProject.UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+
+            
         }
     }
 }
