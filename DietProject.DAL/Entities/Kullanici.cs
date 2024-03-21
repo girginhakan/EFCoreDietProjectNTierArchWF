@@ -17,7 +17,10 @@ namespace DietProject.DAL.Entities
         public string Sifre { get; set; }
         public int KullaniciDetayId { get; set; }
 
-        KullaniciDetay KullaniciDetay { get; set; }  
+
+        public KullaniciDetay KullaniciDetay { get; set; }
+
+
         public UserStatus UserStatus { get; set; } = UserStatus.NormalKullanici;
 
 
