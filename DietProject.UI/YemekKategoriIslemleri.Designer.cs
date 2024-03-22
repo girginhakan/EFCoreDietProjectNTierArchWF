@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class Form5
+    partial class YemekKategoriIslemleri
     {
         /// <summary>
         /// Required designer variable.

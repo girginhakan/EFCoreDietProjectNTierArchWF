@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class Form8
+    partial class PorsiyonIslemleri
     {
         /// <summary>
         /// Required designer variable.

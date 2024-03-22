@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class Form3 : Form
+    public partial class OgunIslemleri : Form
     {
-        public Form3()
+        public OgunIslemleri()
         {
             InitializeComponent();
         }
