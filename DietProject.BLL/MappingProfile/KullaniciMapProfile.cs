@@ -15,6 +15,9 @@ namespace DietProject.BLL.MappingProfile
         {
             CreateMap<KullaniciDetayModel, KullaniciDetay>().
         ForMember(y => y.kullanici, b => b.MapFrom(src => src.Kullanici)).ReverseMap();
+
+            CreateMap<KullaniciOgunYemekPorsiyonModel, KullaniciOgunYemekPorsiyon>().
+                ForMember(y => y.Kullanici, k => k.MapFrom(src => src.Kullanici)).ReverseMap();
         }
     }
 }
