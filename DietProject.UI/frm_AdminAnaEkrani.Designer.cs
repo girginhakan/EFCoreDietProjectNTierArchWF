@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class AdminAnaEkranı
+    partial class frm_AdminAnaEkrani
     {
         /// <summary>
         /// Required designer variable.
@@ -40,10 +40,9 @@
             // 
             btnYemekKategoriCRUD.BackColor = Color.Pink;
             btnYemekKategoriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnYemekKategoriCRUD.Location = new Point(72, 97);
-            btnYemekKategoriCRUD.Margin = new Padding(3, 2, 3, 2);
+            btnYemekKategoriCRUD.Location = new Point(82, 129);
             btnYemekKategoriCRUD.Name = "btnYemekKategoriCRUD";
-            btnYemekKategoriCRUD.Size = new Size(167, 75);
+            btnYemekKategoriCRUD.Size = new Size(191, 100);
             btnYemekKategoriCRUD.TabIndex = 0;
             btnYemekKategoriCRUD.Text = "Yemek Kategori İşlemleri";
             btnYemekKategoriCRUD.UseVisualStyleBackColor = false;
@@ -53,10 +52,9 @@
             // 
             btnYemekCesidiCRUD.BackColor = Color.Thistle;
             btnYemekCesidiCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnYemekCesidiCRUD.Location = new Point(268, 97);
-            btnYemekCesidiCRUD.Margin = new Padding(3, 2, 3, 2);
+            btnYemekCesidiCRUD.Location = new Point(306, 129);
             btnYemekCesidiCRUD.Name = "btnYemekCesidiCRUD";
-            btnYemekCesidiCRUD.Size = new Size(167, 75);
+            btnYemekCesidiCRUD.Size = new Size(191, 100);
             btnYemekCesidiCRUD.TabIndex = 1;
             btnYemekCesidiCRUD.Text = "Yemek Çeşidi İşlemleri";
             btnYemekCesidiCRUD.UseVisualStyleBackColor = false;
@@ -66,10 +64,9 @@
             // 
             btnOgunİslemleriCRUD.BackColor = Color.Plum;
             btnOgunİslemleriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnOgunİslemleriCRUD.Location = new Point(72, 202);
-            btnOgunİslemleriCRUD.Margin = new Padding(3, 2, 3, 2);
+            btnOgunİslemleriCRUD.Location = new Point(82, 269);
             btnOgunİslemleriCRUD.Name = "btnOgunİslemleriCRUD";
-            btnOgunİslemleriCRUD.Size = new Size(167, 71);
+            btnOgunİslemleriCRUD.Size = new Size(191, 95);
             btnOgunİslemleriCRUD.TabIndex = 2;
             btnOgunİslemleriCRUD.Text = "Öğün İşlemleri";
             btnOgunİslemleriCRUD.UseVisualStyleBackColor = false;
@@ -79,10 +76,9 @@
             // 
             btnPorsiyonİslemleriCRUD.BackColor = Color.FromArgb(255, 192, 255);
             btnPorsiyonİslemleriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnPorsiyonİslemleriCRUD.Location = new Point(268, 202);
-            btnPorsiyonİslemleriCRUD.Margin = new Padding(3, 2, 3, 2);
+            btnPorsiyonİslemleriCRUD.Location = new Point(306, 269);
             btnPorsiyonİslemleriCRUD.Name = "btnPorsiyonİslemleriCRUD";
-            btnPorsiyonİslemleriCRUD.Size = new Size(167, 71);
+            btnPorsiyonİslemleriCRUD.Size = new Size(191, 95);
             btnPorsiyonİslemleriCRUD.TabIndex = 3;
             btnPorsiyonİslemleriCRUD.Text = "Porsiyon İşlemleri";
             btnPorsiyonİslemleriCRUD.UseVisualStyleBackColor = false;
@@ -92,9 +88,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(128, 44);
+            label1.Location = new Point(146, 59);
             label1.Name = "label1";
-            label1.Size = new Size(267, 19);
+            label1.Size = new Size(320, 23);
             label1.TabIndex = 4;
             label1.Text = "Lütfen İşlem Yapılacak Olan Alanı Seçiniz";
             // 
@@ -102,29 +98,27 @@
             // 
             btnRaporlama.BackColor = Color.RosyBrown;
             btnRaporlama.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnRaporlama.Location = new Point(72, 302);
-            btnRaporlama.Margin = new Padding(3, 2, 3, 2);
+            btnRaporlama.Location = new Point(82, 403);
             btnRaporlama.Name = "btnRaporlama";
-            btnRaporlama.Size = new Size(363, 71);
+            btnRaporlama.Size = new Size(415, 95);
             btnRaporlama.TabIndex = 5;
             btnRaporlama.Text = "Raporlama İşlemleri";
             btnRaporlama.UseVisualStyleBackColor = false;
             btnRaporlama.Click += btnRaporlama_Click;
             // 
-            // AdminAnaEkranı
+            // frm_AdminAnaEkrani
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(513, 430);
+            ClientSize = new Size(586, 573);
             Controls.Add(btnRaporlama);
             Controls.Add(label1);
             Controls.Add(btnPorsiyonİslemleriCRUD);
             Controls.Add(btnOgunİslemleriCRUD);
             Controls.Add(btnYemekCesidiCRUD);
             Controls.Add(btnYemekKategoriCRUD);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "AdminAnaEkranı";
+            Name = "frm_AdminAnaEkrani";
             Text = "İşlemler";
             ResumeLayout(false);
             PerformLayout();

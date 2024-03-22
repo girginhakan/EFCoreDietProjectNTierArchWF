@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class frm_AnaGirisEkranı
+    partial class frm_AnaGirisEkrani
     {
         /// <summary>
         ///  Required designer variable.
@@ -93,7 +93,7 @@
             Controls.Add(btnGirisYap);
             Controls.Add(btnKayitOl);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "AnaGirisEkranı";
+            Name = "frm_AnaGirisEkrani";
             Text = "Kalori Takip Sistemi";
             ResumeLayout(false);
             PerformLayout();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class frm_NormalKullanıcıOgunEkleme : Form
+    public partial class frm_NormalKullaniciOgunEkleme : Form
     {
-        public frm_NormalKullanıcıOgunEkleme()
+        public frm_NormalKullaniciOgunEkleme()
         {
             InitializeComponent();
         }

@@ -17,72 +17,49 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class frm_KullanıcıGirisEkranı : Form
+    public partial class frm_KullaniciGirisEkrani : Form
     {
-        public frm_KullanıcıGirisEkranı()
+        public frm_KullaniciGirisEkrani()
         {
             InitializeComponent();
         }
 
         private void btnİptal_Click(object sender, EventArgs e)
         {
-            frm_AnaGirisEkranı anaGirisEkranı = new frm_AnaGirisEkranı();
+            frm_AnaGirisEkrani anaGirisEkranı = new frm_AnaGirisEkrani();
             this.Close();
             anaGirisEkranı.Show();
         }
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            string eposta = txtEposta.Text;
-            KullaniciModel eslesenKullanici = new KullaniciModel();
 
             KullaniciManager kullaniciManager = new KullaniciManager();
-
+            
             foreach (KullaniciModel kullanici in kullaniciManager.GetAllWithIncludes())
             {
-                if (kullanici.Eposta == eposta)
+                if (kullanici.Eposta == txtEposta.Text&&kullanici.Sifre==txtSifre.Text)
                 {
-                    eslesenKullanici = kullanici;
-
+                    if (kullanici.UserStatus == UserStatus.NormalKullanici)
+                    {
+                        frm_NormalKullaniciAnaEkrani normalKullaniciAnaEkrani = new frm_NormalKullaniciAnaEkrani();
+                        normalKullaniciAnaEkrani.Show();
+                        this.Hide();
+                        return;
+                    }
+                    else if(kullanici.UserStatus == UserStatus.Admin)
+                    {
+                        frm_AdminAnaEkrani adminAnaEkranı = new frm_AdminAnaEkrani();
+                        adminAnaEkranı.Show();
+                        this.Hide();
+                        return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Yanlış eposta adresi girdiniz.");
+                    MessageBox.Show("Eposta adresi veya şifreyi hatalı girdiniz.");
                 }
             }
-            string sifre = txtSifre.Text;
-
-            foreach (KullaniciModel kullanici in kullaniciManager.GetAllWithIncludes())
-            {
-                if (kullanici.Sifre == sifre)
-                {
-                    eslesenKullanici = kullanici;
-
-                }
-                else
-                {
-                    MessageBox.Show("Yanlış şifre adresi girdiniz.");
-                }
-            }
-            if (eslesenKullanici.UserStatus == UserStatus.NormalKullanici)
-            {
-                frm_NormalKullanıcıAnaEkranı normalKullanıcıAnaEkranı = new frm_NormalKullanıcıAnaEkranı();
-                normalKullanıcıAnaEkranı.ShowDialog();
-                this.Hide();
-            }
-            else if (eslesenKullanici.UserStatus == UserStatus.Admin)
-            {
-                AdminAnaEkranı adminAnaEkranı = new AdminAnaEkranı();
-                adminAnaEkranı.ShowDialog();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Giriş işlemi başarısız.");
-            }
-
-
-
         }
 
         private void frm_KullanıcıGirisEkranı_Load(object sender, EventArgs e)
