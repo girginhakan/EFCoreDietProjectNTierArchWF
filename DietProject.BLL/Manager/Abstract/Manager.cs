@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 namespace DietProject.BLL.Manager.Abstract
 {
 
-    public abstract class Manager<TModel,TEntity >: IManager<TModel> //, TMapperProfile>
+    public abstract class Manager<TModel,TEntity, TMapperProfile> : IManager<TModel> //, TMapperProfile>
         where TModel : class 
         where TEntity : class
-        //where TMapperProfile : Profile, new()
+        where TMapperProfile : Profile, new()
     {
         private IMapper _mapper;
         protected IRepository< TEntity> _repository;
@@ -26,8 +26,8 @@ namespace DietProject.BLL.Manager.Abstract
 
             _config = new MapperConfiguration(cfg =>
             {
-                cfg.AddExpressionMapping().CreateMap<TModel, TEntity>().ReverseMap();
-                //cfg.AddProfile<TMapperProfile>();
+                cfg.AddExpressionMapping().CreateMap<TModel, TEntity>().ReverseMap();//sad
+                cfg.AddProfile<TMapperProfile>();
 
             });
 
@@ -62,10 +62,28 @@ namespace DietProject.BLL.Manager.Abstract
             return models;
         }
 
-        public IQueryable<TModel> GetAllWithIncludes()
+        public List<TModel> GetAllWithIncludes()
         {
-            throw new NotImplementedException();
+            List<TEntity> entities = _repository.GetAllWithIncludes().ToList();
+
+            List<TModel> models = _mapper.Map<List<TModel>>(entities);
+
+            return models;
         }
+
+        public List<TModel> GetAllWithIncludes(params string[] navigationProperties)
+        {
+            //önce repository'deki GetAllWithIncludes metodunu çağır
+            //Ama çağırınca TEntity tipinde gelir tabi.
+            //Bİz de bunu yine yukarıda yaptığımız gibi bu listeyi TModel listesine döndüreceğiz.
+
+            List<TEntity> entities = _repository.GetAllWithIncludes(navigationProperties).ToList();
+
+            List<TModel> models = _mapper.Map<List<TModel>>(entities);
+
+            return models;
+        }
+
 
         public TModel GetById(int id)
         {

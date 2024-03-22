@@ -4,6 +4,7 @@ using DietProject.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietProject.DAL.Migrations
 {
     [DbContext(typeof(DietProjectDbContext))]
-    partial class DietProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240321171002_bud1")]
+    partial class bud1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -165,9 +168,6 @@ namespace DietProject.DAL.Migrations
                     b.Property<int>("PorsiyonId")
                         .HasColumnType("int");
 
-                    b.Property<double>("ToplamKalori")
-                        .HasColumnType("float");
-
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -295,37 +295,35 @@ namespace DietProject.DAL.Migrations
 
             modelBuilder.Entity("DietProject.DAL.Entities.Kullanici", b =>
                 {
-                    b.HasOne("DietProject.DAL.Entities.KullaniciDetay", "KullaniciDetay")
+                    b.HasOne("DietProject.DAL.Entities.KullaniciDetay", null)
                         .WithOne("kullanici")
                         .HasForeignKey("DietProject.DAL.Entities.Kullanici", "KullaniciDetayId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("KullaniciDetay");
                 });
 
             modelBuilder.Entity("DietProject.DAL.Entities.KullaniciOgunYemekPorsiyon", b =>
                 {
                     b.HasOne("DietProject.DAL.Entities.Kullanici", "Kullanici")
-                        .WithMany("KullaniciOgunYemekPorsiyonlar")
+                        .WithMany()
                         .HasForeignKey("KullaniciId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DietProject.DAL.Entities.Ogun", "Ogun")
-                        .WithMany("KullaniciOgunYemekPorsiyonlar")
+                        .WithMany()
                         .HasForeignKey("OgunId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DietProject.DAL.Entities.Porsiyon", "Porsiyon")
-                        .WithMany("KullaniciOgunYemekPorsiyonlar")
+                        .WithMany()
                         .HasForeignKey("PorsiyonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DietProject.DAL.Entities.Yemek", "Yemek")
-                        .WithMany("KullaniciOgunYemekPorsiyonlar")
+                        .WithMany()
                         .HasForeignKey("YemekId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -342,7 +340,7 @@ namespace DietProject.DAL.Migrations
             modelBuilder.Entity("DietProject.DAL.Entities.Yemek", b =>
                 {
                     b.HasOne("DietProject.DAL.Entities.Kategori", "Kategori")
-                        .WithMany("Yemekler")
+                        .WithMany()
                         .HasForeignKey("KategoriId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -350,35 +348,10 @@ namespace DietProject.DAL.Migrations
                     b.Navigation("Kategori");
                 });
 
-            modelBuilder.Entity("DietProject.DAL.Entities.Kategori", b =>
-                {
-                    b.Navigation("Yemekler");
-                });
-
-            modelBuilder.Entity("DietProject.DAL.Entities.Kullanici", b =>
-                {
-                    b.Navigation("KullaniciOgunYemekPorsiyonlar");
-                });
-
             modelBuilder.Entity("DietProject.DAL.Entities.KullaniciDetay", b =>
                 {
                     b.Navigation("kullanici")
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("DietProject.DAL.Entities.Ogun", b =>
-                {
-                    b.Navigation("KullaniciOgunYemekPorsiyonlar");
-                });
-
-            modelBuilder.Entity("DietProject.DAL.Entities.Porsiyon", b =>
-                {
-                    b.Navigation("KullaniciOgunYemekPorsiyonlar");
-                });
-
-            modelBuilder.Entity("DietProject.DAL.Entities.Yemek", b =>
-                {
-                    b.Navigation("KullaniciOgunYemekPorsiyonlar");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DietProject.BLL.Manager.Concrete;
+using DietProject.BLL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,17 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class Form7 : Form
+    public partial class frm_YemekKategoriIslemleri : Form
     {
-        public Form7()
+        public frm_YemekKategoriIslemleri()
         {
             InitializeComponent();
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }

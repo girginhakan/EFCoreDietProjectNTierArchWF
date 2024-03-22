@@ -10,11 +10,17 @@ namespace DietProject.DAL.Entities
 {
     public class Kullanici : Entity
     {
-        public string Eposta { get; set; }
+
+        
+        public string Eposta { get; set; } 
+
         public string Sifre { get; set; }
         public int KullaniciDetayId { get; set; }
 
+
         public KullaniciDetay KullaniciDetay { get; set; }
+
+
         public UserStatus UserStatus { get; set; } = UserStatus.NormalKullanici;
 
 

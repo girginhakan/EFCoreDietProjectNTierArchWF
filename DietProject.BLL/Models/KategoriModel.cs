@@ -14,7 +14,7 @@ namespace DietProject.BLL.Models
         public int Id { get; set; }
         public string KategoriAdi { get; set; }
         public string Aciklama { get; set; }
-        public List<YemekModel> YemekModel { get; set; }
+        public List<YemekModel> Yemekler { get; set; }
 
     }
 }
