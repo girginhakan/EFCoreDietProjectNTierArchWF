@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class Form4 : Form
+    public partial class NormalKullanıcıOgunEkleme : Form
     {
-        public Form4()
+        public NormalKullanıcıOgunEkleme()
         {
             InitializeComponent();
+        }
+
+        private void btnKullaniciKayitİptal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }

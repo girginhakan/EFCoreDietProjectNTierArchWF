@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class Form10 : Form
+    public partial class NormalKullanıcıAnaEkranı : Form
     {
-        public Form10()
+        public NormalKullanıcıAnaEkranı()
         {
             InitializeComponent();
         }
@@ -20,6 +20,13 @@ namespace DietProject.UI
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOgunEkle_Click(object sender, EventArgs e)
+        {
+            NormalKullanıcıOgunEkleme normalKullanıcıOgunEkleme = new NormalKullanıcıOgunEkleme();
+            normalKullanıcıOgunEkleme.Show();
+            this.Hide();
         }
     }
 }

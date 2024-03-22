@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class Form7
+    partial class YemekCesitIslemleri
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lblYemekCesitleri = new Label();
+            dgvMevcutYemekCesitleri = new DataGridView();
             btnGuncelle = new Button();
             btnSil = new Button();
             btnEkle = new Button();
-            dgvMevcutOgunler = new DataGridView();
-            lblMevcutOgunler = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvMevcutOgunler).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMevcutYemekCesitleri).BeginInit();
             SuspendLayout();
+            // 
+            // lblYemekCesitleri
+            // 
+            lblYemekCesitleri.AutoSize = true;
+            lblYemekCesitleri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lblYemekCesitleri.Location = new Point(114, 26);
+            lblYemekCesitleri.Name = "lblYemekCesitleri";
+            lblYemekCesitleri.Size = new Size(167, 20);
+            lblYemekCesitleri.TabIndex = 1;
+            lblYemekCesitleri.Text = "Mevcut Yemek Çeşitleri";
+            // 
+            // dgvMevcutYemekCesitleri
+            // 
+            dgvMevcutYemekCesitleri.BackgroundColor = Color.LightGray;
+            dgvMevcutYemekCesitleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMevcutYemekCesitleri.Location = new Point(39, 70);
+            dgvMevcutYemekCesitleri.Name = "dgvMevcutYemekCesitleri";
+            dgvMevcutYemekCesitleri.RowHeadersWidth = 51;
+            dgvMevcutYemekCesitleri.Size = new Size(332, 361);
+            dgvMevcutYemekCesitleri.TabIndex = 2;
             // 
             // btnGuncelle
             // 
             btnGuncelle.BackColor = Color.FromArgb(255, 128, 0);
             btnGuncelle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGuncelle.Location = new Point(407, 320);
+            btnGuncelle.Location = new Point(408, 315);
             btnGuncelle.Name = "btnGuncelle";
             btnGuncelle.Size = new Size(148, 76);
-            btnGuncelle.TabIndex = 8;
+            btnGuncelle.TabIndex = 3;
             btnGuncelle.Text = "GÜNCELLE";
             btnGuncelle.UseVisualStyleBackColor = false;
             // 
@@ -51,10 +71,10 @@
             // 
             btnSil.BackColor = Color.Crimson;
             btnSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnSil.Location = new Point(407, 224);
+            btnSil.Location = new Point(408, 219);
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(148, 76);
-            btnSil.TabIndex = 9;
+            btnSil.TabIndex = 4;
             btnSil.Text = "SİL";
             btnSil.UseVisualStyleBackColor = false;
             // 
@@ -62,34 +82,14 @@
             // 
             btnEkle.BackColor = Color.Lime;
             btnEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnEkle.Location = new Point(407, 127);
+            btnEkle.Location = new Point(408, 122);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(148, 76);
-            btnEkle.TabIndex = 10;
+            btnEkle.TabIndex = 5;
             btnEkle.Text = "EKLE";
             btnEkle.UseVisualStyleBackColor = false;
             // 
-            // dgvMevcutOgunler
-            // 
-            dgvMevcutOgunler.BackgroundColor = Color.LightGray;
-            dgvMevcutOgunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMevcutOgunler.Location = new Point(38, 75);
-            dgvMevcutOgunler.Name = "dgvMevcutOgunler";
-            dgvMevcutOgunler.RowHeadersWidth = 51;
-            dgvMevcutOgunler.Size = new Size(332, 361);
-            dgvMevcutOgunler.TabIndex = 7;
-            // 
-            // lblMevcutOgunler
-            // 
-            lblMevcutOgunler.AutoSize = true;
-            lblMevcutOgunler.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblMevcutOgunler.Location = new Point(144, 27);
-            lblMevcutOgunler.Name = "lblMevcutOgunler";
-            lblMevcutOgunler.Size = new Size(120, 20);
-            lblMevcutOgunler.TabIndex = 6;
-            lblMevcutOgunler.Text = "Mevcut Öğünler";
-            // 
-            // Form7
+            // Form6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -98,21 +98,21 @@
             Controls.Add(btnGuncelle);
             Controls.Add(btnSil);
             Controls.Add(btnEkle);
-            Controls.Add(dgvMevcutOgunler);
-            Controls.Add(lblMevcutOgunler);
-            Name = "Form7";
-            Text = "Öğün İşlemleri";
-            ((System.ComponentModel.ISupportInitialize)dgvMevcutOgunler).EndInit();
+            Controls.Add(dgvMevcutYemekCesitleri);
+            Controls.Add(lblYemekCesitleri);
+            Name = "Form6";
+            Text = "Yemek Çeşidi İşlemleri";
+            ((System.ComponentModel.ISupportInitialize)dgvMevcutYemekCesitleri).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Label lblYemekCesitleri;
+        private DataGridView dgvMevcutYemekCesitleri;
         private Button btnGuncelle;
         private Button btnSil;
         private Button btnEkle;
-        private DataGridView dgvMevcutOgunler;
-        private Label lblMevcutOgunler;
     }
 }
