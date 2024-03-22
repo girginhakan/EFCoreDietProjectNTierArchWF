@@ -35,30 +35,34 @@ namespace DietProject.UI
         {
 
             KullaniciManager kullaniciManager = new KullaniciManager();
-            
+
+            bool kullanicibul = false;
+
             foreach (KullaniciModel kullanici in kullaniciManager.GetAllWithIncludes())
             {
-                if (kullanici.Eposta == txtEposta.Text&&kullanici.Sifre==txtSifre.Text)
+                if (kullanici.Eposta == txtEposta.Text && kullanici.Sifre == txtSifre.Text)
                 {
-                    if (kullanici.UserStatus == UserStatus.NormalKullanici)
-                    {
-                        frm_NormalKullaniciAnaEkrani normalKullaniciAnaEkrani = new frm_NormalKullaniciAnaEkrani();
-                        normalKullaniciAnaEkrani.Show();
-                        this.Hide();
-                        return;
-                    }
-                    else if(kullanici.UserStatus == UserStatus.Admin)
+                    kullanicibul = true;
+
+                    if (kullanici.UserStatus == UserStatus.Admin)
                     {
                         frm_AdminAnaEkrani adminAnaEkranı = new frm_AdminAnaEkrani();
                         adminAnaEkranı.Show();
-                        this.Hide();
-                        return;
                     }
+                    else if (kullanici.UserStatus == UserStatus.NormalKullanici)
+                    {
+                        frm_NormalKullaniciAnaEkrani normalKullaniciAnaEkrani = new frm_NormalKullaniciAnaEkrani();
+                        normalKullaniciAnaEkrani.Show();
+                    }
+
+                    this.Hide();
+                    break;
                 }
-                else
-                {
-                    MessageBox.Show("Eposta adresi veya şifreyi hatalı girdiniz.");
-                }
+            }
+
+            if (!kullanicibul)
+            {
+                MessageBox.Show("Eposta adresi veya şifrenizi hatalı girdiniz.");
             }
         }
 

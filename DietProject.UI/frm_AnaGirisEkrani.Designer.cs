@@ -31,7 +31,6 @@
             btnKayitOl = new Button();
             btnGirisYap = new Button();
             lblBaslik = new Label();
-            btnAdminGiris = new Button();
             SuspendLayout();
             // 
             // btnKayitOl
@@ -45,7 +44,7 @@
             btnKayitOl.TabIndex = 0;
             btnKayitOl.Text = "Kayıt Ol ";
             btnKayitOl.UseVisualStyleBackColor = false;
-            btnKayitOl.Click += this.btnKayitOl_Click;
+            btnKayitOl.Click += btnKayitOl_Click;
             // 
             // btnGirisYap
             // 
@@ -58,37 +57,25 @@
             btnGirisYap.TabIndex = 1;
             btnGirisYap.Text = "Giriş Yap";
             btnGirisYap.UseVisualStyleBackColor = false;
-            btnGirisYap.Click += this.btnGirisYap_Click;
+            btnGirisYap.Click += btnGirisYap_Click;
             // 
             // lblBaslik
             // 
             lblBaslik.AutoSize = true;
             lblBaslik.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblBaslik.ForeColor = SystemColors.ControlText;
-            lblBaslik.Location = new Point(49, 41);
+            lblBaslik.Location = new Point(66, 37);
             lblBaslik.Name = "lblBaslik";
             lblBaslik.Size = new Size(373, 30);
             lblBaslik.TabIndex = 2;
             lblBaslik.Text = "Kalori Takip Sistemine Hoşgeldiniz ! ";
             // 
-            // btnAdminGiris
-            // 
-            btnAdminGiris.BackColor = Color.IndianRed;
-            btnAdminGiris.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnAdminGiris.Location = new Point(12, 317);
-            btnAdminGiris.Name = "btnAdminGiris";
-            btnAdminGiris.Size = new Size(137, 41);
-            btnAdminGiris.TabIndex = 3;
-            btnAdminGiris.Text = "Admin Girişi";
-            btnAdminGiris.UseVisualStyleBackColor = false;
-            // 
-            // AnaGirisEkranı
+            // frm_AnaGirisEkrani
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
             ClientSize = new Size(510, 370);
-            Controls.Add(btnAdminGiris);
             Controls.Add(lblBaslik);
             Controls.Add(btnGirisYap);
             Controls.Add(btnKayitOl);
@@ -104,6 +91,5 @@
         private Button btnKayitOl;
         private Button btnGirisYap;
         private Label lblBaslik;
-        private Button btnAdminGiris;
     }
 }

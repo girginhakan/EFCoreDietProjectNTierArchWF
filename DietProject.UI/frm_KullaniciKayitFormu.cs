@@ -1,4 +1,4 @@
-﻿using DietProject.DAL.Context;
+﻿//using DietProject.DAL.Context;
 //using DietProject.DAL.Entities;
 using DietProject.BLL;
 using Microsoft.IdentityModel.Tokens;
@@ -65,47 +65,43 @@ namespace DietProject.UI
             
             KullaniciModel kullaniciModel = new KullaniciModel();
 
+            //---AD-----------
 
             string isim = txtAd.Text;
             if (isim.Any(char.IsDigit) && isim.Length < 3 && isim.IsNullOrEmpty())
-            {
                 MessageBox.Show("Lütfen adınızı uygun şekilde giriniz.");
-            }
             else
-            {
                 kullaniciDetayModel.Adi=isim;
-            }
+
+            
+            //----SOYAD------------
 
             string soyad = txtSoyad.Text;
             if (soyad.Any(char.IsDigit) && soyad.Length < 3 && soyad.IsNullOrEmpty())
-            {
                 MessageBox.Show("Lütfen soyadınız uygun şekilde giriniz.");
-            }
             else
-            {
                 kullaniciDetayModel.Soyadi = soyad;    
-            }
+            
+
+            //-----EMAİL------------
 
             string email = txtEposta.Text;
             if (email.IsNullOrEmpty() && !(email.Contains("@")) && !(email.EndsWith(".com")))
-            {
                 MessageBox.Show("Lütfen emailinizi uygun şekilde giriniz.");
-            }
             else
-            {
                 kullaniciModel.Eposta=email;
-            }
+
+
+            //-----ŞİFRE------------
 
             string sifre = txtSifre.Text;
             if (sifre.IsNullOrEmpty() && !(sifre.Any(char.IsDigit)) && !(sifre.Any(char.IsLower)) && !(sifre.Any(char.IsUpper)) && sifre.Length<=8 && !(sifre.Any(char.IsLetter)))
-            {
                 MessageBox.Show("Şifreniz en az 8 karakter içermelidir, en az bir büyük harf,bir küçük harf, bir sayı kullanmalısınız.");
-            }
             else
-            {
                 kullaniciModel.Sifre = Metodlar.Sha256Hash(sifre);
-            }
-            //yıl-----------
+
+
+            //-----YIL-----------
 
             string secilenYilString = cbYıl.SelectedItem.ToString();
 
@@ -125,7 +121,8 @@ namespace DietProject.UI
 
             kullaniciDetayModel.DogumTarihi = secilenTarih;
 
-            // boy---------
+            // ----BOY---------
+
               string boyString = txtBoy.Text;
 
             if (double.TryParse(boyString, out double boy))
@@ -138,14 +135,12 @@ namespace DietProject.UI
                 {
                     MessageBox.Show("Boy aralıkları dışında giriş yaptınız.");
                 }
-                
             }
             else
-            {
                 MessageBox.Show("Geçersiz boy formatı!");
-            }
 
-            // kilo-------------
+            // ------KİLO-------------
+
             string kiloString = txtKilo.Text;
             if (double.TryParse(kiloString, out double kilo))
             {
@@ -157,23 +152,21 @@ namespace DietProject.UI
                 {
                     MessageBox.Show("Kilo aralıkları dışında giriş yaptınız.");
                 }
-
             }
             else
-            {
                 MessageBox.Show("Geçersiz kilo formatı!");
-            }
+
+
+            //-------DATABASEİŞLEMLERİ---------
 
             KullaniciDetayManager kullaniciDetayManager = new KullaniciDetayManager();
 
             KullaniciManager kullaniciManager = new KullaniciManager();
 
-            kullaniciDetayManager.Add(kullaniciDetayModel);
-
-          
-            kullaniciModel.KullaniciDetayId = kullaniciDetayModel.Id;
-          
-
+            kullaniciDetayManager.Add(kullaniciDetayModel); // burası çalışıyor.
+            int id = kullaniciDetayModel.Id;
+            
+           kullaniciModel.KullaniciDetayId = kullaniciDetayModel.Id; // ıdler birbirine atanmıyor (default 0 dönüyor) hata veriyor hata cozulmeli.
             
             kullaniciManager.Add(kullaniciModel);
                 
