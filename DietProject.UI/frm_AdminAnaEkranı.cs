@@ -19,7 +19,7 @@ namespace DietProject.UI
 
         private void btnYemekKategoriCRUD_Click(object sender, EventArgs e)
         {
-            YemekKategoriIslemleri yemekKategoriIslemleri = new YemekKategoriIslemleri();
+            frm_YemekKategoriIslemleri yemekKategoriIslemleri = new frm_YemekKategoriIslemleri();
             yemekKategoriIslemleri.ShowDialog();
             this.Hide();
 
@@ -27,21 +27,21 @@ namespace DietProject.UI
 
         private void btnYemekCesidiCRUD_Click(object sender, EventArgs e)
         {
-            YemekCesitIslemleri yemekCesitIslemleri = new YemekCesitIslemleri();
+            frm_YemekCesitIslemleri yemekCesitIslemleri = new frm_YemekCesitIslemleri();
             yemekCesitIslemleri.ShowDialog();
             this.Hide();
         }
 
         private void btnOgunİslemleriCRUD_Click(object sender, EventArgs e)
         {
-            OgunIslemleri ogunIslemleri = new OgunIslemleri();
+            frm_OgunIslemleri ogunIslemleri = new frm_OgunIslemleri();
             ogunIslemleri.ShowDialog();
             this.Hide();
         }
 
         private void btnPorsiyonİslemleriCRUD_Click(object sender, EventArgs e)
         {
-            PorsiyonIslemleri porsiyonIslemleri = new PorsiyonIslemleri();
+            frm_PorsiyonIslemleri porsiyonIslemleri = new frm_PorsiyonIslemleri();
             porsiyonIslemleri.ShowDialog();
             this.Hide();
         }

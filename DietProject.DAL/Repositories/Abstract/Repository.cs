@@ -87,5 +87,18 @@ namespace DietProject.DAL.Repositories.Abstract
             return query;
 
         }
+        public IQueryable<T> GetAllWithIncludes(params string[] navigationProperties)
+        {
+            //burada navigation prop.ları include edeceğiz.
+
+            IQueryable<T> query = _db.Set<T>();
+
+            foreach (var navigationProperty in navigationProperties)
+            {
+                query = query.Include(navigationProperty);
+            }
+
+            return query;
+        }
     }
 }

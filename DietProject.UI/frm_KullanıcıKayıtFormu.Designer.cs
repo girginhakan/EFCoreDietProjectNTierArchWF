@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class KullanıcıKayıtFormu
+    partial class frm_KullanıcıKayıtFormu
     {
         /// <summary>
         /// Required designer variable.

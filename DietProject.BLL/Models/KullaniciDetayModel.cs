@@ -14,7 +14,7 @@ namespace DietProject.BLL.Models
         public DateTime DogumTarihi { get; set; }
         public double Boy { get; set; }
         public double Kilo { get; set; }
-        public KullaniciModel KullaniciModel { get; set; }
+        public KullaniciModel Kullanici { get; set; }
 
     }
 }

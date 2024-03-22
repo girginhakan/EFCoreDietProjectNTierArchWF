@@ -17,5 +17,6 @@ namespace DietProject.DAL.Repositories.Abstract
         public T GetById(int id);
         public IQueryable<T> Search(Expression<Func<T, bool>> predicate);
         public IQueryable<T> GetAllWithIncludes();
+        public IQueryable<T> GetAllWithIncludes(params string[] navigationProperties);
     }
 }

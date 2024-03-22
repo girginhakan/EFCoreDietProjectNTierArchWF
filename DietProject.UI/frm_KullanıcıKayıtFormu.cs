@@ -1,5 +1,6 @@
 ﻿using DietProject.DAL.Context;
-using DietProject.DAL.Entities;
+//using DietProject.DAL.Entities;
+using DietProject.BLL;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -13,14 +14,15 @@ using System.Windows.Forms;
 using System.Xml;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using DietProject.BLL.Manager.Concrete;
+using DietProject.BLL.Models;
 
 namespace DietProject.UI
 {
-    public partial class KullanıcıKayıtFormu : Form
+    public partial class frm_KullanıcıKayıtFormu : Form
     {
-        DietProjectDbContext db = new DietProjectDbContext();
 
-        public KullanıcıKayıtFormu()
+        public frm_KullanıcıKayıtFormu()
         {
             InitializeComponent();
             YılAyGün();
@@ -51,7 +53,7 @@ namespace DietProject.UI
 
         private void btnKullaniciKayitİptal_Click(object sender, EventArgs e)
         {
-            AnaGirisEkranı anaGirisEkranı = new AnaGirisEkranı();
+            frm_AnaGirisEkranı anaGirisEkranı = new frm_AnaGirisEkranı();
             this.Close();
             anaGirisEkranı.Show();
 
@@ -59,8 +61,9 @@ namespace DietProject.UI
 
         private void btnKullaniciKaydet_Click(object sender, EventArgs e)
         {
-            KullaniciDetay kullaniciDetay = new KullaniciDetay();
-            Kullanici kullanici = new Kullanici();
+            KullaniciDetayModel kullaniciDetayModel = new KullaniciDetayModel();
+            
+            KullaniciModel kullaniciModel = new KullaniciModel();
 
 
             string isim = txtAd.Text;
@@ -70,7 +73,7 @@ namespace DietProject.UI
             }
             else
             {
-                kullaniciDetay.Adi=isim;
+                kullaniciDetayModel.Adi=isim;
             }
 
             string soyad = txtSoyad.Text;
@@ -80,7 +83,7 @@ namespace DietProject.UI
             }
             else
             {
-                kullaniciDetay.Soyadi = soyad;    
+                kullaniciDetayModel.Soyadi = soyad;    
             }
 
             string email = txtEposta.Text;
@@ -90,7 +93,7 @@ namespace DietProject.UI
             }
             else
             {
-                kullanici.Eposta=email;
+                kullaniciModel.Eposta=email;
             }
 
             string sifre = txtSifre.Text;
@@ -99,8 +102,8 @@ namespace DietProject.UI
                 MessageBox.Show("Şifreniz en az 8 karakter içermelidir, en az bir büyük harf,bir küçük harf, bir sayı kullanmalısınız.");
             }
             else
-            { 
-                kullanici.Sifre=sifre;
+            {
+                kullaniciModel.Sifre = Metodlar.Sha256Hash(sifre);
             }
             //yıl-----------
 
@@ -120,7 +123,7 @@ namespace DietProject.UI
 
             DateTime secilenTarih = new DateTime(secilenYil, secilenAy, secilenGun);
 
-            kullaniciDetay.DogumTarihi = secilenTarih;
+            kullaniciDetayModel.DogumTarihi = secilenTarih;
 
             // boy---------
               string boyString = txtBoy.Text;
@@ -129,7 +132,7 @@ namespace DietProject.UI
             {
                 if(boy < 240 & boy>140)
                 {
-                    kullaniciDetay.Boy=boy;
+                    kullaniciDetayModel.Boy=boy;
                 }
                 else
                 {
@@ -148,7 +151,7 @@ namespace DietProject.UI
             {
                 if (kilo < 240 & kilo > 40)
                 {
-                    kullaniciDetay.Kilo = kilo;
+                    kullaniciDetayModel.Kilo = kilo;
                 }
                 else
                 {
@@ -161,15 +164,18 @@ namespace DietProject.UI
                 MessageBox.Show("Geçersiz kilo formatı!");
             }
 
+            KullaniciDetayManager kullaniciDetayManager = new KullaniciDetayManager();
 
+            KullaniciManager kullaniciManager = new KullaniciManager();
 
-            // Listeye ekleme ve save
+            kullaniciDetayManager.Add(kullaniciDetayModel);
 
-            kullanici.KullaniciDetayId = kullaniciDetay.Id;
+          
+            kullaniciModel.KullaniciDetayId = kullaniciDetayModel.Id;
+          
 
-                db.Kullanicilar.Add(kullanici);
             
-                db.SaveChanges();
+            kullaniciManager.Add(kullaniciModel);
                 
 
         }

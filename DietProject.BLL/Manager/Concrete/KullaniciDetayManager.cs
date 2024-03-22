@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DietProject.BLL.Manager.Concrete
 {
-    public class KullaniciDetayManager : Manager<KullaniciDetayModel, KullaniciDetay,KullaniciMapProfile>
+    public class KullaniciDetayManager : Manager<KullaniciDetayModel, KullaniciDetay,KullaniciDetayMapProfile>
     {
         public KullaniciDetayManager()
         {

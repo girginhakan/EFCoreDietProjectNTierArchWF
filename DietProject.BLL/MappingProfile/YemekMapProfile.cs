@@ -14,10 +14,13 @@ namespace DietProject.BLL.MappingProfile
         public YemekMapProfile()
         {
             CreateMap<KategoriModel, Kategori>().
-            ForMember(y => y.Yemekler, b => b.MapFrom(src => src.YemekModel)).ReverseMap();
+            ForMember(y => y.Yemekler, b => b.MapFrom(src => src.Yemekler)).ReverseMap();
+
+            CreateMap<KullaniciOgunYemekPorsiyonModel, KullaniciOgunYemekPorsiyon>().
+                ForMember(y => y.Yemek, k => k.MapFrom(src => src.Yemek));
 
             //CreateMap<KullaniciOgunYemekPorsiyonModel, KullaniciOgunYemekPorsiyon>().
-            //    ForMember(y => y.Yemek, k => k.MapFrom(src => src.YemekModel));
+            // ForMember(y => y.Ogun, k => k.MapFrom(src => src.OgunModel));
         }
     }
 }
