@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class AdminAnaEkranı : Form
+    public partial class frm_AdminAnaEkrani : Form
     {
-        public AdminAnaEkranı()
+        public frm_AdminAnaEkrani()
         {
             InitializeComponent();
         }

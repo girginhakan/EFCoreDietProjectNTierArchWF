@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class frm_NormalKullanıcıAnaEkranı
+    partial class frm_NormalKullaniciAnaEkrani
     {
         /// <summary>
         /// Required designer variable.

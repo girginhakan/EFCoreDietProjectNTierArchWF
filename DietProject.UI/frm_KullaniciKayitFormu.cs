@@ -19,10 +19,10 @@ using DietProject.BLL.Models;
 
 namespace DietProject.UI
 {
-    public partial class frm_KullanıcıKayıtFormu : Form
+    public partial class frm_KullaniciKayitFormu : Form
     {
 
-        public frm_KullanıcıKayıtFormu()
+        public frm_KullaniciKayitFormu()
         {
             InitializeComponent();
             YılAyGün();
@@ -53,9 +53,9 @@ namespace DietProject.UI
 
         private void btnKullaniciKayitİptal_Click(object sender, EventArgs e)
         {
-            frm_AnaGirisEkranı anaGirisEkranı = new frm_AnaGirisEkranı();
+            frm_AnaGirisEkrani anaGirisEkrani = new frm_AnaGirisEkrani();
             this.Close();
-            anaGirisEkranı.Show();
+            anaGirisEkrani.Show();
 
         }
 
