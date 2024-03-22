@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DietProject.BLL.Models;
+using DietProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,9 @@ namespace DietProject.BLL.MappingProfile
     {
         public KategoriMapProfile()
         {
-            
+            CreateMap<YemekModel, Yemek>().
+          ForMember(y => y.Kategori, b => b.MapFrom(src => src.Kategori)).ReverseMap();
+
         }
     }
 }

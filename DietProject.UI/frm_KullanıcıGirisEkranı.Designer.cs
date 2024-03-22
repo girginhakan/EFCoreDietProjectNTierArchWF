@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class KullanıcıGirisEkranı
+    partial class frm_KullanıcıGirisEkranı
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,8 @@
             btnİptal = new Button();
             btnGiris = new Button();
             label3 = new Label();
+            cbSifreGoster = new CheckBox();
+            linklSifremiUnuttum = new LinkLabel();
             SuspendLayout();
             // 
             // lblEposta
@@ -109,12 +111,36 @@
             label3.TabIndex = 14;
             label3.Text = "Kullanıcı Girişi ";
             // 
-            // KullanıcıGirisEkranı
+            // cbSifreGoster
+            // 
+            cbSifreGoster.AutoSize = true;
+            cbSifreGoster.Location = new Point(176, 222);
+            cbSifreGoster.Name = "cbSifreGoster";
+            cbSifreGoster.Size = new Size(99, 19);
+            cbSifreGoster.TabIndex = 15;
+            cbSifreGoster.Text = "Şifremi göster";
+            cbSifreGoster.UseVisualStyleBackColor = true;
+            cbSifreGoster.CheckedChanged += cbSifreGoster_CheckedChanged;
+            // 
+            // linklSifremiUnuttum
+            // 
+            linklSifremiUnuttum.AutoSize = true;
+            linklSifremiUnuttum.Location = new Point(297, 222);
+            linklSifremiUnuttum.Name = "linklSifremiUnuttum";
+            linklSifremiUnuttum.Size = new Size(95, 15);
+            linklSifremiUnuttum.TabIndex = 16;
+            linklSifremiUnuttum.TabStop = true;
+            linklSifremiUnuttum.Text = "Şifremi Unuttum";
+            linklSifremiUnuttum.LinkClicked += linklSifremiUnuttum_LinkClicked;
+            // 
+            // frm_KullanıcıGirisEkranı
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
             ClientSize = new Size(510, 370);
+            Controls.Add(linklSifremiUnuttum);
+            Controls.Add(cbSifreGoster);
             Controls.Add(label3);
             Controls.Add(btnİptal);
             Controls.Add(btnGiris);
@@ -123,8 +149,9 @@
             Controls.Add(lblSifre);
             Controls.Add(lblEposta);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "KullanıcıGirisEkranı";
+            Name = "frm_KullanıcıGirisEkranı";
             Text = "Kullanıcı Giriş";
+            Load += frm_KullanıcıGirisEkranı_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,5 +165,7 @@
         private Button btnİptal;
         private Button btnGiris;
         private Label label3;
+        private CheckBox cbSifreGoster;
+        private LinkLabel linklSifremiUnuttum;
     }
 }

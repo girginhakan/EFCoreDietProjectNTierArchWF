@@ -19,5 +19,6 @@ namespace DietProject.BLL.Manager.Abstract
         public TModel GetById(int id);
         public List<TModel> Search(Expression<Func<TModel, bool>> predicate);
         public List<TModel> GetAllWithIncludes();
+        public List<TModel> GetAllWithIncludes(params string[] navigationProperties);
     }
 }

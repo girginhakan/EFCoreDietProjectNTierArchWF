@@ -18,5 +18,10 @@ namespace DietProject.DAL.Entities
         public Ogun Ogun { get; set; }
         public Porsiyon Porsiyon { get; set; }
         public Yemek Yemek { get; set; }
+
+        public double ToplamKalori { get; set; } 
+
+
+
     }
 }

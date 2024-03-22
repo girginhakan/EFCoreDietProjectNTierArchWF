@@ -71,6 +71,20 @@ namespace DietProject.BLL.Manager.Abstract
             return models;
         }
 
+        public List<TModel> GetAllWithIncludes(params string[] navigationProperties)
+        {
+            //önce repository'deki GetAllWithIncludes metodunu çağır
+            //Ama çağırınca TEntity tipinde gelir tabi.
+            //Bİz de bunu yine yukarıda yaptığımız gibi bu listeyi TModel listesine döndüreceğiz.
+
+            List<TEntity> entities = _repository.GetAllWithIncludes(navigationProperties).ToList();
+
+            List<TModel> models = _mapper.Map<List<TModel>>(entities);
+
+            return models;
+        }
+
+
         public TModel GetById(int id)
         {
             TEntity entity = _repository.GetById(id);

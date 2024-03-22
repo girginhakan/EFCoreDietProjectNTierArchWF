@@ -4,6 +4,7 @@ using DietProject.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietProject.DAL.Migrations
 {
     [DbContext(typeof(DietProjectDbContext))]
-    partial class DietProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240322091504_bud2")]
+    partial class bud2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -164,9 +167,6 @@ namespace DietProject.DAL.Migrations
 
                     b.Property<int>("PorsiyonId")
                         .HasColumnType("int");
-
-                    b.Property<double>("ToplamKalori")
-                        .HasColumnType("float");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");

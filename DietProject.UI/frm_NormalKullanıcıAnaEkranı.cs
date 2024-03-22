@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class NormalKullanıcıAnaEkranı : Form
+    public partial class frm_NormalKullanıcıAnaEkranı : Form
     {
-        public NormalKullanıcıAnaEkranı()
+        public frm_NormalKullanıcıAnaEkranı()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace DietProject.UI
 
         private void btnOgunEkle_Click(object sender, EventArgs e)
         {
-            NormalKullanıcıOgunEkleme normalKullanıcıOgunEkleme = new NormalKullanıcıOgunEkleme();
+            frm_NormalKullanıcıOgunEkleme normalKullanıcıOgunEkleme = new frm_NormalKullanıcıOgunEkleme();
             normalKullanıcıOgunEkleme.Show();
             this.Hide();
         }
