@@ -12,7 +12,6 @@ namespace DietProject.DAL.Context
     {
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Kullanici> Kullanicilar { get; set;}
-        public DbSet<KullaniciDetay> KullaniciDetaylar { get; set; }
         public DbSet<Ogun> Ogunler { get; set; }
         public DbSet<Porsiyon> Porsiyonlar { get; set; }
         public DbSet<Yemek> Yemekler { get; set; }
@@ -21,7 +20,7 @@ namespace DietProject.DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-6LKAQV9R;Initial Catalog=DietProjectDb;Integrated Security=true;Encrypt=False");
+            optionsBuilder.UseSqlServer("Data Source=HAKANPC;Initial Catalog=DietProjectDb;Integrated Security=true;Encrypt=False");
         }
     }
 }

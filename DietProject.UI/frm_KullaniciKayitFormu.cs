@@ -61,7 +61,7 @@ namespace DietProject.UI
 
         private void btnKullaniciKaydet_Click(object sender, EventArgs e)
         {
-            KullaniciDetayModel kullaniciDetayModel = new KullaniciDetayModel();
+            
             
             KullaniciModel kullaniciModel = new KullaniciModel();
 
@@ -71,7 +71,7 @@ namespace DietProject.UI
             if (isim.Any(char.IsDigit) && isim.Length < 3 && isim.IsNullOrEmpty())
                 MessageBox.Show("Lütfen adınızı uygun şekilde giriniz.");
             else
-                kullaniciDetayModel.Adi=isim;
+                kullaniciModel.Adi=isim;
 
             
             //----SOYAD------------
@@ -80,7 +80,7 @@ namespace DietProject.UI
             if (soyad.Any(char.IsDigit) && soyad.Length < 3 && soyad.IsNullOrEmpty())
                 MessageBox.Show("Lütfen soyadınız uygun şekilde giriniz.");
             else
-                kullaniciDetayModel.Soyadi = soyad;    
+                kullaniciModel.Soyadi = soyad;    
             
 
             //-----EMAİL------------
@@ -98,7 +98,7 @@ namespace DietProject.UI
             if (sifre.IsNullOrEmpty() && !(sifre.Any(char.IsDigit)) && !(sifre.Any(char.IsLower)) && !(sifre.Any(char.IsUpper)) && sifre.Length<=8 && !(sifre.Any(char.IsLetter)))
                 MessageBox.Show("Şifreniz en az 8 karakter içermelidir, en az bir büyük harf,bir küçük harf, bir sayı kullanmalısınız.");
             else
-                kullaniciModel.Sifre = Metodlar.Sha256Hash(sifre);
+                kullaniciModel.Sifre = Metodlar.Sha256Hash(sifre);// burası hatalı
 
 
             //-----YIL-----------
@@ -119,7 +119,7 @@ namespace DietProject.UI
 
             DateTime secilenTarih = new DateTime(secilenYil, secilenAy, secilenGun);
 
-            kullaniciDetayModel.DogumTarihi = secilenTarih;
+            kullaniciModel.DogumTarihi = secilenTarih;
 
             // ----BOY---------
 
@@ -129,7 +129,7 @@ namespace DietProject.UI
             {
                 if(boy < 240 & boy>140)
                 {
-                    kullaniciDetayModel.Boy=boy;
+                    kullaniciModel.Boy=boy;
                 }
                 else
                 {
@@ -146,7 +146,7 @@ namespace DietProject.UI
             {
                 if (kilo < 240 & kilo > 40)
                 {
-                    kullaniciDetayModel.Kilo = kilo;
+                    kullaniciModel.Kilo = kilo;
                 }
                 else
                 {
@@ -159,14 +159,7 @@ namespace DietProject.UI
 
             //-------DATABASEİŞLEMLERİ---------
 
-            KullaniciDetayManager kullaniciDetayManager = new KullaniciDetayManager();
-
             KullaniciManager kullaniciManager = new KullaniciManager();
-
-            kullaniciDetayManager.Add(kullaniciDetayModel); // burası çalışıyor.
-            int id = kullaniciDetayModel.Id;
-            
-           kullaniciModel.KullaniciDetayId = kullaniciDetayModel.Id; // ıdler birbirine atanmıyor (default 0 dönüyor) hata veriyor hata cozulmeli.
             
             kullaniciManager.Add(kullaniciModel);
                 

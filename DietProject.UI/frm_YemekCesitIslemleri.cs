@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietProject.BLL.Manager.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace DietProject.UI
         public frm_YemekCesitIslemleri()
         {
             InitializeComponent();
+            //KategoriManager kategoriManager = new KategoriManager();
+            //dgvMevcutYemekCesitleri.DataSource = kategoriManager.GetAllWithIncludes();
         }
     }
 }
