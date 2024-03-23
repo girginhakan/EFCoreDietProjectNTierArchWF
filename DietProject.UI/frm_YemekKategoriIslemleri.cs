@@ -27,7 +27,7 @@ namespace DietProject.UI
         {
 
             dgvMevcutYemekKategorileri.DataSource = kategoriManager.GetAllWithIncludes();
-            dgvMevcutYemekKategorileri.Columns[0].Visible = false;
+            //gvMevcutYemekKategorileri.Columns[0].Visible = false;
 
         }
 

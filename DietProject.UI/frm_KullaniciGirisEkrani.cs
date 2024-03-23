@@ -19,9 +19,11 @@ namespace DietProject.UI
 {
     public partial class frm_KullaniciGirisEkrani : Form
     {
+        //public KullaniciModel kullanicilar = new KullaniciModel();
         public frm_KullaniciGirisEkrani()
         {
             InitializeComponent();
+            
         }
 
         private void btnİptal_Click(object sender, EventArgs e)

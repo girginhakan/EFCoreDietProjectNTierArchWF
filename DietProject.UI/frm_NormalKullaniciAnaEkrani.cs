@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietProject.BLL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace DietProject.UI
 {
     public partial class frm_NormalKullaniciAnaEkrani : Form
     {
+        //public KullaniciModel SecilenKullanici {  get; set; } 
+        //public frm_KullaniciGirisEkrani MainForm { get; set; }
         public frm_NormalKullaniciAnaEkrani()
         {
             InitializeComponent();
