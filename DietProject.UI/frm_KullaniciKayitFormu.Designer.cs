@@ -248,6 +248,7 @@
             Controls.Add(lblEposta);
             Controls.Add(lblSoyad);
             Controls.Add(lblAd);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frm_KullaniciKayitFormu";
             Text = "Yeni Kullanıcı Kayıt ";
             ResumeLayout(false);

@@ -31,16 +31,16 @@
             btnKayitOl = new Button();
             btnGirisYap = new Button();
             lblBaslik = new Label();
+            btnCikisYap = new Button();
             SuspendLayout();
             // 
             // btnKayitOl
             // 
             btnKayitOl.BackColor = Color.SandyBrown;
             btnKayitOl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnKayitOl.Location = new Point(66, 112);
-            btnKayitOl.Margin = new Padding(3, 2, 3, 2);
+            btnKayitOl.Location = new Point(75, 149);
             btnKayitOl.Name = "btnKayitOl";
-            btnKayitOl.Size = new Size(186, 104);
+            btnKayitOl.Size = new Size(213, 139);
             btnKayitOl.TabIndex = 0;
             btnKayitOl.Text = "Kayıt Ol ";
             btnKayitOl.UseVisualStyleBackColor = false;
@@ -50,10 +50,9 @@
             // 
             btnGirisYap.BackColor = Color.GreenYellow;
             btnGirisYap.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnGirisYap.Location = new Point(265, 112);
-            btnGirisYap.Margin = new Padding(3, 2, 3, 2);
+            btnGirisYap.Location = new Point(303, 149);
             btnGirisYap.Name = "btnGirisYap";
-            btnGirisYap.Size = new Size(187, 104);
+            btnGirisYap.Size = new Size(214, 139);
             btnGirisYap.TabIndex = 1;
             btnGirisYap.Text = "Giriş Yap";
             btnGirisYap.UseVisualStyleBackColor = false;
@@ -64,22 +63,35 @@
             lblBaslik.AutoSize = true;
             lblBaslik.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblBaslik.ForeColor = SystemColors.ControlText;
-            lblBaslik.Location = new Point(66, 37);
+            lblBaslik.Location = new Point(75, 49);
             lblBaslik.Name = "lblBaslik";
-            lblBaslik.Size = new Size(373, 30);
+            lblBaslik.Size = new Size(476, 38);
             lblBaslik.TabIndex = 2;
             lblBaslik.Text = "Kalori Takip Sistemine Hoşgeldiniz ! ";
             // 
+            // btnCikisYap
+            // 
+            btnCikisYap.BackColor = Color.Khaki;
+            btnCikisYap.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnCikisYap.Location = new Point(75, 322);
+            btnCikisYap.Name = "btnCikisYap";
+            btnCikisYap.Size = new Size(442, 48);
+            btnCikisYap.TabIndex = 8;
+            btnCikisYap.Text = "Programı Kapat";
+            btnCikisYap.UseVisualStyleBackColor = false;
+            btnCikisYap.Click += btnCikisYap_Click;
+            // 
             // frm_AnaGirisEkrani
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(510, 370);
+            ClientSize = new Size(583, 395);
+            Controls.Add(btnCikisYap);
             Controls.Add(lblBaslik);
             Controls.Add(btnGirisYap);
             Controls.Add(btnKayitOl);
-            Margin = new Padding(3, 2, 3, 2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frm_AnaGirisEkrani";
             Text = "Kalori Takip Sistemi";
             ResumeLayout(false);
@@ -91,5 +103,6 @@
         private Button btnKayitOl;
         private Button btnGirisYap;
         private Label lblBaslik;
+        private Button btnCikisYap;
     }
 }

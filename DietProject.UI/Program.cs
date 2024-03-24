@@ -1,4 +1,5 @@
 using DietProject.BLL.Manager.Concrete;
+using DietProject.BLL.Models;
 
 namespace DietProject.UI
 {
@@ -13,8 +14,9 @@ namespace DietProject.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frm_YemekKategoriIslemleri());
+            Application.Run(new frm_AnaGirisEkrani());
 
+           
             
         }
     }

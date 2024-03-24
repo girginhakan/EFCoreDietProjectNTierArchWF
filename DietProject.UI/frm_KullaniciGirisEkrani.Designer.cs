@@ -145,6 +145,7 @@
             Controls.Add(txtEposta);
             Controls.Add(lblSifre);
             Controls.Add(lblEposta);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frm_KullaniciGirisEkrani";
             Text = "Kullanıcı Giriş";
             Load += frm_KullanıcıGirisEkranı_Load;

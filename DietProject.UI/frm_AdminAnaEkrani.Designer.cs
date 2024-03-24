@@ -34,6 +34,8 @@
             btnPorsiyonİslemleriCRUD = new Button();
             label1 = new Label();
             btnRaporlama = new Button();
+            lblKullanici = new Label();
+            btnGeri = new Button();
             SuspendLayout();
             // 
             // btnYemekKategoriCRUD
@@ -106,20 +108,45 @@
             btnRaporlama.UseVisualStyleBackColor = false;
             btnRaporlama.Click += btnRaporlama_Click;
             // 
+            // lblKullanici
+            // 
+            lblKullanici.AutoSize = true;
+            lblKullanici.Location = new Point(23, 21);
+            lblKullanici.Name = "lblKullanici";
+            lblKullanici.Size = new Size(50, 20);
+            lblKullanici.TabIndex = 6;
+            lblKullanici.Text = "label2";
+            // 
+            // btnGeri
+            // 
+            btnGeri.BackColor = Color.Khaki;
+            btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnGeri.Location = new Point(82, 504);
+            btnGeri.Name = "btnGeri";
+            btnGeri.Size = new Size(415, 57);
+            btnGeri.TabIndex = 8;
+            btnGeri.Text = "Çıkış yap";
+            btnGeri.UseVisualStyleBackColor = false;
+            btnGeri.Click += btnGeri_Click;
+            // 
             // frm_AdminAnaEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
             ClientSize = new Size(586, 573);
+            Controls.Add(btnGeri);
+            Controls.Add(lblKullanici);
             Controls.Add(btnRaporlama);
             Controls.Add(label1);
             Controls.Add(btnPorsiyonİslemleriCRUD);
             Controls.Add(btnOgunİslemleriCRUD);
             Controls.Add(btnYemekCesidiCRUD);
             Controls.Add(btnYemekKategoriCRUD);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frm_AdminAnaEkrani";
             Text = "İşlemler";
+            Load += frm_AdminAnaEkrani_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,5 +159,7 @@
         private Button btnPorsiyonİslemleriCRUD;
         private Label label1;
         private Button btnRaporlama;
+        private Label lblKullanici;
+        private Button btnGeri;
     }
 }
