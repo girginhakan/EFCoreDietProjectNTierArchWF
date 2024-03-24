@@ -16,5 +16,10 @@ namespace DietProject.UI
         {
             InitializeComponent();
         }
+
+        private void btnPorsiyonEkle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -74,6 +74,7 @@
             btnPorsiyonEkle.TabIndex = 15;
             btnPorsiyonEkle.Text = "EKLE";
             btnPorsiyonEkle.UseVisualStyleBackColor = false;
+            btnPorsiyonEkle.Click += btnPorsiyonEkle_Click;
             // 
             // dgvMevcutPorsiyonlar
             // 
@@ -148,7 +149,7 @@
             btnPorsiyonBirimEkle.Text = "EKLE";
             btnPorsiyonBirimEkle.UseVisualStyleBackColor = false;
             // 
-            // Form8
+            // frm_PorsiyonIslemleri
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -164,7 +165,7 @@
             Controls.Add(dgvMevcutPorsiyonlar);
             Controls.Add(lblMevcutPorsiyonBirim);
             Controls.Add(lblMevcutPorsiyonlar);
-            Name = "Form8";
+            Name = "frm_PorsiyonIslemleri";
             Text = "Porsiyon İşlemleri";
             ((System.ComponentModel.ISupportInitialize)dgvMevcutPorsiyonlar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
