@@ -46,56 +46,53 @@
             // 
             lblOgun.AutoSize = true;
             lblOgun.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblOgun.Location = new Point(32, 44);
+            lblOgun.Location = new Point(37, 59);
             lblOgun.Name = "lblOgun";
-            lblOgun.Size = new Size(37, 15);
+            lblOgun.Size = new Size(47, 20);
             lblOgun.TabIndex = 0;
             lblOgun.Text = "Öğün";
             // 
             // cbOgun
             // 
             cbOgun.FormattingEnabled = true;
-            cbOgun.Location = new Point(161, 38);
-            cbOgun.Margin = new Padding(3, 2, 3, 2);
+            cbOgun.Location = new Point(184, 51);
             cbOgun.Name = "cbOgun";
-            cbOgun.Size = new Size(133, 23);
+            cbOgun.Size = new Size(151, 28);
             cbOgun.TabIndex = 1;
             // 
             // lblYemekKategori
             // 
             lblYemekKategori.AutoSize = true;
             lblYemekKategori.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblYemekKategori.Location = new Point(32, 84);
+            lblYemekKategori.Location = new Point(37, 112);
             lblYemekKategori.Name = "lblYemekKategori";
-            lblYemekKategori.Size = new Size(97, 15);
+            lblYemekKategori.Size = new Size(126, 20);
             lblYemekKategori.TabIndex = 2;
             lblYemekKategori.Text = "Yemek Kategorisi";
             // 
             // cbYemekKategori
             // 
             cbYemekKategori.FormattingEnabled = true;
-            cbYemekKategori.Location = new Point(161, 80);
-            cbYemekKategori.Margin = new Padding(3, 2, 3, 2);
+            cbYemekKategori.Location = new Point(184, 107);
             cbYemekKategori.Name = "cbYemekKategori";
-            cbYemekKategori.Size = new Size(133, 23);
+            cbYemekKategori.Size = new Size(151, 28);
             cbYemekKategori.TabIndex = 3;
             // 
             // cbYemekCesidi
             // 
             cbYemekCesidi.FormattingEnabled = true;
-            cbYemekCesidi.Location = new Point(161, 128);
-            cbYemekCesidi.Margin = new Padding(3, 2, 3, 2);
+            cbYemekCesidi.Location = new Point(184, 171);
             cbYemekCesidi.Name = "cbYemekCesidi";
-            cbYemekCesidi.Size = new Size(133, 23);
+            cbYemekCesidi.Size = new Size(151, 28);
             cbYemekCesidi.TabIndex = 4;
             // 
             // lblYemekCesidi
             // 
             lblYemekCesidi.AutoSize = true;
             lblYemekCesidi.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblYemekCesidi.Location = new Point(32, 131);
+            lblYemekCesidi.Location = new Point(37, 175);
             lblYemekCesidi.Name = "lblYemekCesidi";
-            lblYemekCesidi.Size = new Size(76, 15);
+            lblYemekCesidi.Size = new Size(98, 20);
             lblYemekCesidi.TabIndex = 5;
             lblYemekCesidi.Text = "Yemek Çeşidi";
             // 
@@ -103,48 +100,45 @@
             // 
             lblPorsiyonMiktari.AutoSize = true;
             lblPorsiyonMiktari.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblPorsiyonMiktari.Location = new Point(32, 180);
+            lblPorsiyonMiktari.Location = new Point(37, 240);
             lblPorsiyonMiktari.Name = "lblPorsiyonMiktari";
-            lblPorsiyonMiktari.Size = new Size(93, 15);
+            lblPorsiyonMiktari.Size = new Size(121, 20);
             lblPorsiyonMiktari.TabIndex = 6;
             lblPorsiyonMiktari.Text = "Porsiyon Miktarı";
             // 
             // cbPorsiyonMiktari
             // 
             cbPorsiyonMiktari.FormattingEnabled = true;
-            cbPorsiyonMiktari.Location = new Point(161, 177);
-            cbPorsiyonMiktari.Margin = new Padding(3, 2, 3, 2);
+            cbPorsiyonMiktari.Location = new Point(184, 236);
             cbPorsiyonMiktari.Name = "cbPorsiyonMiktari";
-            cbPorsiyonMiktari.Size = new Size(133, 23);
+            cbPorsiyonMiktari.Size = new Size(151, 28);
             cbPorsiyonMiktari.TabIndex = 7;
             // 
             // lblPorsiyonBirimi
             // 
             lblPorsiyonBirimi.AutoSize = true;
             lblPorsiyonBirimi.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblPorsiyonBirimi.Location = new Point(316, 179);
+            lblPorsiyonBirimi.Location = new Point(361, 239);
             lblPorsiyonBirimi.Name = "lblPorsiyonBirimi";
-            lblPorsiyonBirimi.Size = new Size(87, 15);
+            lblPorsiyonBirimi.Size = new Size(112, 20);
             lblPorsiyonBirimi.TabIndex = 8;
             lblPorsiyonBirimi.Text = "Porsiyon Birimi";
             // 
             // cbPorsiyonBirimi
             // 
             cbPorsiyonBirimi.FormattingEnabled = true;
-            cbPorsiyonBirimi.Location = new Point(419, 177);
-            cbPorsiyonBirimi.Margin = new Padding(3, 2, 3, 2);
+            cbPorsiyonBirimi.Location = new Point(479, 236);
             cbPorsiyonBirimi.Name = "cbPorsiyonBirimi";
-            cbPorsiyonBirimi.Size = new Size(85, 23);
+            cbPorsiyonBirimi.Size = new Size(97, 28);
             cbPorsiyonBirimi.TabIndex = 9;
             // 
             // btnKullaniciKayitİptal
             // 
             btnKullaniciKayitİptal.BackColor = Color.Crimson;
             btnKullaniciKayitİptal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnKullaniciKayitİptal.Location = new Point(415, 334);
-            btnKullaniciKayitİptal.Margin = new Padding(3, 2, 3, 2);
+            btnKullaniciKayitİptal.Location = new Point(474, 445);
             btnKullaniciKayitİptal.Name = "btnKullaniciKayitİptal";
-            btnKullaniciKayitİptal.Size = new Size(86, 27);
+            btnKullaniciKayitİptal.Size = new Size(98, 36);
             btnKullaniciKayitİptal.TabIndex = 13;
             btnKullaniciKayitİptal.Text = "İPTAL";
             btnKullaniciKayitİptal.UseVisualStyleBackColor = false;
@@ -154,20 +148,19 @@
             // 
             btnKullaniciKaydet.BackColor = Color.Lime;
             btnKullaniciKaydet.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnKullaniciKaydet.Location = new Point(324, 334);
-            btnKullaniciKaydet.Margin = new Padding(3, 2, 3, 2);
+            btnKullaniciKaydet.Location = new Point(370, 445);
             btnKullaniciKaydet.Name = "btnKullaniciKaydet";
-            btnKullaniciKaydet.Size = new Size(86, 27);
+            btnKullaniciKaydet.Size = new Size(98, 36);
             btnKullaniciKaydet.TabIndex = 12;
             btnKullaniciKaydet.Text = "KAYDET";
             btnKullaniciKaydet.UseVisualStyleBackColor = false;
             // 
-            // NormalKullanıcıOgunEkleme
+            // frm_NormalKullaniciOgunEkleme
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
-            ClientSize = new Size(510, 370);
+            ClientSize = new Size(594, 493);
             Controls.Add(btnKullaniciKayitİptal);
             Controls.Add(btnKullaniciKaydet);
             Controls.Add(cbPorsiyonBirimi);
@@ -180,8 +173,8 @@
             Controls.Add(lblYemekKategori);
             Controls.Add(cbOgun);
             Controls.Add(lblOgun);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "NormalKullanıcıOgunEkleme";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "frm_NormalKullaniciOgunEkleme";
             Text = "Öğün Ekle İşlemi";
             ResumeLayout(false);
             PerformLayout();

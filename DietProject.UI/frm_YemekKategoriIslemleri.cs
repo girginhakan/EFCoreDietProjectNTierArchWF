@@ -21,13 +21,14 @@ namespace DietProject.UI
         {
             InitializeComponent();
             KategoriGoster();
+
         }
 
         private void KategoriGoster()
         {
 
             dgvMevcutYemekKategorileri.DataSource = kategoriManager.GetAllWithIncludes();
-            //gvMevcutYemekKategorileri.Columns[0].Visible = false;
+            dgvMevcutYemekKategorileri.Columns[0].Visible = true;
 
         }
 
@@ -66,7 +67,7 @@ namespace DietProject.UI
 
         private void btnGuncelle_Click(object sender, EventArgs e) //hata veriyor kontrol edilmeli.
         {
-            if(secilenKategori != null)
+            if (secilenKategori != null)
             {
                 secilenKategori.KategoriAdi = txtKategoriAdı.Text;
                 secilenKategori.Aciklama = txtAcıklama.Text;
@@ -79,6 +80,13 @@ namespace DietProject.UI
             }
             else
                 MessageBox.Show("Güncellemek için kategori seçiniz!");
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            frm_AdminAnaEkrani adminAnaEkrani = new frm_AdminAnaEkrani();
+            adminAnaEkrani.Show();
+            this.Close();
         }
     }
 }

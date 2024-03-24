@@ -86,8 +86,9 @@ namespace DietProject.UI
             //-----EMAİL------------
 
             string email = txtEposta.Text;
-            if (email.IsNullOrEmpty() && !(email.Contains("@")) && !(email.EndsWith(".com")))
+            if ((email==string.Empty) && !(email.Contains("@")) && !(email.EndsWith(".com")))
                 MessageBox.Show("Lütfen emailinizi uygun şekilde giriniz.");
+
             else
                 kullaniciModel.Eposta=email;
 
@@ -99,6 +100,7 @@ namespace DietProject.UI
                 MessageBox.Show("Şifreniz en az 8 karakter içermelidir, en az bir büyük harf,bir küçük harf, bir sayı kullanmalısınız.");
             else
                 kullaniciModel.Sifre = Metodlar.Sha256Hash(sifre);// burası hatalı
+            MessageBox.Show("Ekleme işlemi başarılı");
 
 
             //-----YIL-----------
@@ -162,6 +164,9 @@ namespace DietProject.UI
             KullaniciManager kullaniciManager = new KullaniciManager();
             
             kullaniciManager.Add(kullaniciModel);
+            this.Close();
+            frm_AnaGirisEkrani anaGirisEkrani = new frm_AnaGirisEkrani();
+            anaGirisEkrani.Show();
                 
 
         }

@@ -18,5 +18,7 @@ namespace DietProject.BLL.Models
         public OgunModel Ogun { get; set; }
         public PorsiyonModel Porsiyon { get; set; }
         public YemekModel Yemek { get; set; }
+
+    
     }
 }

@@ -1,4 +1,4 @@
-using DietProject.BLL.Manager.Concrete;
+﻿using DietProject.BLL.Manager.Concrete;
 
 namespace DietProject.UI
 {
@@ -21,6 +21,19 @@ namespace DietProject.UI
             frm_KullaniciGirisEkrani girisEkrani = new frm_KullaniciGirisEkrani();
             this.Hide();
             girisEkrani.Show();
+        }
+
+        private void btnCikisYap_Click(object sender, EventArgs e)
+        {
+            DialogResult cikis = new DialogResult();
+            cikis = MessageBox.Show("Çıkış yapmak  istiyormusunuz ?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cikis == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
+
+            
         }
     }
 }

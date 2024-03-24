@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace DietProject.UI
 {
     public partial class frm_KullaniciGirisEkrani : Form
     {
-        //public KullaniciModel kullanicilar = new KullaniciModel();
+        
         public frm_KullaniciGirisEkrani()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace DietProject.UI
 
             foreach (KullaniciModel kullanici in kullaniciManager.GetAllWithIncludes())
             {
-                if (kullanici.Eposta == txtEposta.Text && kullanici.Sifre == txtSifre.Text)
+                if (kullanici.Eposta == txtEposta.Text && kullanici.Sifre == Metodlar.Sha256Hash(txtSifre.Text))
                 {
                     kullanicibul = true;
 
