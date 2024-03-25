@@ -33,11 +33,12 @@
             btnEkle = new Button();
             btnSil = new Button();
             btnGuncelle = new Button();
-            txtKategoriAdı = new TextBox();
-            txtAcıklama = new TextBox();
+            txtKategoriAdi = new TextBox();
+            txtAciklama = new TextBox();
             lblKategoriAdı = new Label();
             lblAcıklama = new Label();
             btnGeri = new Button();
+            lblSecilen = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMevcutYemekKategorileri).BeginInit();
             SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             btnEkle.BackColor = Color.Lime;
             btnEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnEkle.Location = new Point(618, 195);
+            btnEkle.Location = new Point(402, 353);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(149, 76);
             btnEkle.TabIndex = 2;
@@ -79,7 +80,7 @@
             // 
             btnSil.BackColor = Color.Crimson;
             btnSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnSil.Location = new Point(411, 272);
+            btnSil.Location = new Point(753, 353);
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(149, 76);
             btnSil.TabIndex = 2;
@@ -91,7 +92,7 @@
             // 
             btnGuncelle.BackColor = Color.FromArgb(255, 128, 0);
             btnGuncelle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGuncelle.Location = new Point(411, 353);
+            btnGuncelle.Location = new Point(581, 353);
             btnGuncelle.Name = "btnGuncelle";
             btnGuncelle.Size = new Size(149, 76);
             btnGuncelle.TabIndex = 2;
@@ -99,26 +100,26 @@
             btnGuncelle.UseVisualStyleBackColor = false;
             btnGuncelle.Click += btnGuncelle_Click;
             // 
-            // txtKategoriAdı
+            // txtKategoriAdi
             // 
-            txtKategoriAdı.Location = new Point(422, 68);
-            txtKategoriAdı.Margin = new Padding(3, 4, 3, 4);
-            txtKategoriAdı.Name = "txtKategoriAdı";
-            txtKategoriAdı.Size = new Size(345, 27);
-            txtKategoriAdı.TabIndex = 3;
+            txtKategoriAdi.Location = new Point(402, 131);
+            txtKategoriAdi.Margin = new Padding(3, 4, 3, 4);
+            txtKategoriAdi.Name = "txtKategoriAdi";
+            txtKategoriAdi.Size = new Size(345, 27);
+            txtKategoriAdi.TabIndex = 3;
             // 
-            // txtAcıklama
+            // txtAciklama
             // 
-            txtAcıklama.Location = new Point(422, 137);
-            txtAcıklama.Margin = new Padding(3, 4, 3, 4);
-            txtAcıklama.Name = "txtAcıklama";
-            txtAcıklama.Size = new Size(345, 27);
-            txtAcıklama.TabIndex = 4;
+            txtAciklama.Location = new Point(402, 242);
+            txtAciklama.Margin = new Padding(3, 4, 3, 4);
+            txtAciklama.Name = "txtAciklama";
+            txtAciklama.Size = new Size(345, 27);
+            txtAciklama.TabIndex = 4;
             // 
             // lblKategoriAdı
             // 
             lblKategoriAdı.AutoSize = true;
-            lblKategoriAdı.Location = new Point(402, 44);
+            lblKategoriAdı.Location = new Point(402, 91);
             lblKategoriAdı.Name = "lblKategoriAdı";
             lblKategoriAdı.Size = new Size(96, 20);
             lblKategoriAdı.TabIndex = 5;
@@ -127,7 +128,7 @@
             // lblAcıklama
             // 
             lblAcıklama.AutoSize = true;
-            lblAcıklama.Location = new Point(402, 113);
+            lblAcıklama.Location = new Point(402, 204);
             lblAcıklama.Name = "lblAcıklama";
             lblAcıklama.Size = new Size(73, 20);
             lblAcıklama.TabIndex = 6;
@@ -137,7 +138,7 @@
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(618, 353);
+            btnGeri.Location = new Point(402, 437);
             btnGeri.Name = "btnGeri";
             btnGeri.Size = new Size(149, 76);
             btnGeri.TabIndex = 7;
@@ -145,17 +146,27 @@
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
+            // lblSecilen
+            // 
+            lblSecilen.AutoSize = true;
+            lblSecilen.Location = new Point(402, 51);
+            lblSecilen.Name = "lblSecilen";
+            lblSecilen.Size = new Size(50, 20);
+            lblSecilen.TabIndex = 8;
+            lblSecilen.Text = "label1";
+            // 
             // frm_YemekKategoriIslemleri
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
             ClientSize = new Size(1015, 525);
+            Controls.Add(lblSecilen);
             Controls.Add(btnGeri);
             Controls.Add(lblAcıklama);
             Controls.Add(lblKategoriAdı);
-            Controls.Add(txtAcıklama);
-            Controls.Add(txtKategoriAdı);
+            Controls.Add(txtAciklama);
+            Controls.Add(txtKategoriAdi);
             Controls.Add(btnGuncelle);
             Controls.Add(btnSil);
             Controls.Add(btnEkle);
@@ -175,10 +186,11 @@
         private Button btnEkle;
         private Button btnSil;
         private Button btnGuncelle;
-        private TextBox txtKategoriAdı;
-        private TextBox txtAcıklama;
+        private TextBox txtKategoriAdi;
+        private TextBox txtAciklama;
         private Label lblKategoriAdı;
         private Label lblAcıklama;
         private Button btnGeri;
+        private Label lblSecilen;
     }
 }
