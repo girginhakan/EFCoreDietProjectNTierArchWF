@@ -1,5 +1,7 @@
 ﻿using DietProject.BLL.Manager.Concrete;
 using DietProject.BLL.Models;
+using DietProject.DAL.Context;
+using DietProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,44 +16,52 @@ namespace DietProject.UI
 {
     public partial class frm_YemekKategoriIslemleri : Form
     {
+        DietProjectDbContext db = new DietProjectDbContext();
         KategoriManager kategoriManager = new KategoriManager();
-        KategoriModel kategoriModel = new KategoriModel();
-        KategoriModel secilenKategori;
+        Kategori secilenKategori;
         public frm_YemekKategoriIslemleri()
         {
             InitializeComponent();
-            KategoriGoster();
+            lblSecilen.Text = "Seçilen Kategori: ";
+            KategorileriGoster();
 
         }
 
-        private void KategoriGoster()
+        private void KategorileriGoster()
         {
-
-            dgvMevcutYemekKategorileri.DataSource = kategoriManager.GetAllWithIncludes();
-            dgvMevcutYemekKategorileri.Columns[0].Visible = true;
-
+            dgvMevcutYemekKategorileri.DataSource = db.Kategoriler.ToList();
         }
+
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            kategoriModel.KategoriAdi = txtKategoriAdı.Text;
-            kategoriModel.Aciklama = txtAcıklama.Text;
-            kategoriManager.Add(kategoriModel);
-            txtKategoriAdı.Text = null;
-            txtAcıklama.Text = null;
-            KategoriGoster();
+            KategoriModel kategori = new KategoriModel();
+
+            kategori.KategoriAdi = txtKategoriAdi.Text;
+            kategori.Aciklama = txtAciklama.Text;
+            kategoriManager.Add(kategori);
+            dgvMevcutYemekKategorileri.DataSource = kategoriManager.GetAll();
+            db.SaveChanges();
+            MessageBox.Show("Kategoriler Eklenmiştir.");
+            KategorileriGoster();
         }
 
         private void btnSil_Click(object sender, EventArgs e) // hata veriyor kontrol edilmeli
         {
             if (secilenKategori != null)
             {
-                kategoriManager.Delete(secilenKategori);
-                MessageBox.Show("Kategori silinmiştir.");
-                KategoriGoster();
-                txtAcıklama.Text = null;
-                txtKategoriAdı.Text = null;
+                db.Kategoriler.Remove(secilenKategori);
+                db.SaveChanges();
+
+                MessageBox.Show("kategori silinmiştir");
+                KategorileriGoster();
+
+                txtKategoriAdi.Text = "";
+                txtAciklama.Text = "";
+
                 secilenKategori = null;
+                lblSecilen.Text = "Seçilen kategori: ";
+
             }
             else
                 MessageBox.Show("Silmek için kategori seçiniz!");
@@ -59,9 +69,10 @@ namespace DietProject.UI
 
         private void dgvMevcutYemekKategorileri_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            secilenKategori = (KategoriModel)dgvMevcutYemekKategorileri.SelectedRows[0].DataBoundItem;
-            txtKategoriAdı.Text = secilenKategori.KategoriAdi;
-            txtAcıklama.Text = secilenKategori.Aciklama;
+            secilenKategori = (Kategori)dgvMevcutYemekKategorileri.SelectedRows[0].DataBoundItem;
+            lblSecilen.Text = "Seçilen Kategori: " + secilenKategori.KategoriAdi + " " + secilenKategori.Aciklama;
+            txtKategoriAdi.Text = secilenKategori.KategoriAdi;
+            txtAciklama.Text = secilenKategori.Aciklama;
 
         }
 
@@ -69,14 +80,20 @@ namespace DietProject.UI
         {
             if (secilenKategori != null)
             {
-                secilenKategori.KategoriAdi = txtKategoriAdı.Text;
-                secilenKategori.Aciklama = txtAcıklama.Text;
-                kategoriManager.Update(secilenKategori);
+                secilenKategori.KategoriAdi = txtKategoriAdi.Text;
+                secilenKategori.Aciklama = txtAciklama.Text;
+
+                db.SaveChanges();
+
                 MessageBox.Show("Kategori güncellenmiştir");
-                KategoriGoster();
-                txtAcıklama.Text = null;
-                txtKategoriAdı.Text = null;
+                KategorileriGoster();
+
+                txtKategoriAdi.Text = "";
+                txtAciklama.Text = "";
+
                 secilenKategori = null;
+                lblSecilen.Text = "Seçilen kategori: ";
+
             }
             else
                 MessageBox.Show("Güncellemek için kategori seçiniz!");
