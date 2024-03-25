@@ -24,7 +24,25 @@ namespace DietProject.UI
         {
             InitializeComponent();
             
-            dgvTuketilenOgunler.DataSource=kullaniciYemekleri.GetAllWithIncludes();
+            List<KullaniciOgunYemekPorsiyonModel> model =  kullaniciYemekleri.GetAllWithIncludes();
+
+            List<TuketilenOgunlerViewModel> viewModel = new List<TuketilenOgunlerViewModel>();
+
+            foreach (var item in model)
+            {
+                TuketilenOgunlerViewModel row = new TuketilenOgunlerViewModel();
+                row.KullaniciAdiSoyadi = item.Kullanici.Adi + " " + item.Kullanici.Soyadi;
+                row.PorsiyonMiktari = item.Porsiyon.PorsiyonMiktari.ToString();
+                row.PorsiyonBirimi = item.Porsiyon.PorsiyonBirim;
+
+                viewModel.Add(row);
+            }
+
+
+
+            dgvTuketilenOgunler.DataSource = viewModel;
+
+            label3.Text = Program.KullaniciModel.Eposta;
         }
 
 
@@ -46,7 +64,8 @@ namespace DietProject.UI
         private void btnOgunGuncelle_Click(object sender, EventArgs e)
         {
             frm_NormalKullaniciOgunEkleme normalKullanıcıOgunEkleme = new frm_NormalKullaniciOgunEkleme();
-            normalKullanıcıOgunEkleme.GelenOgun = seciliTuketikenYemek;
+            //normalKullanıcıOgunEkleme.GelenOgun = seciliTuketikenYemek;
+            Program.SecilenYemek = seciliTuketikenYemek;
             normalKullanıcıOgunEkleme.Show();
             this.Hide();
         }
@@ -55,5 +74,14 @@ namespace DietProject.UI
         {
             seciliTuketikenYemek = (KullaniciOgunYemekPorsiyonModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
         }
+    }
+
+    public class TuketilenOgunlerViewModel
+    {
+        public string KullaniciAdiSoyadi { get; set; }
+        public string OgunAdi { get; set; }
+        public string PorsiyonBirimi { get; set; }
+        public string PorsiyonMiktari { get; set; }
+        public string YemekAdi { get; set; }
     }
 }

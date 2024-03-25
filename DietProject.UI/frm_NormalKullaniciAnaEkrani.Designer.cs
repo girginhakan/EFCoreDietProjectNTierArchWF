@@ -53,10 +53,12 @@
             // 
             dgvTuketilenOgunler.BackgroundColor = SystemColors.Info;
             dgvTuketilenOgunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTuketilenOgunler.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvTuketilenOgunler.GridColor = Color.LavenderBlush;
             dgvTuketilenOgunler.Location = new Point(50, 163);
             dgvTuketilenOgunler.Name = "dgvTuketilenOgunler";
             dgvTuketilenOgunler.RowHeadersWidth = 51;
+            dgvTuketilenOgunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTuketilenOgunler.Size = new Size(486, 219);
             dgvTuketilenOgunler.TabIndex = 1;
             dgvTuketilenOgunler.CellClick += dgvTuketilenOgunler_CellClick;
