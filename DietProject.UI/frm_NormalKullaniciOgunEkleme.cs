@@ -21,15 +21,17 @@ namespace DietProject.UI
         public frm_NormalKullaniciOgunEkleme()
         {
             InitializeComponent();
-            
-            //if (GelenOgun != null)
-            //{
-            //    cbOgun.SelectedValue = GelenOgun.Ogun.OgunAdi;
-            //    cbPorsiyonBirimi.SelectedValue = GelenOgun.Porsiyon.PorsiyonBirim;
-            //    cbPorsiyonMiktari.SelectedValue = GelenOgun.Porsiyon.PorsiyonMiktari;
-            //    cbYemekCesidi.SelectedValue = GelenOgun.Yemek.YemekAdi;
-            //    cbYemekKategori.SelectedValue = GelenOgun.Yemek.Kategori.KategoriAdi;
-            //}
+
+            var seciliYemekGuncelle = Program.SecilenYemek;
+
+            if (seciliYemekGuncelle != null)
+            {
+                cbOgun.SelectedValue = seciliYemekGuncelle.Ogun.OgunAdi;
+                cbPorsiyonBirimi.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonBirim;
+                cbPorsiyonMiktari.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonMiktari;
+                cbYemekCesidi.SelectedValue = seciliYemekGuncelle.Yemek.YemekAdi;
+                cbYemekKategori.SelectedValue = seciliYemekGuncelle.Yemek.Kategori.KategoriAdi;
+            }
             //else
             //{
             //    foreach (var item in ogunManager.GetAll())
@@ -48,7 +50,7 @@ namespace DietProject.UI
             //    }
 
             //}
-            
+
         }
 
         private void btnKullaniciKayitİptal_Click(object sender, EventArgs e)

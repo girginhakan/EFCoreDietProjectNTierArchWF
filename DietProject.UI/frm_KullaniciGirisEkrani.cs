@@ -47,6 +47,8 @@ namespace DietProject.UI
                 {
                     kullanicibul = true;
 
+                    Program.KullaniciModel = kullanici;
+
                     if (kullanici.UserStatus == UserStatus.Admin)
                     {
                         frm_AdminAnaEkrani adminAnaEkranı = new frm_AdminAnaEkrani();
