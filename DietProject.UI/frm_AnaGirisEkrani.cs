@@ -1,4 +1,5 @@
 ﻿using DietProject.BLL.Manager.Concrete;
+using System.Runtime.InteropServices;
 
 namespace DietProject.UI
 {
@@ -31,9 +32,15 @@ namespace DietProject.UI
             {
                 Application.Exit();
             }
-            
 
-            
+        }
+ 
+
+        private void panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            Metodlar.ReleaseCapture();
+            Metodlar.SendMessage(Handle, 0x112, 0xf012, 0);
         }
     }
+
 }

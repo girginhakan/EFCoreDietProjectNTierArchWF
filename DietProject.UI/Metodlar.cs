@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace DietProject.UI
             }
         }
 
-      
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        public static extern void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        public static extern void SendMessage(System.IntPtr one, int two, int three, int four);
+
+
     }
 }

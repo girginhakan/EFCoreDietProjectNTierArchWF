@@ -47,6 +47,7 @@
             cbYıl = new ComboBox();
             cbAy = new ComboBox();
             cbGün = new ComboBox();
+            panel = new Panel();
             SuspendLayout();
             // 
             // lblAd
@@ -223,12 +224,23 @@
             cbGün.Size = new Size(44, 28);
             cbGün.TabIndex = 19;
             // 
+            // panel
+            // 
+            panel.BackColor = Color.LightCoral;
+            panel.Dock = DockStyle.Top;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(583, 29);
+            panel.TabIndex = 20;
+            panel.MouseDown += panel_MouseDown;
+            // 
             // frm_KullaniciKayitFormu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
             ClientSize = new Size(583, 493);
+            Controls.Add(panel);
             Controls.Add(cbGün);
             Controls.Add(cbAy);
             Controls.Add(cbYıl);
@@ -250,6 +262,7 @@
             Controls.Add(lblAd);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frm_KullaniciKayitFormu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Yeni Kullanıcı Kayıt ";
             ResumeLayout(false);
             PerformLayout();
@@ -276,5 +289,6 @@
         private ComboBox cbYıl;
         private ComboBox cbAy;
         private ComboBox cbGün;
+        private Panel panel;
     }
 }

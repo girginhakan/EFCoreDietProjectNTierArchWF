@@ -32,6 +32,7 @@
             btnGirisYap = new Button();
             lblBaslik = new Label();
             btnCikisYap = new Button();
+            panel = new Panel();
             SuspendLayout();
             // 
             // btnKayitOl
@@ -81,18 +82,30 @@
             btnCikisYap.UseVisualStyleBackColor = false;
             btnCikisYap.Click += btnCikisYap_Click;
             // 
+            // panel
+            // 
+            panel.BackColor = Color.LightCoral;
+            panel.Dock = DockStyle.Top;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(583, 29);
+            panel.TabIndex = 9;
+            panel.MouseDown += panel_MouseDown;
+            // 
             // frm_AnaGirisEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
             ClientSize = new Size(583, 395);
+            Controls.Add(panel);
             Controls.Add(btnCikisYap);
             Controls.Add(lblBaslik);
             Controls.Add(btnGirisYap);
             Controls.Add(btnKayitOl);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frm_AnaGirisEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Kalori Takip Sistemi";
             ResumeLayout(false);
             PerformLayout();
@@ -104,5 +117,6 @@
         private Button btnGirisYap;
         private Label lblBaslik;
         private Button btnCikisYap;
+        private Panel panel;
     }
 }

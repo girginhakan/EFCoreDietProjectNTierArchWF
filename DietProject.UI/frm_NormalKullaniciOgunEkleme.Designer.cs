@@ -40,6 +40,7 @@
             cbPorsiyonBirimi = new ComboBox();
             btnKullaniciKayitİptal = new Button();
             btnKullaniciKaydet = new Button();
+            panel = new Panel();
             SuspendLayout();
             // 
             // lblOgun
@@ -155,12 +156,23 @@
             btnKullaniciKaydet.Text = "KAYDET";
             btnKullaniciKaydet.UseVisualStyleBackColor = false;
             // 
+            // panel
+            // 
+            panel.BackColor = Color.LightCoral;
+            panel.Dock = DockStyle.Top;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(594, 29);
+            panel.TabIndex = 14;
+            panel.MouseDown += panel_MouseDown;
+            // 
             // frm_NormalKullaniciOgunEkleme
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(594, 493);
+            Controls.Add(panel);
             Controls.Add(btnKullaniciKayitİptal);
             Controls.Add(btnKullaniciKaydet);
             Controls.Add(cbPorsiyonBirimi);
@@ -175,6 +187,7 @@
             Controls.Add(lblOgun);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frm_NormalKullaniciOgunEkleme";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Öğün Ekle İşlemi";
             ResumeLayout(false);
             PerformLayout();
@@ -194,5 +207,6 @@
         private ComboBox cbPorsiyonBirimi;
         private Button btnKullaniciKayitİptal;
         private Button btnKullaniciKaydet;
+        private Panel panel;
     }
 }

@@ -26,10 +26,16 @@ namespace DietProject.UI
             // _kullanici = kullanici;
         }
 
+        private void panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            Metodlar.ReleaseCapture();
+            Metodlar.SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
         private void btnYemekKategoriCRUD_Click(object sender, EventArgs e)
         {
             frm_YemekKategoriIslemleri yemekKategoriIslemleri = new frm_YemekKategoriIslemleri();
-            yemekKategoriIslemleri.ShowDialog();
+            yemekKategoriIslemleri.Show();
             this.Hide();
 
         }
@@ -37,28 +43,28 @@ namespace DietProject.UI
         private void btnYemekCesidiCRUD_Click(object sender, EventArgs e)
         {
             frm_YemekCesitIslemleri yemekCesitIslemleri = new frm_YemekCesitIslemleri();
-            yemekCesitIslemleri.ShowDialog();
+            yemekCesitIslemleri.Show();
             this.Hide();
         }
 
         private void btnOgunİslemleriCRUD_Click(object sender, EventArgs e)
         {
             frm_OgunIslemleri ogunIslemleri = new frm_OgunIslemleri();
-            ogunIslemleri.ShowDialog();
+            ogunIslemleri.Show();
             this.Hide();
         }
 
         private void btnPorsiyonİslemleriCRUD_Click(object sender, EventArgs e)
         {
             frm_PorsiyonIslemleri porsiyonIslemleri = new frm_PorsiyonIslemleri();
-            porsiyonIslemleri.ShowDialog();
+            porsiyonIslemleri.Show();
             this.Hide();
         }
 
         private void btnRaporlama_Click(object sender, EventArgs e)
         {
             s raporlamaIslemleri = new s();
-            raporlamaIslemleri.ShowDialog();
+            raporlamaIslemleri.Show();
             this.Hide();
         }
 

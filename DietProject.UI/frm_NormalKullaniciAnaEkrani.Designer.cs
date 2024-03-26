@@ -36,6 +36,7 @@
             btnOgunSil = new Button();
             btnOgunGuncelle = new Button();
             btnGeri = new Button();
+            panel = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvTuketilenOgunler).BeginInit();
             SuspendLayout();
             // 
@@ -85,7 +86,6 @@
             // btnOgunEkle
             // 
             btnOgunEkle.BackColor = Color.FromArgb(255, 128, 0);
-            btnOgunEkle.Cursor = Cursors.No;
             btnOgunEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnOgunEkle.ForeColor = SystemColors.ActiveCaptionText;
             btnOgunEkle.Location = new Point(54, 44);
@@ -99,7 +99,6 @@
             // btnOgunSil
             // 
             btnOgunSil.BackColor = Color.Red;
-            btnOgunSil.Cursor = Cursors.No;
             btnOgunSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnOgunSil.ForeColor = SystemColors.ActiveCaptionText;
             btnOgunSil.Location = new Point(405, 44);
@@ -112,7 +111,6 @@
             // btnOgunGuncelle
             // 
             btnOgunGuncelle.BackColor = Color.FromArgb(128, 128, 255);
-            btnOgunGuncelle.Cursor = Cursors.No;
             btnOgunGuncelle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnOgunGuncelle.ForeColor = SystemColors.ActiveCaptionText;
             btnOgunGuncelle.Location = new Point(229, 44);
@@ -135,12 +133,23 @@
             btnGeri.UseVisualStyleBackColor = false;
             btnGeri.Click += btnGeri_Click;
             // 
+            // panel
+            // 
+            panel.BackColor = Color.LightCoral;
+            panel.Dock = DockStyle.Top;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(583, 29);
+            panel.TabIndex = 10;
+            panel.MouseDown += panel_MouseDown;
+            // 
             // frm_NormalKullaniciAnaEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(583, 493);
+            Controls.Add(panel);
             Controls.Add(btnGeri);
             Controls.Add(btnOgunGuncelle);
             Controls.Add(btnOgunSil);
@@ -151,6 +160,7 @@
             Controls.Add(lblTuketilenOgunler);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frm_NormalKullaniciAnaEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form10";
             ((System.ComponentModel.ISupportInitialize)dgvTuketilenOgunler).EndInit();
             ResumeLayout(false);
@@ -167,5 +177,6 @@
         private Button btnOgunSil;
         private Button btnOgunGuncelle;
         private Button btnGeri;
+        private Panel panel;
     }
 }

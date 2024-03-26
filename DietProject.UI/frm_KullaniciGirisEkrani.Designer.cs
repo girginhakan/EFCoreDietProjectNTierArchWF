@@ -37,6 +37,7 @@
             label3 = new Label();
             cbSifreGoster = new CheckBox();
             linklSifremiUnuttum = new LinkLabel();
+            panel = new Panel();
             SuspendLayout();
             // 
             // lblEposta
@@ -130,12 +131,23 @@
             linklSifremiUnuttum.Text = "Şifremi Unuttum";
             linklSifremiUnuttum.LinkClicked += linklSifremiUnuttum_LinkClicked;
             // 
+            // panel
+            // 
+            panel.BackColor = Color.LightCoral;
+            panel.Dock = DockStyle.Top;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(583, 29);
+            panel.TabIndex = 17;
+            panel.MouseDown += panel_MouseDown;
+            // 
             // frm_KullaniciGirisEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Moccasin;
             ClientSize = new Size(583, 493);
+            Controls.Add(panel);
             Controls.Add(linklSifremiUnuttum);
             Controls.Add(cbSifreGoster);
             Controls.Add(label3);
@@ -147,6 +159,7 @@
             Controls.Add(lblEposta);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frm_KullaniciGirisEkrani";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Kullanıcı Giriş";
             Load += frm_KullanıcıGirisEkranı_Load;
             ResumeLayout(false);
@@ -164,5 +177,6 @@
         private Label label3;
         private CheckBox cbSifreGoster;
         private LinkLabel linklSifremiUnuttum;
+        private Panel panel;
     }
 }
