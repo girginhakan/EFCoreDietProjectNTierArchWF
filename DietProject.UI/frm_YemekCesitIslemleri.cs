@@ -33,5 +33,10 @@ namespace DietProject.UI
             frm_AdminAnaEkrani adminAnaEkrani = new frm_AdminAnaEkrani();
             adminAnaEkrani.Show();
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

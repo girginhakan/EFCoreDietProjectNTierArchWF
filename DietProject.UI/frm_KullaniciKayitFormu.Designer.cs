@@ -199,6 +199,7 @@
             // 
             // cbYıl
             // 
+            cbYıl.DropDownStyle = ComboBoxStyle.DropDownList;
             cbYıl.FormattingEnabled = true;
             cbYıl.Location = new Point(433, 145);
             cbYıl.Margin = new Padding(3, 4, 3, 4);
@@ -208,6 +209,7 @@
             // 
             // cbAy
             // 
+            cbAy.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAy.FormattingEnabled = true;
             cbAy.Location = new Point(382, 145);
             cbAy.Margin = new Padding(3, 4, 3, 4);
@@ -217,6 +219,7 @@
             // 
             // cbGün
             // 
+            cbGün.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGün.FormattingEnabled = true;
             cbGün.Location = new Point(330, 145);
             cbGün.Margin = new Padding(3, 4, 3, 4);
@@ -264,6 +267,7 @@
             Name = "frm_KullaniciKayitFormu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Yeni Kullanıcı Kayıt ";
+            Load += frm_KullaniciKayitFormu_Load;
             ResumeLayout(false);
             PerformLayout();
         }

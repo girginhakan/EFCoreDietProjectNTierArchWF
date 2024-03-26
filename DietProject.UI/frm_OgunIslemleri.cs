@@ -17,9 +17,8 @@ namespace DietProject.UI
 {
     public partial class frm_OgunIslemleri : Form
     {
-        DietProjectDbContext db = new DietProjectDbContext();
         OgunManager ogunManager = new OgunManager();
-        Ogun secilenOgun;
+        OgunModel secilenOgun = new OgunModel();
 
         public frm_OgunIslemleri()
         {
@@ -30,7 +29,7 @@ namespace DietProject.UI
 
         private void OgunleriGoster()
         {
-            dgvMevcutOgunler.DataSource = db.Ogunler.ToList();
+            dgvMevcutOgunler.DataSource = ogunManager.GetAll();
         }
 
 
@@ -42,21 +41,28 @@ namespace DietProject.UI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            OgunModel ogun = new OgunModel();
 
-            ogun.OgunAdi = txtOgunAdi.Text;
-            ogun.Aciklama = txtAciklama.Text;
-            ogunManager.Add(ogun);
-            dgvMevcutOgunler.DataSource = ogunManager.GetAll();
-            db.SaveChanges();
-            MessageBox.Show("Öğünler Eklenmiştir.");
-            OgunleriGoster();
+            if (txtOgunAdi.Text!=string.Empty&&txtAciklama.Text!=string.Empty)
+            {
+                secilenOgun.OgunAdi = txtOgunAdi.Text;
+                secilenOgun.Aciklama = txtAciklama.Text;
+                ogunManager.Add(secilenOgun);
+                dgvMevcutOgunler.DataSource = ogunManager.GetAll();
+                MessageBox.Show("Öğünler Eklenmiştir.");
+                OgunleriGoster();
+            }
+            else
+            {
+                MessageBox.Show("Öğün adı ve açıklama boş geçilemez");
+                return;
+            }
+            
 
         }
 
         private void dgvMevcutOgunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            secilenOgun = (Ogun)dgvMevcutOgunler.SelectedRows[0].DataBoundItem;
+            secilenOgun = (OgunModel)dgvMevcutOgunler.SelectedRows[0].DataBoundItem;
             lblSecilen.Text = "Seçilen Öğün: " + secilenOgun.OgunAdi + " " + secilenOgun.Aciklama;
             txtOgunAdi.Text = secilenOgun.OgunAdi;
             txtAciklama.Text = secilenOgun.Aciklama;
@@ -64,46 +70,46 @@ namespace DietProject.UI
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            if (secilenOgun != null)
+            if (secilenOgun.OgunAdi != null && secilenOgun.Aciklama != null)
             {
                 secilenOgun.OgunAdi = txtOgunAdi.Text;
                 secilenOgun.Aciklama = txtAciklama.Text;
-
-                db.SaveChanges();
-
+                ogunManager.Update(secilenOgun);
                 MessageBox.Show("Öğün güncellenmiştir");
                 OgunleriGoster();
 
                 txtOgunAdi.Text = "";
                 txtAciklama.Text = "";
-
-                secilenOgun = null;
                 lblSecilen.Text = "Seçilen öğün: ";
-
             }
             else
+            {
                 MessageBox.Show("Güncellemek için öğün seçiniz!");
+                return;
+            }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (secilenOgun != null)
+            if (secilenOgun!=null&&secilenOgun.OgunAdi != null && secilenOgun.Aciklama != null)
             {
-                db.Ogunler.Remove(secilenOgun);
-                db.SaveChanges();
-
+                ogunManager.Remove(secilenOgun);
                 MessageBox.Show("Öğün silinmiştir");
                 OgunleriGoster();
 
                 txtOgunAdi.Text = "";
                 txtAciklama.Text = "";
 
-                secilenOgun = null;
+                //secilenOgun = null;
                 lblSecilen.Text = "Seçilen öğün: ";
 
             }
             else
+            {
                 MessageBox.Show("Silmek için öğün seçiniz!");
+                return;
+            }
+
         }
 
         private void btnGeri_Click(object sender, EventArgs e)

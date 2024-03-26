@@ -18,7 +18,8 @@ namespace DietProject.UI
     {
         DietProjectDbContext db = new DietProjectDbContext();
         PorsiyonManager porsiyonManager = new PorsiyonManager();
-        Porsiyon secilenPorsiyon;
+        PorsiyonModel seciliPorsiyon = new PorsiyonModel();
+
         public frm_PorsiyonIslemleri()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace DietProject.UI
 
         private void PorsiyonGoster()
         {
-            dgvMevcutPorsiyonlar.DataSource = db.Porsiyonlar.ToList();
+            dgvMevcutPorsiyonlar.DataSource = porsiyonManager.GetAll();
         }
 
 
@@ -40,66 +41,75 @@ namespace DietProject.UI
 
         private void btnPorsiyonEkle_Click(object sender, EventArgs e)
         {
-            PorsiyonModel porsiyon = new PorsiyonModel();
-            porsiyon.PorsiyonMiktari = int.Parse(txtPorsiyonMiktari.Text);
-            porsiyon.PorsiyonBirim = txtPorsiyonBirim.Text;
-            porsiyonManager.Add(porsiyon);
-            dgvMevcutPorsiyonlar.DataSource = porsiyonManager.GetAll();
-            db.SaveChanges();
-            MessageBox.Show("Porsiyon Bilgileri Eklenmiştir.");
-            PorsiyonGoster();
+            if (txtPorsiyonBirim.Text != string.Empty)
+            {
+
+                seciliPorsiyon.PorsiyonBirim = txtPorsiyonBirim.Text;
+                porsiyonManager.Add(seciliPorsiyon);
+                dgvMevcutPorsiyonlar.DataSource = porsiyonManager.GetAll();
+                MessageBox.Show("Porsiyon Bilgileri Eklenmiştir.");
+                PorsiyonGoster();
+            }
+            else
+            {
+                MessageBox.Show("Porsiyon birim ile miktar boş geçilemez");
+                return;
+            }
+            
         }
         private void dgvMevcutPorsiyonMiktarları_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            secilenPorsiyon = (Porsiyon)dgvMevcutPorsiyonlar.SelectedRows[0].DataBoundItem;
-            lblSecilen1.Text = "Seçilen Porsiyon: " + secilenPorsiyon.PorsiyonMiktari + " " + secilenPorsiyon.PorsiyonBirim;
-            txtPorsiyonMiktari.Text = secilenPorsiyon.PorsiyonMiktari.ToString();
-            txtPorsiyonBirim.Text = secilenPorsiyon.PorsiyonBirim;
+            seciliPorsiyon = (PorsiyonModel)dgvMevcutPorsiyonlar.SelectedRows[0].DataBoundItem;
+            lblSecilen1.Text = "Seçilen Porsiyon: "  + seciliPorsiyon.PorsiyonBirim;
+            txtPorsiyonBirim.Text = seciliPorsiyon.PorsiyonBirim;
         }
         private void btnPorsiyonGuncelle_Click(object sender, EventArgs e)
         {
-            if (secilenPorsiyon != null)
+            if ( seciliPorsiyon.PorsiyonBirim!= null)
             {
-                secilenPorsiyon.PorsiyonMiktari = int.Parse(txtPorsiyonMiktari.Text);
-                secilenPorsiyon.PorsiyonBirim = txtPorsiyonBirim.Text;
-
-                db.SaveChanges();
+                seciliPorsiyon.PorsiyonBirim = txtPorsiyonBirim.Text;
+                porsiyonManager.Update(seciliPorsiyon);
 
                 MessageBox.Show("Porsiyon güncellenmiştir");
                 PorsiyonGoster();
 
-                txtPorsiyonMiktari.Text = "";
+
                 txtPorsiyonBirim.Text = "";
 
-                secilenPorsiyon = null;
+                //seciliPorsiyon = null;
                 lblSecilen1.Text = "Seçilen porsiyon: ";
 
             }
             else
+            {
                 MessageBox.Show("Güncellemek için porsiyon seçiniz!");
+                return;
+            }
         }
 
 
 
         private void btnPorsiyonSil_Click(object sender, EventArgs e)
         {
-            if (secilenPorsiyon != null)
+            if (seciliPorsiyon != null &&  seciliPorsiyon.PorsiyonBirim != null)
             {
-                db.Porsiyonlar.Remove(secilenPorsiyon);
-                db.SaveChanges();
+                porsiyonManager.Remove(seciliPorsiyon);
 
                 MessageBox.Show("Porsiyon silinmiştir");
                 PorsiyonGoster();
 
-                txtPorsiyonMiktari.Text = "";
+                
                 txtPorsiyonBirim.Text = "";
 
-                secilenPorsiyon = null;
+                //secilenPorsiyon = null;
                 lblSecilen1.Text = "Seçilen porsiyon: ";
 
             }
             else
+            {
                 MessageBox.Show("Silmek için porsiyon seçiniz!");
+                return;
+            }
         }
 
         private void btnGeri_Click(object sender, EventArgs e)
