@@ -30,7 +30,14 @@ namespace DietProject.UI
 
         private void OgunleriGoster()
         {
-            dgvMevcutOgunler.DataSource=db.Ogunler.ToList();
+            dgvMevcutOgunler.DataSource = db.Ogunler.ToList();
+        }
+
+
+        private void panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            Metodlar.ReleaseCapture();
+            Metodlar.SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -97,6 +104,13 @@ namespace DietProject.UI
             }
             else
                 MessageBox.Show("Silmek için öğün seçiniz!");
+        }
+
+        private void btnGeri_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frm_AdminAnaEkrani adminAnaEkrani = new frm_AdminAnaEkrani();
+            adminAnaEkrani.Show();
         }
     }
 }

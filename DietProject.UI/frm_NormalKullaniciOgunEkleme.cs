@@ -53,6 +53,13 @@ namespace DietProject.UI
 
         }
 
+
+        private void panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            Metodlar.ReleaseCapture();
+            Metodlar.SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
         private void btnKullaniciKayitİptal_Click(object sender, EventArgs e)
         {
             this.Close();
