@@ -27,18 +27,18 @@ namespace DietProject.UI
             //    dataGridView1.Columns[4].Visible = false;
 
 
-            // admin hashli şifre için adin oluştuma komutu
-            //KullaniciManager kullaniciManager = new KullaniciManager();
-            //KullaniciModel model = new KullaniciModel();
-            //model.Adi = "hknn";
-            //model.Soyadi = "grgnn";
-            //model.Boy = 170;
-            //model.Sifre = Metodlar.Sha256Hash("1234");
-            //model.UserStatus = UserStatus.Admin;
-            //model.Eposta = "hknn";
-            //kullaniciManager.Add(model);
-            //MessageBox.Show("başarılı");
-            
+            //admin hashli şifre için adin oluştuma komutu
+           KullaniciManager kullaniciManager = new KullaniciManager();
+            KullaniciModel model = new KullaniciModel();
+            model.Adi = "kerem";
+            model.Soyadi = "ozyon";
+            model.Boy = 170;
+            model.Sifre = Metodlar.Sha256Hash("1234");
+            model.UserStatus = UserStatus.Admin;
+            model.Eposta = "kerem";
+            kullaniciManager.Add(model);
+            MessageBox.Show("başarılı");
+
         }
     }
 }

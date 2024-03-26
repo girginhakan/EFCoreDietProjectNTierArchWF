@@ -73,7 +73,7 @@
             // 
             btnSil.BackColor = Color.Crimson;
             btnSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnSil.Location = new Point(408, 234);
+            btnSil.Location = new Point(738, 330);
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(148, 76);
             btnSil.TabIndex = 4;
@@ -84,12 +84,13 @@
             // 
             btnEkle.BackColor = Color.Lime;
             btnEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnEkle.Location = new Point(408, 137);
+            btnEkle.Location = new Point(575, 330);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(148, 76);
             btnEkle.TabIndex = 5;
             btnEkle.Text = "EKLE";
             btnEkle.UseVisualStyleBackColor = false;
+            btnEkle.Click += btnEkle_Click;
             // 
             // btnGeri
             // 
@@ -109,7 +110,7 @@
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(583, 29);
+            panel.Size = new Size(1002, 29);
             panel.TabIndex = 27;
             panel.MouseDown += panel_MouseDown;
             // 
@@ -118,7 +119,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(583, 494);
+            ClientSize = new Size(1002, 494);
             Controls.Add(panel);
             Controls.Add(btnGeri);
             Controls.Add(btnGuncelle);
