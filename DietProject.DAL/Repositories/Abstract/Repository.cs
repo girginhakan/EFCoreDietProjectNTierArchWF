@@ -72,7 +72,7 @@ namespace DietProject.DAL.Repositories.Abstract
 
         public IQueryable<T> GetAllWithIncludes()
         {
-            IQueryable<T> query =_db.Set<T>();
+            IQueryable<T> query =_db.Set<T>().AsNoTracking();
             T instance = new T();
 
             Type type = instance.GetType();
