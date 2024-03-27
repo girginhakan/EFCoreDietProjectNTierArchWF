@@ -10,7 +10,7 @@ namespace DietProject.DAL.Entities
     public class Porsiyon: Entity
     {
         public string PorsiyonBirim { get; set; }
-        public double PorsiyonMiktari { get; set; }
+
         public List<KullaniciOgunYemekPorsiyon> KullaniciOgunYemekPorsiyonlar { get; set; }
 
     }

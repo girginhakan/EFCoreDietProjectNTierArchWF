@@ -1,5 +1,6 @@
 ﻿using DietProject.BLL.Manager.Concrete;
 using DietProject.BLL.Models;
+using DietProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,11 @@ namespace DietProject.UI
 {
     public partial class frm_NormalKullaniciOgunEkleme : Form
     {
-        public KullaniciOgunYemekPorsiyonModel GelenOgun {  get; set; }
+        public KullaniciOgunYemekPorsiyonModel GelenOgun { get; set; }
         OgunManager ogunManager = new OgunManager();
-        PorsiyonManager porsiyonManager= new PorsiyonManager();
+        PorsiyonManager porsiyonManager = new PorsiyonManager();
         YemekManager yemekManager = new YemekManager();
+        KategoriManager kategoriManager = new KategoriManager();
         public frm_NormalKullaniciOgunEkleme()
         {
             InitializeComponent();
@@ -28,28 +30,29 @@ namespace DietProject.UI
             {
                 cbOgun.SelectedValue = seciliYemekGuncelle.Ogun.OgunAdi;
                 cbPorsiyonBirimi.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonBirim;
-                cbPorsiyonMiktari.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonMiktari;
+                //cbPorsiyonMiktari.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonMiktari;
                 cbYemekCesidi.SelectedValue = seciliYemekGuncelle.Yemek.YemekAdi;
                 cbYemekKategori.SelectedValue = seciliYemekGuncelle.Yemek.Kategori.KategoriAdi;
             }
-            //else
-            //{
-            //    foreach (var item in ogunManager.GetAll())
-            //    {
-            //        cbOgun.Items.Add(item.OgunAdi);
-            //    }
-            //    foreach (var item in porsiyonManager.GetAll())
-            //    {
-            //        cbPorsiyonBirimi.Items.Add(item.PorsiyonBirim);
-            //        cbPorsiyonMiktari.Items.Add(item.PorsiyonMiktari);
-            //    }
-            //    foreach (var item in yemekManager.GetAll())
-            //    {
-            //        cbYemekCesidi.Items.Add(item.YemekAdi);
-            //        cbYemekKategori.Items.Add(item.Kategori.KategoriAdi);
-            //    }
 
-            //}
+            cbOgun.DataSource = ogunManager.GetAll();
+            cbOgun.DisplayMember = "OgunAdi";
+            cbOgun.ValueMember = "Id";
+
+            cbYemekKategori.DataSource = kategoriManager.GetAll();
+            cbYemekKategori.DisplayMember = "KategoriAdi";
+            cbYemekKategori.ValueMember = "Id";
+
+            cbPorsiyonBirimi.DataSource = porsiyonManager.GetAll();
+            cbPorsiyonBirimi.DisplayMember = "PorsiyonAdi";
+            cbPorsiyonBirimi.DisplayMember = "Id";
+
+            KategoriModel selectedKategori = (KategoriModel)cbYemekKategori.SelectedItem;
+            var filtreliListe = yemekManager.GetAll().Where(y => y.KategoriId == selectedKategori.Id);
+            cbYemekCesidi.DataSource = filtreliListe.ToList();
+
+            cbYemekCesidi.DisplayMember = "YemekAdi";
+            cbYemekCesidi.ValueMember = "Id";
 
         }
 
@@ -65,7 +68,27 @@ namespace DietProject.UI
             this.Close();
             frm_NormalKullaniciAnaEkrani normalKullaniciAnaEkrani = new frm_NormalKullaniciAnaEkrani();
             normalKullaniciAnaEkrani.Show();
-            
+
+        }
+
+        private void cbYemekKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(sender is not null)
+            {
+                ComboBox cbYemekKategori = sender as ComboBox;
+
+                KategoriModel selectedKategori = (KategoriModel)cbYemekKategori.SelectedItem;
+
+                YemekManager yemekManager = new YemekManager();
+                List<YemekModel> yemekModel = yemekManager.Search(y => y.KategoriId == selectedKategori.Id);
+
+                cbYemekCesidi.DataSource = yemekModel;
+                cbYemekCesidi.DisplayMember = "YemekAdi";
+                cbYemekCesidi.ValueMember = "Id";
+
+            }
+
+
         }
     }
 }

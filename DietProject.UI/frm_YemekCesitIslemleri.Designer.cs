@@ -42,6 +42,8 @@
             txtYemekAdi = new TextBox();
             txtAciklama = new TextBox();
             txtKalori = new TextBox();
+            cbKategori = new ComboBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvMevcutYemekCesitleri).BeginInit();
             SuspendLayout();
             // 
@@ -59,6 +61,7 @@
             // 
             dgvMevcutYemekCesitleri.BackgroundColor = Color.LightGray;
             dgvMevcutYemekCesitleri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMevcutYemekCesitleri.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvMevcutYemekCesitleri.Location = new Point(39, 85);
             dgvMevcutYemekCesitleri.Name = "dgvMevcutYemekCesitleri";
             dgvMevcutYemekCesitleri.RowHeadersWidth = 51;
@@ -165,22 +168,40 @@
             // 
             txtYemekAdi.Location = new Point(454, 119);
             txtYemekAdi.Name = "txtYemekAdi";
-            txtYemekAdi.Size = new Size(288, 27);
+            txtYemekAdi.Size = new Size(176, 27);
             txtYemekAdi.TabIndex = 32;
             // 
             // txtAciklama
             // 
             txtAciklama.Location = new Point(454, 200);
             txtAciklama.Name = "txtAciklama";
-            txtAciklama.Size = new Size(288, 27);
+            txtAciklama.Size = new Size(363, 27);
             txtAciklama.TabIndex = 33;
             // 
             // txtKalori
             // 
             txtKalori.Location = new Point(454, 279);
             txtKalori.Name = "txtKalori";
-            txtKalori.Size = new Size(288, 27);
+            txtKalori.Size = new Size(363, 27);
             txtKalori.TabIndex = 34;
+            // 
+            // cbKategori
+            // 
+            cbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbKategori.FormattingEnabled = true;
+            cbKategori.Location = new Point(666, 118);
+            cbKategori.Name = "cbKategori";
+            cbKategori.Size = new Size(151, 28);
+            cbKategori.TabIndex = 35;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(666, 85);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 36;
+            label1.Text = "Kategorisi:";
             // 
             // frm_YemekCesitIslemleri
             // 
@@ -188,6 +209,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
             ClientSize = new Size(1002, 494);
+            Controls.Add(label1);
+            Controls.Add(cbKategori);
             Controls.Add(txtKalori);
             Controls.Add(txtAciklama);
             Controls.Add(txtYemekAdi);
@@ -227,5 +250,7 @@
         private TextBox txtYemekAdi;
         private TextBox txtAciklama;
         private TextBox txtKalori;
+        private ComboBox cbKategori;
+        private Label label1;
     }
 }

@@ -32,7 +32,7 @@ namespace DietProject.UI
             {
                 TuketilenOgunlerViewModel row = new TuketilenOgunlerViewModel();
                 row.KullaniciAdiSoyadi = item.Kullanici.Adi + " " + item.Kullanici.Soyadi;
-                row.PorsiyonMiktari = item.Porsiyon.PorsiyonMiktari.ToString();
+                row.PorsiyonMiktari = item.Yemek.PorsiyonMiktari.ToString();
                 row.PorsiyonBirimi = item.Porsiyon.PorsiyonBirim;
 
                 viewModel.Add(row);
@@ -41,8 +41,19 @@ namespace DietProject.UI
 
 
             dgvTuketilenOgunler.DataSource = viewModel;
+            double totalKalori;
+            if (seciliTuketikenYemek!=null)
+            {
 
-            label3.Text = Program.KullaniciModel.Eposta;
+                 totalKalori = double.Parse(seciliTuketikenYemek.Yemek.Kalori.ToString()) * double.Parse(seciliTuketikenYemek.Yemek.PorsiyonMiktari.ToString());
+                label3.Text = totalKalori.ToString();
+            }
+            else
+            {
+                totalKalori = 0;
+                label3.Text = totalKalori.ToString();
+            }
+            
         }
 
         private void panel_MouseDown(object sender, MouseEventArgs e)
@@ -76,7 +87,10 @@ namespace DietProject.UI
 
         private void dgvTuketilenOgunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            seciliTuketikenYemek = (KullaniciOgunYemekPorsiyonModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
+            if (seciliTuketikenYemek!=null)
+            {
+                seciliTuketikenYemek = (KullaniciOgunYemekPorsiyonModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
+            }
         }
     }
 

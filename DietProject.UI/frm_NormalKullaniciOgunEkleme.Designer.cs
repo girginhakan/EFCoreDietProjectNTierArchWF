@@ -35,12 +35,12 @@
             cbYemekCesidi = new ComboBox();
             lblYemekCesidi = new Label();
             lblPorsiyonMiktari = new Label();
-            cbPorsiyonMiktari = new ComboBox();
             lblPorsiyonBirimi = new Label();
             cbPorsiyonBirimi = new ComboBox();
             btnKullaniciKayitİptal = new Button();
             btnKullaniciKaydet = new Button();
             panel = new Panel();
+            txtPorsiyonMiktari = new TextBox();
             SuspendLayout();
             // 
             // lblOgun
@@ -78,6 +78,7 @@
             cbYemekKategori.Name = "cbYemekKategori";
             cbYemekKategori.Size = new Size(151, 28);
             cbYemekKategori.TabIndex = 3;
+            cbYemekKategori.SelectedIndexChanged += cbYemekKategori_SelectedIndexChanged;
             // 
             // cbYemekCesidi
             // 
@@ -106,14 +107,6 @@
             lblPorsiyonMiktari.Size = new Size(121, 20);
             lblPorsiyonMiktari.TabIndex = 6;
             lblPorsiyonMiktari.Text = "Porsiyon Miktarı";
-            // 
-            // cbPorsiyonMiktari
-            // 
-            cbPorsiyonMiktari.FormattingEnabled = true;
-            cbPorsiyonMiktari.Location = new Point(184, 236);
-            cbPorsiyonMiktari.Name = "cbPorsiyonMiktari";
-            cbPorsiyonMiktari.Size = new Size(151, 28);
-            cbPorsiyonMiktari.TabIndex = 7;
             // 
             // lblPorsiyonBirimi
             // 
@@ -166,18 +159,25 @@
             panel.TabIndex = 14;
             panel.MouseDown += panel_MouseDown;
             // 
+            // txtPorsiyonMiktari
+            // 
+            txtPorsiyonMiktari.Location = new Point(184, 237);
+            txtPorsiyonMiktari.Name = "txtPorsiyonMiktari";
+            txtPorsiyonMiktari.Size = new Size(151, 27);
+            txtPorsiyonMiktari.TabIndex = 15;
+            // 
             // frm_NormalKullaniciOgunEkleme
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(594, 493);
+            Controls.Add(txtPorsiyonMiktari);
             Controls.Add(panel);
             Controls.Add(btnKullaniciKayitİptal);
             Controls.Add(btnKullaniciKaydet);
             Controls.Add(cbPorsiyonBirimi);
             Controls.Add(lblPorsiyonBirimi);
-            Controls.Add(cbPorsiyonMiktari);
             Controls.Add(lblPorsiyonMiktari);
             Controls.Add(lblYemekCesidi);
             Controls.Add(cbYemekCesidi);
@@ -202,11 +202,11 @@
         private ComboBox cbYemekCesidi;
         private Label lblYemekCesidi;
         private Label lblPorsiyonMiktari;
-        private ComboBox cbPorsiyonMiktari;
         private Label lblPorsiyonBirimi;
         private ComboBox cbPorsiyonBirimi;
         private Button btnKullaniciKayitİptal;
         private Button btnKullaniciKaydet;
         private Panel panel;
+        private TextBox txtPorsiyonMiktari;
     }
 }
