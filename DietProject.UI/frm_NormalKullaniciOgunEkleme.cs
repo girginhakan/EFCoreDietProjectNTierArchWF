@@ -1,6 +1,5 @@
 ﻿using DietProject.BLL.Manager.Concrete;
 using DietProject.BLL.Models;
-using DietProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,18 +19,23 @@ namespace DietProject.UI
         PorsiyonManager porsiyonManager = new PorsiyonManager();
         YemekManager yemekManager = new YemekManager();
         KategoriManager kategoriManager = new KategoriManager();
+        KullaniciOgunYemekPorsiyonManager kullaniciOgunYemekPorsiyon = new KullaniciOgunYemekPorsiyonManager();
+
         public frm_NormalKullaniciOgunEkleme()
         {
             InitializeComponent();
 
-            var seciliYemekGuncelle = Program.SecilenYemek;
+            var seciliYemekGuncelle = GelenOgun;
 
             if (seciliYemekGuncelle != null)
             {
-                cbOgun.SelectedValue = seciliYemekGuncelle.Ogun.OgunAdi;
-                cbPorsiyonBirimi.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonBirim;
-                cbYemekCesidi.SelectedValue = seciliYemekGuncelle.Yemek.YemekAdi;
-                cbYemekKategori.SelectedValue = seciliYemekGuncelle.Yemek.Kategori.KategoriAdi;
+                
+            }
+            else
+            {
+                btnGuncelle.Visible = true;
+                btnKullaniciYemekKaydet.Visible = false;
+
             }
 
             cbOgun.DataSource = ogunManager.GetAll();
@@ -88,18 +92,18 @@ namespace DietProject.UI
 
         private void btnKullaniciYemekKaydet_Click(object sender, EventArgs e)
         {
-            KullaniciOgunYemekPorsiyonModel kullaniciOgun= new KullaniciOgunYemekPorsiyonModel();
+            KullaniciOgunYemekPorsiyonModel kullaniciOgun = new KullaniciOgunYemekPorsiyonModel();
 
             kullaniciOgun.KullaniciId = Program.KullaniciModel.Id;
-            if (cbYemekCesidi.SelectedText!=null && cbYemekKategori.SelectedText!=null&& cbOgun.SelectedText!=null&& cbPorsiyonBirimi.SelectedText!=null&& txtPorsiyonMiktari.Text!=string.Empty)
+            if (cbYemekCesidi.SelectedText != null && cbYemekKategori.SelectedText != null && cbOgun.SelectedText != null && cbPorsiyonBirimi.SelectedText != null && txtPorsiyonMiktari.Text != string.Empty)
             {
                 kullaniciOgun.YemekId = ((YemekModel)cbYemekCesidi.SelectedItem).Id;
-               
+
                 kullaniciOgun.OgunId = ((OgunModel)cbOgun.SelectedItem).Id;
                 kullaniciOgun.PorsiyonId = ((PorsiyonModel)cbPorsiyonBirimi.SelectedItem).Id;
                 kullaniciOgun.PorsiyonMiktari = int.Parse(txtPorsiyonMiktari.Text);
 
-                KullaniciOgunYemekPorsiyonManager kullaniciOgunYemekPorsiyon = new KullaniciOgunYemekPorsiyonManager();
+
                 kullaniciOgunYemekPorsiyon.Add(kullaniciOgun);
                 MessageBox.Show("İlgili Öğün başarıyla profilinize eklnmiştir");
                 frm_NormalKullaniciAnaEkrani kullaniciAnaEkrani = new frm_NormalKullaniciAnaEkrani();
@@ -112,6 +116,27 @@ namespace DietProject.UI
                 return;
             }
 
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+
+            if (Program.SecilenYemek != null)
+            {
+
+                Program.SecilenYemek.Id = Program.KullaniciModel.Id;
+
+                GelenOgun.YemekId= ((YemekModel)(cbYemekCesidi.SelectedItem)).Id;
+                GelenOgun.OgunId= ((OgunModel)cbOgun.SelectedItem).Id;
+                GelenOgun.PorsiyonId = ((PorsiyonModel)(cbPorsiyonBirimi.SelectedItem)).Id;
+                GelenOgun.PorsiyonMiktari = double.Parse(txtPorsiyonMiktari.Text);
+                kullaniciOgunYemekPorsiyon.Update(GelenOgun);
+
+                MessageBox.Show("Öğün guncellenmistir");
+
+            }
+            else
+                MessageBox.Show("Secili Öğün Yok!");
         }
     }
 }

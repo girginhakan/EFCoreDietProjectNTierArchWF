@@ -15,9 +15,12 @@ namespace DietProject.UI
     public partial class frm_NormalKullaniciAnaEkrani : Form
     {
 
-        KullaniciOgunYemekPorsiyonModel seciliTuketikenYemek;
+        KullaniciOgunYemekPorsiyonModel secilenTuketikenYemek = new KullaniciOgunYemekPorsiyonModel();
         KullaniciOgunYemekPorsiyonManager kullaniciYemekleri = new KullaniciOgunYemekPorsiyonManager();
         YemekModel yemekKalori = new YemekModel();
+        KullaniciManager kullaniciManager = new KullaniciManager();
+        YemekManager yemekManager = new YemekManager();
+        OgunManager ogunManager = new OgunManager();
         public frm_NormalKullaniciAnaEkrani()
         {
             InitializeComponent();
@@ -37,11 +40,16 @@ namespace DietProject.UI
 
                 viewModel.Add(row);
             }
+
             dgvTuketilenOgunler.DataSource = viewModel;
+            dgvTuketilenOgunler.Columns[0].Visible = false;
+
 
 
 
         }
+
+
 
         private void panel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -66,38 +74,47 @@ namespace DietProject.UI
         private void btnOgunGuncelle_Click(object sender, EventArgs e)
         {
             frm_NormalKullaniciOgunEkleme normalKullanıcıOgunEkleme = new frm_NormalKullaniciOgunEkleme();
-            //normalKullanıcıOgunEkleme.GelenOgun = seciliTuketikenYemek;
-            Program.SecilenYemek = seciliTuketikenYemek;
             normalKullanıcıOgunEkleme.Show();
             this.Hide();
         }
 
         private void dgvTuketilenOgunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            seciliTuketikenYemek = (KullaniciOgunYemekPorsiyonModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
+            var seciliTuketikenYemek = (TuketilenOgunlerViewModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
 
+            secilenTuketikenYemek = kullaniciYemekleri.Search((x => x.Id == seciliTuketikenYemek.Id)).FirstOrDefault();
 
 
         }
 
         private void frm_NormalKullaniciAnaEkrani_Load(object sender, EventArgs e)
         {
-            if (seciliTuketikenYemek != null)
+
+        }
+
+        private void btnOgunSil_Click(object sender, EventArgs e)
+        {
+            if (secilenTuketikenYemek != null)
             {
-                double? totalKalori = 0;
-                totalKalori = yemekKalori.Kalori * seciliTuketikenYemek.PorsiyonMiktari;
-                label3.Text = totalKalori.ToString();
+                kullaniciYemekleri.Remove(secilenTuketikenYemek);
+
+                MessageBox.Show("Öğün silinmiştir.");
 
             }
+            else
+                MessageBox.Show("Secili Öğün Yok!");
         }
     }
 
     public class TuketilenOgunlerViewModel
     {
+        public int Id { get; set; }
         public string KullaniciAdiSoyadi { get; set; }
         public string OgunAdi { get; set; }
         public string PorsiyonBirimi { get; set; }
         public double PorsiyonMiktari { get; set; }
         public string YemekAdi { get; set; }
     }
+
+   
 }
