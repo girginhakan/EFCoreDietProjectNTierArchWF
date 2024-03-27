@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class s
+    partial class frm_RaporlamaIslemleri
     {
         /// <summary>
         /// Required designer variable.
@@ -50,10 +50,9 @@
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(54, 315);
-            btnGeri.Margin = new Padding(3, 2, 3, 2);
+            btnGeri.Location = new Point(62, 420);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(130, 30);
+            btnGeri.Size = new Size(149, 40);
             btnGeri.TabIndex = 27;
             btnGeri.Text = "GERİ";
             btnGeri.UseVisualStyleBackColor = false;
@@ -64,9 +63,8 @@
             panel.BackColor = Color.LightCoral;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
-            panel.Margin = new Padding(3, 2, 3, 2);
             panel.Name = "panel";
-            panel.Size = new Size(979, 22);
+            panel.Size = new Size(1119, 29);
             panel.TabIndex = 28;
             panel.Paint += panel_Paint;
             panel.MouseDown += panel_MouseDown;
@@ -76,19 +74,21 @@
             tbEnCokTuketilenYemek.Controls.Add(tabPage1);
             tbEnCokTuketilenYemek.Controls.Add(tabPage2);
             tbEnCokTuketilenYemek.Controls.Add(tabPage3);
-            tbEnCokTuketilenYemek.Location = new Point(54, 43);
+            tbEnCokTuketilenYemek.Location = new Point(62, 57);
+            tbEnCokTuketilenYemek.Margin = new Padding(3, 4, 3, 4);
             tbEnCokTuketilenYemek.Name = "tbEnCokTuketilenYemek";
             tbEnCokTuketilenYemek.SelectedIndex = 0;
-            tbEnCokTuketilenYemek.Size = new Size(750, 244);
+            tbEnCokTuketilenYemek.Size = new Size(857, 325);
             tbEnCokTuketilenYemek.TabIndex = 29;
             // 
             // tabPage1
             // 
             tabPage1.Controls.Add(dataGridView2);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(742, 216);
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(849, 292);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "En Çok Tüketilen Yemek Rapor";
             tabPage1.UseVisualStyleBackColor = true;
@@ -96,18 +96,21 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(50, 28);
+            dataGridView2.Location = new Point(57, 37);
+            dataGridView2.Margin = new Padding(3, 4, 3, 4);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(626, 150);
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(715, 200);
             dataGridView2.TabIndex = 0;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(742, 216);
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(849, 292);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Haftalık Raporlama";
             tabPage2.UseVisualStyleBackColor = true;
@@ -115,18 +118,21 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(66, 19);
+            dataGridView1.Location = new Point(75, 25);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(612, 150);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(699, 200);
             dataGridView1.TabIndex = 0;
             // 
             // tabPage3
             // 
             tabPage3.Controls.Add(dataGridView3);
-            tabPage3.Location = new Point(4, 24);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Margin = new Padding(3, 4, 3, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(742, 216);
+            tabPage3.Padding = new Padding(3, 4, 3, 4);
+            tabPage3.Size = new Size(849, 292);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Aylık Raporlama";
             tabPage3.UseVisualStyleBackColor = true;
@@ -134,26 +140,27 @@
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(49, 20);
+            dataGridView3.Location = new Point(56, 27);
+            dataGridView3.Margin = new Padding(3, 4, 3, 4);
             dataGridView3.Name = "dataGridView3";
-            dataGridView3.Size = new Size(612, 150);
+            dataGridView3.RowHeadersWidth = 51;
+            dataGridView3.Size = new Size(699, 200);
             dataGridView3.TabIndex = 0;
             // 
-            // s
+            // frm_RaporlamaIslemleri
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(979, 370);
+            ClientSize = new Size(1119, 493);
             Controls.Add(tbEnCokTuketilenYemek);
             Controls.Add(panel);
             Controls.Add(btnGeri);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "s";
+            Name = "frm_RaporlamaIslemleri";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Raporlar";
-            Load += s_Load;
+            Load += frm_RaporlamaIslemleri_Load;
             tbEnCokTuketilenYemek.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();

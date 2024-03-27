@@ -17,6 +17,7 @@ namespace DietProject.UI
         public AdminEkleme()
         {
             InitializeComponent();
+            
 
             //admin hashli şifre için adin oluştuma komutu Program.csden bu formu başlatıp çalıştırdıktan sonra bu kullanıcı ile admin girişi yapabilirsiniz.
             KullaniciManager kullaniciManager = new KullaniciManager();
