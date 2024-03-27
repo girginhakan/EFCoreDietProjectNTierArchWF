@@ -13,7 +13,7 @@ namespace DietProject.DAL.Entities
         public int KullaniciId { get; set; }
         public int OgunId { get; set; }
         public int PorsiyonId { get; set; }
-
+        public double PorsiyonMiktari { get; set; }
         public Kullanici Kullanici { get; set; }
         public Ogun Ogun { get; set; }
         public Porsiyon Porsiyon { get; set; }

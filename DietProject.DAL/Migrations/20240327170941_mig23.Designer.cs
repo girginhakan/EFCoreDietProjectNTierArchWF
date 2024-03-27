@@ -4,6 +4,7 @@ using DietProject.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietProject.DAL.Migrations
 {
     [DbContext(typeof(DietProjectDbContext))]
-    partial class DietProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240327170941_mig23")]
+    partial class mig23
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,7 +116,7 @@ namespace DietProject.DAL.Migrations
                             Id = 16,
                             Adi = "Admin Adı",
                             Boy = 175.0,
-                            CreatedDate = new DateTime(2024, 3, 27, 20, 12, 17, 396, DateTimeKind.Local).AddTicks(7344),
+                            CreatedDate = new DateTime(2024, 3, 27, 20, 9, 41, 336, DateTimeKind.Local).AddTicks(9936),
                             DogumTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EntityStatus = 0,
                             Eposta = "admin",

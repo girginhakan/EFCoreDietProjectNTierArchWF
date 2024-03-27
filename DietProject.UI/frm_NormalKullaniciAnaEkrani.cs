@@ -14,17 +14,15 @@ namespace DietProject.UI
 {
     public partial class frm_NormalKullaniciAnaEkrani : Form
     {
-        //public KullaniciModel SecilenKullanici {  get; set; } 
-        //public frm_KullaniciGirisEkrani MainForm { get; set; }
 
         KullaniciOgunYemekPorsiyonModel seciliTuketikenYemek;
-        frm_NormalKullaniciOgunEkleme secilenOgun;
         KullaniciOgunYemekPorsiyonManager kullaniciYemekleri = new KullaniciOgunYemekPorsiyonManager();
+        YemekModel yemekKalori = new YemekModel();
         public frm_NormalKullaniciAnaEkrani()
         {
             InitializeComponent();
-            
-            List<KullaniciOgunYemekPorsiyonModel> model =  kullaniciYemekleri.GetAllWithIncludes().Where(ky => ky.KullaniciId == Program.KullaniciModel.Id).ToList();
+
+            List<KullaniciOgunYemekPorsiyonModel> model = kullaniciYemekleri.GetAllWithIncludes().Where(ky => ky.KullaniciId == Program.KullaniciModel.Id).ToList();
 
             List<TuketilenOgunlerViewModel> viewModel = new List<TuketilenOgunlerViewModel>();
 
@@ -32,8 +30,10 @@ namespace DietProject.UI
             {
                 TuketilenOgunlerViewModel row = new TuketilenOgunlerViewModel();
                 row.KullaniciAdiSoyadi = item.Kullanici.Adi + " " + item.Kullanici.Soyadi;
-                row.PorsiyonMiktari = item.Yemek.PorsiyonMiktari.ToString();
+                row.PorsiyonMiktari = item.PorsiyonMiktari;
                 row.PorsiyonBirimi = item.Porsiyon.PorsiyonBirim;
+                row.YemekAdi = item.Yemek.YemekAdi;
+                row.OgunAdi = item.Ogun.OgunAdi;
 
                 viewModel.Add(row);
             }
@@ -41,17 +41,6 @@ namespace DietProject.UI
 
 
 
-            double totalKalori;
-            if (seciliTuketikenYemek!=null)
-            {
-                 totalKalori = double.Parse(seciliTuketikenYemek.Yemek.Kalori.ToString()) * double.Parse(seciliTuketikenYemek.Yemek.PorsiyonMiktari.ToString());
-                label3.Text = totalKalori.ToString();
-            }
-            else
-            {
-                totalKalori = 0;
-                label3.Text = totalKalori.ToString();
-            }
         }
 
         private void panel_MouseDown(object sender, MouseEventArgs e)
@@ -85,9 +74,20 @@ namespace DietProject.UI
 
         private void dgvTuketilenOgunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (seciliTuketikenYemek!=null)
+            seciliTuketikenYemek = (KullaniciOgunYemekPorsiyonModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
+
+
+
+        }
+
+        private void frm_NormalKullaniciAnaEkrani_Load(object sender, EventArgs e)
+        {
+            if (seciliTuketikenYemek != null)
             {
-                seciliTuketikenYemek = (KullaniciOgunYemekPorsiyonModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
+                double? totalKalori = 0;
+                totalKalori = yemekKalori.Kalori * seciliTuketikenYemek.PorsiyonMiktari;
+                label3.Text = totalKalori.ToString();
+
             }
         }
     }
@@ -97,7 +97,7 @@ namespace DietProject.UI
         public string KullaniciAdiSoyadi { get; set; }
         public string OgunAdi { get; set; }
         public string PorsiyonBirimi { get; set; }
-        public string PorsiyonMiktari { get; set; }
+        public double PorsiyonMiktari { get; set; }
         public string YemekAdi { get; set; }
     }
 }
