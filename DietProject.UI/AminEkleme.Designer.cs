@@ -1,6 +1,6 @@
 ﻿namespace DietProject.UI
 {
-    partial class Deneme
+    partial class AdminEkleme
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label1 = new Label();
             SuspendLayout();
             // 
-            // dataGridView1
+            // label1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(90, 60);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(605, 192);
-            dataGridView1.TabIndex = 0;
+            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(890, 497);
+            label1.TabIndex = 0;
+            label1.Text = "Admin Eklemek için Projeyi bu formdan çalıştırdıktan sonra Eposta : kullanici    Şifre:1234  ile giriş yapabilirsiniz.";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // Deneme
+            // AdminEkleme
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
-            Name = "Deneme";
-            Text = "Deneme";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ClientSize = new Size(905, 515);
+            Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "AdminEkleme";
+            Text = "Admin Ekleme";
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dataGridView1;
+        private Label label1;
     }
 }

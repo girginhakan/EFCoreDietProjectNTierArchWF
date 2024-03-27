@@ -20,7 +20,7 @@ namespace DietProject.DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-MCJPB0C;Initial Catalog=DietProjectDb;Integrated Security=true;Encrypt=False");
+            optionsBuilder.UseSqlServer("Data Source=HAKANPC;Initial Catalog=DietProjectDb;Integrated Security=true;Encrypt=False");
         }
     }
 }

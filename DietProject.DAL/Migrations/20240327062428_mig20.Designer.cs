@@ -4,6 +4,7 @@ using DietProject.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietProject.DAL.Migrations
 {
     [DbContext(typeof(DietProjectDbContext))]
-    partial class DietProjectDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240327062428_mig20")]
+    partial class mig20
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -210,6 +213,9 @@ namespace DietProject.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("PorsiyonMiktari")
+                        .HasColumnType("float");
+
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
@@ -244,9 +250,6 @@ namespace DietProject.DAL.Migrations
 
                     b.Property<int>("KategoriId")
                         .HasColumnType("int");
-
-                    b.Property<double>("PorsiyonMiktari")
-                        .HasColumnType("float");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
