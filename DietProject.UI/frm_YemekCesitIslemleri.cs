@@ -1,4 +1,6 @@
 ﻿using DietProject.BLL.Manager.Concrete;
+using DietProject.BLL.Models;
+using DietProject.DAL.Context;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +15,20 @@ namespace DietProject.UI
 {
     public partial class frm_YemekCesitIslemleri : Form
     {
+        DietProjectDbContext db = new DietProjectDbContext();
+        YemekManager yemekManager = new YemekManager();
+        YemekModel secilenYemek = new YemekModel();
         public frm_YemekCesitIslemleri()
         {
             InitializeComponent();
-            //KategoriManager kategoriManager = new KategoriManager();
-            //dgvMevcutYemekCesitleri.DataSource = kategoriManager.GetAllWithIncludes();
+            lblSecilen.Text = "Seçilen Yemekler: ";
+            YemekleriGoster();
         }
 
-
+        private void YemekleriGoster()
+        {
+            dgvMevcutYemekCesitleri.DataSource = yemekManager.GetAll();
+        }
         private void panel_MouseDown(object sender, MouseEventArgs e)
         {
             Metodlar.ReleaseCapture();
@@ -29,14 +37,93 @@ namespace DietProject.UI
 
         private void btnGeri_Click(object sender, EventArgs e)
         {
-            this.Close();
             frm_AdminAnaEkrani adminAnaEkrani = new frm_AdminAnaEkrani();
             adminAnaEkrani.Show();
+            this.Close();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
+            if (txtYemekAdi.Text != string.Empty && txtAciklama.Text != string.Empty && txtKalori.Text != string.Empty)
+            {
+                string a = txtKalori.Text.ToString();
+                int b = Convert.ToInt32(a);
+                secilenYemek.YemekAdi = txtYemekAdi.Text;
+                secilenYemek.Aciklama = txtAciklama.Text;
+                secilenYemek.Kalori = b;
 
+                yemekManager.Add(secilenYemek);
+                dgvMevcutYemekCesitleri.DataSource = yemekManager.GetAll();
+                MessageBox.Show("Yemekler eklenmiştir.");
+                YemekleriGoster();
+            }
+            else
+            {
+                MessageBox.Show("Yemek adi, aciklama ve kalori boş geçilemez.");
+                return;
+            }
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (secilenYemek.YemekAdi != null && secilenYemek.Aciklama != null && secilenYemek.Kalori != null)
+            {
+                string a = txtKalori.Text.ToString();
+                int b = Convert.ToInt32(a);
+                secilenYemek.YemekAdi = txtYemekAdi.Text;
+                secilenYemek.Aciklama = txtAciklama.Text;
+                secilenYemek.Kalori = b;
+
+                yemekManager.Update(secilenYemek);
+                MessageBox.Show("Yemek güncellenmiştir");
+                YemekleriGoster();
+
+                txtYemekAdi.Text = "";
+                txtAciklama.Text = "";
+                txtKalori.Text = "";
+
+                lblSecilen.Text = "Seçilen yemek: ";
+
+            }
+            else
+            {
+                MessageBox.Show("Güncellemek için yemek seçiniz!");
+                return;
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (secilenYemek.YemekAdi != null && secilenYemek.Aciklama != null && secilenYemek.Kalori != null)
+            {
+                yemekManager.Remove(secilenYemek);
+
+                MessageBox.Show("Yemek silinmiştir");
+                YemekleriGoster();
+
+                txtYemekAdi.Text = "";
+                txtAciklama.Text = "";
+                txtKalori.Text = "";
+
+                lblSecilen.Text = "Seçilen yemek: ";
+
+            }
+            else
+            {
+                MessageBox.Show("Silmek için yemek seçiniz!");
+                return;
+            }
+        }
+
+        private void dgvMevcutYemekCesitleri_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string a = txtKalori.Text.ToString();
+            int b = Convert.ToInt32(a);
+            secilenYemek = (YemekModel)dgvMevcutYemekCesitleri.SelectedRows[0].DataBoundItem;
+            lblSecilen.Text = "Seçilen Yemek: " + secilenYemek.YemekAdi + " " + secilenYemek.Aciklama + " " + secilenYemek.Kalori;
+            txtYemekAdi.Text = secilenYemek.YemekAdi;
+            txtAciklama.Text = secilenYemek.Aciklama;
+            b = secilenYemek.Kalori;
         }
     }
 }
