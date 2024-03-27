@@ -24,7 +24,7 @@ namespace DietProject.UI
         {
             InitializeComponent();
             
-            List<KullaniciOgunYemekPorsiyonModel> model =  kullaniciYemekleri.GetAllWithIncludes();
+            List<KullaniciOgunYemekPorsiyonModel> model =  kullaniciYemekleri.GetAllWithIncludes().Where(ky => ky.KullaniciId == Program.KullaniciModel.Id).ToList();
 
             List<TuketilenOgunlerViewModel> viewModel = new List<TuketilenOgunlerViewModel>();
 
@@ -37,14 +37,13 @@ namespace DietProject.UI
 
                 viewModel.Add(row);
             }
-
-
-
             dgvTuketilenOgunler.DataSource = viewModel;
+
+
+
             double totalKalori;
             if (seciliTuketikenYemek!=null)
             {
-
                  totalKalori = double.Parse(seciliTuketikenYemek.Yemek.Kalori.ToString()) * double.Parse(seciliTuketikenYemek.Yemek.PorsiyonMiktari.ToString());
                 label3.Text = totalKalori.ToString();
             }
@@ -53,7 +52,6 @@ namespace DietProject.UI
                 totalKalori = 0;
                 label3.Text = totalKalori.ToString();
             }
-            
         }
 
         private void panel_MouseDown(object sender, MouseEventArgs e)

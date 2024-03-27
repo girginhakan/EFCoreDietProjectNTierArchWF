@@ -30,7 +30,6 @@ namespace DietProject.UI
             {
                 cbOgun.SelectedValue = seciliYemekGuncelle.Ogun.OgunAdi;
                 cbPorsiyonBirimi.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonBirim;
-                //cbPorsiyonMiktari.SelectedValue = seciliYemekGuncelle.Porsiyon.PorsiyonMiktari;
                 cbYemekCesidi.SelectedValue = seciliYemekGuncelle.Yemek.YemekAdi;
                 cbYemekKategori.SelectedValue = seciliYemekGuncelle.Yemek.Kategori.KategoriAdi;
             }
@@ -47,12 +46,8 @@ namespace DietProject.UI
             cbPorsiyonBirimi.DisplayMember = "PorsiyonAdi";
             cbPorsiyonBirimi.DisplayMember = "Id";
 
-            KategoriModel selectedKategori = (KategoriModel)cbYemekKategori.SelectedItem;
-            var filtreliListe = yemekManager.GetAll().Where(y => y.KategoriId == selectedKategori.Id);
-            cbYemekCesidi.DataSource = filtreliListe.ToList();
-
-            cbYemekCesidi.DisplayMember = "YemekAdi";
-            cbYemekCesidi.ValueMember = "Id";
+            //cbYemekCesidi.DisplayMember = "YemekAdi";
+            //cbYemekCesidi.ValueMember = "Id";
 
         }
 
@@ -73,7 +68,7 @@ namespace DietProject.UI
 
         private void cbYemekKategori_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(sender is not null)
+            if (sender is not null)
             {
                 ComboBox cbYemekKategori = sender as ComboBox;
 
@@ -88,6 +83,32 @@ namespace DietProject.UI
 
             }
 
+
+        }
+
+        private void btnKullaniciYemekKaydet_Click(object sender, EventArgs e)
+        {
+            KullaniciOgunYemekPorsiyonModel kullaniciOgun= new KullaniciOgunYemekPorsiyonModel();
+            if (cbYemekCesidi.SelectedText!=null && cbYemekKategori.SelectedText!=null&& cbOgun.SelectedText!=null&& cbPorsiyonBirimi.SelectedText!=null&& txtPorsiyonMiktari.Text!=string.Empty)
+            {
+                kullaniciOgun.YemekId = ((YemekModel)cbYemekCesidi.SelectedItem).Id;
+               
+                kullaniciOgun.OgunId = ((OgunModel)cbOgun.SelectedItem).Id;
+                kullaniciOgun.PorsiyonId = ((PorsiyonModel)cbPorsiyonBirimi.SelectedItem).Id;
+                //kullaniciOgun.Yemek. = int.Parse(txtPorsiyonMiktari.Text);
+
+                KullaniciOgunYemekPorsiyonManager kullaniciOgunYemekPorsiyon = new KullaniciOgunYemekPorsiyonManager();
+                kullaniciOgunYemekPorsiyon.Add(kullaniciOgun);
+                MessageBox.Show("İlgili Öğün başarıyla profilinize eklnmiştir");
+                frm_NormalKullaniciAnaEkrani kullaniciAnaEkrani = new frm_NormalKullaniciAnaEkrani();
+                this.Close();
+                kullaniciAnaEkrani.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bütün alanları girmeniz gerekmektedir.");
+                return;
+            }
 
         }
     }

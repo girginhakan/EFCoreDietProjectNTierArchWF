@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace DietProject.UI
 {
-    public partial class s : Form
+    public partial class frm_RaporlamaIslemleri : Form
     {
         KategoriManager kategoriManager = new KategoriManager();
         KullaniciManager kullaniciManager = new KullaniciManager();
@@ -29,7 +29,7 @@ namespace DietProject.UI
         PorsiyonModel porsiyonModel = new PorsiyonModel();
         YemekModel yemekModel = new YemekModel();
 
-        public s()
+        public frm_RaporlamaIslemleri()
         {
             InitializeComponent();
             dgvRapor();
@@ -39,9 +39,9 @@ namespace DietProject.UI
         {
             var yemekListesi = yemekManager.GetAll();
 
-            var EnCokTuketilen =yemekListesi.GroupBy(y => y.YemekAdi).Select(g => new { YemekAdi = g.Key, ToplamTuketim = g.Count() }).OrderByDescending(g => g.ToplamTuketim).FirstOrDefault();
+            var EnCokTuketilen = yemekListesi.GroupBy(y => y.YemekAdi).Select(g => new { YemekAdi = g.Key, ToplamTuketim = g.Count() }).OrderByDescending(g => g.ToplamTuketim).FirstOrDefault();
 
-            dataGridView2.DataSource= EnCokTuketilen;
+            dataGridView2.DataSource = EnCokTuketilen;
 
         }
         private void panel_MouseDown(object sender, MouseEventArgs e)
@@ -62,9 +62,8 @@ namespace DietProject.UI
 
         }
 
-        private void s_Load(object sender, EventArgs e)
+        private void frm_RaporlamaIslemleri_Load(object sender, EventArgs e)
         {
-
             dgvRapor();
         }
     }

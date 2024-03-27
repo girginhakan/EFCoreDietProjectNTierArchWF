@@ -63,7 +63,7 @@ namespace DietProject.UI
 
         private void btnRaporlama_Click(object sender, EventArgs e)
         {
-            s raporlamaIslemleri = new s();
+            frm_RaporlamaIslemleri raporlamaIslemleri = new frm_RaporlamaIslemleri();
             raporlamaIslemleri.Show();
             this.Hide();
         }
