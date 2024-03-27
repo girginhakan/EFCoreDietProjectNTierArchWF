@@ -28,102 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblEnCokTuketilen = new Label();
-            lblEnCokTuketilenMiktar = new Label();
-            cbKullanıcı1 = new ComboBox();
-            cbKullanıcı2 = new ComboBox();
-            lblKullanıcı1 = new Label();
-            lblKullanıcı2 = new Label();
-            btnHaftalıkRapor = new Button();
-            btnAylıkRapor = new Button();
             btnGeri = new Button();
             panel = new Panel();
+            tbEnCokTuketilenYemek = new TabControl();
+            tabPage1 = new TabPage();
+            dataGridView2 = new DataGridView();
+            tabPage2 = new TabPage();
+            dataGridView1 = new DataGridView();
+            tabPage3 = new TabPage();
+            dataGridView3 = new DataGridView();
+            tbEnCokTuketilenYemek.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
-            // 
-            // lblEnCokTuketilen
-            // 
-            lblEnCokTuketilen.AutoSize = true;
-            lblEnCokTuketilen.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblEnCokTuketilen.Location = new Point(30, 41);
-            lblEnCokTuketilen.Name = "lblEnCokTuketilen";
-            lblEnCokTuketilen.Size = new Size(217, 20);
-            lblEnCokTuketilen.TabIndex = 0;
-            lblEnCokTuketilen.Text = "En çok tüketilen yemek çeşidi: ";
-            // 
-            // lblEnCokTuketilenMiktar
-            // 
-            lblEnCokTuketilenMiktar.AutoSize = true;
-            lblEnCokTuketilenMiktar.Location = new Point(248, 41);
-            lblEnCokTuketilenMiktar.Name = "lblEnCokTuketilenMiktar";
-            lblEnCokTuketilenMiktar.Size = new Size(50, 20);
-            lblEnCokTuketilenMiktar.TabIndex = 1;
-            lblEnCokTuketilenMiktar.Text = "label2";
-            // 
-            // cbKullanıcı1
-            // 
-            cbKullanıcı1.FormattingEnabled = true;
-            cbKullanıcı1.Location = new Point(114, 119);
-            cbKullanıcı1.Name = "cbKullanıcı1";
-            cbKullanıcı1.Size = new Size(151, 28);
-            cbKullanıcı1.TabIndex = 2;
-            // 
-            // cbKullanıcı2
-            // 
-            cbKullanıcı2.FormattingEnabled = true;
-            cbKullanıcı2.Location = new Point(114, 191);
-            cbKullanıcı2.Name = "cbKullanıcı2";
-            cbKullanıcı2.Size = new Size(151, 28);
-            cbKullanıcı2.TabIndex = 3;
-            // 
-            // lblKullanıcı1
-            // 
-            lblKullanıcı1.AutoSize = true;
-            lblKullanıcı1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblKullanıcı1.Location = new Point(30, 122);
-            lblKullanıcı1.Name = "lblKullanıcı1";
-            lblKullanıcı1.Size = new Size(71, 20);
-            lblKullanıcı1.TabIndex = 4;
-            lblKullanıcı1.Text = "Kullanıcı:";
-            // 
-            // lblKullanıcı2
-            // 
-            lblKullanıcı2.AutoSize = true;
-            lblKullanıcı2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblKullanıcı2.Location = new Point(30, 195);
-            lblKullanıcı2.Name = "lblKullanıcı2";
-            lblKullanıcı2.Size = new Size(71, 20);
-            lblKullanıcı2.TabIndex = 5;
-            lblKullanıcı2.Text = "Kullanıcı:";
-            // 
-            // btnHaftalıkRapor
-            // 
-            btnHaftalıkRapor.BackColor = Color.Orange;
-            btnHaftalıkRapor.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnHaftalıkRapor.Location = new Point(114, 260);
-            btnHaftalıkRapor.Name = "btnHaftalıkRapor";
-            btnHaftalıkRapor.Size = new Size(151, 50);
-            btnHaftalıkRapor.TabIndex = 6;
-            btnHaftalıkRapor.Text = "Haftalık Raporla";
-            btnHaftalıkRapor.UseVisualStyleBackColor = false;
-            // 
-            // btnAylıkRapor
-            // 
-            btnAylıkRapor.BackColor = Color.OrangeRed;
-            btnAylıkRapor.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnAylıkRapor.Location = new Point(114, 333);
-            btnAylıkRapor.Name = "btnAylıkRapor";
-            btnAylıkRapor.Size = new Size(151, 50);
-            btnAylıkRapor.TabIndex = 7;
-            btnAylıkRapor.Text = "Aylık Raporla";
-            btnAylıkRapor.UseVisualStyleBackColor = false;
             // 
             // btnGeri
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(117, 389);
+            btnGeri.Location = new Point(54, 315);
+            btnGeri.Margin = new Padding(3, 2, 3, 2);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(148, 40);
+            btnGeri.Size = new Size(130, 30);
             btnGeri.TabIndex = 27;
             btnGeri.Text = "GERİ";
             btnGeri.UseVisualStyleBackColor = false;
@@ -134,46 +64,115 @@
             panel.BackColor = Color.LightCoral;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
+            panel.Margin = new Padding(3, 2, 3, 2);
             panel.Name = "panel";
-            panel.Size = new Size(1119, 29);
+            panel.Size = new Size(979, 22);
             panel.TabIndex = 28;
+            panel.Paint += panel_Paint;
             panel.MouseDown += panel_MouseDown;
+            // 
+            // tbEnCokTuketilenYemek
+            // 
+            tbEnCokTuketilenYemek.Controls.Add(tabPage1);
+            tbEnCokTuketilenYemek.Controls.Add(tabPage2);
+            tbEnCokTuketilenYemek.Controls.Add(tabPage3);
+            tbEnCokTuketilenYemek.Location = new Point(54, 43);
+            tbEnCokTuketilenYemek.Name = "tbEnCokTuketilenYemek";
+            tbEnCokTuketilenYemek.SelectedIndex = 0;
+            tbEnCokTuketilenYemek.Size = new Size(750, 244);
+            tbEnCokTuketilenYemek.TabIndex = 29;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(dataGridView2);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(742, 216);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "En Çok Tüketilen Yemek Rapor";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(50, 28);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(626, 150);
+            dataGridView2.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(dataGridView1);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(742, 216);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Haftalık Raporlama";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(66, 19);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(612, 150);
+            dataGridView1.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(dataGridView3);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(742, 216);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Aylık Raporlama";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(49, 20);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.Size = new Size(612, 150);
+            dataGridView3.TabIndex = 0;
             // 
             // s
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MistyRose;
-            ClientSize = new Size(1119, 494);
+            ClientSize = new Size(979, 370);
+            Controls.Add(tbEnCokTuketilenYemek);
             Controls.Add(panel);
             Controls.Add(btnGeri);
-            Controls.Add(btnAylıkRapor);
-            Controls.Add(btnHaftalıkRapor);
-            Controls.Add(lblKullanıcı2);
-            Controls.Add(lblKullanıcı1);
-            Controls.Add(cbKullanıcı2);
-            Controls.Add(cbKullanıcı1);
-            Controls.Add(lblEnCokTuketilenMiktar);
-            Controls.Add(lblEnCokTuketilen);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "s";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Raporlar";
+            Load += s_Load;
+            tbEnCokTuketilenYemek.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lblEnCokTuketilen;
-        private Label lblEnCokTuketilenMiktar;
-        private ComboBox cbKullanıcı1;
-        private ComboBox cbKullanıcı2;
-        private Label lblKullanıcı1;
-        private Label lblKullanıcı2;
-        private Button btnHaftalıkRapor;
-        private Button btnAylıkRapor;
         private Button btnGeri;
         private Panel panel;
+        private TabControl tbEnCokTuketilenYemek;
+        private TabPage tabPage1;
+        private DataGridView dataGridView2;
+        private TabPage tabPage2;
+        private DataGridView dataGridView1;
+        private TabPage tabPage3;
+        private DataGridView dataGridView3;
     }
 }
