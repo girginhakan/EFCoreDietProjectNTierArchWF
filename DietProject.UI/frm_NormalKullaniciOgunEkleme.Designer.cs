@@ -41,6 +41,7 @@
             btnKullaniciYemekKaydet = new Button();
             panel = new Panel();
             txtPorsiyonMiktari = new TextBox();
+            btnGuncelle = new Button();
             SuspendLayout();
             // 
             // lblOgun
@@ -150,7 +151,7 @@
             btnKullaniciYemekKaydet.Name = "btnKullaniciYemekKaydet";
             btnKullaniciYemekKaydet.Size = new Size(98, 36);
             btnKullaniciYemekKaydet.TabIndex = 12;
-            btnKullaniciYemekKaydet.Text = "KAYDET";
+            btnKullaniciYemekKaydet.Text = "Yeni Kayıt";
             btnKullaniciYemekKaydet.UseVisualStyleBackColor = false;
             btnKullaniciYemekKaydet.Click += btnKullaniciYemekKaydet_Click;
             // 
@@ -171,12 +172,25 @@
             txtPorsiyonMiktari.Size = new Size(151, 27);
             txtPorsiyonMiktari.TabIndex = 15;
             // 
+            // btnGuncelle
+            // 
+            btnGuncelle.BackColor = Color.LightSeaGreen;
+            btnGuncelle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnGuncelle.Location = new Point(266, 445);
+            btnGuncelle.Name = "btnGuncelle";
+            btnGuncelle.Size = new Size(98, 36);
+            btnGuncelle.TabIndex = 16;
+            btnGuncelle.Text = "Güncelle";
+            btnGuncelle.UseVisualStyleBackColor = false;
+            btnGuncelle.Click += btnGuncelle_Click;
+            // 
             // frm_NormalKullaniciOgunEkleme
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(594, 493);
+            Controls.Add(btnGuncelle);
             Controls.Add(txtPorsiyonMiktari);
             Controls.Add(panel);
             Controls.Add(btnKullaniciKayitİptal);
@@ -213,5 +227,6 @@
         private Button btnKullaniciYemekKaydet;
         private Panel panel;
         private TextBox txtPorsiyonMiktari;
+        private Button btnGuncelle;
     }
 }

@@ -6,7 +6,7 @@ namespace DietProject.UI
     internal static class Program
     {
         public static KullaniciModel KullaniciModel { get; set; }
-        public static KullaniciOgunYemekPorsiyonModel SecilenYemek {  get; set; }
+        public static TuketilenOgunlerViewModel SecilenYemek {  get; set; }
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

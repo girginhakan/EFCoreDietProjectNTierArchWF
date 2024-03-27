@@ -107,6 +107,7 @@
             btnOgunSil.TabIndex = 4;
             btnOgunSil.Text = "SİL";
             btnOgunSil.UseVisualStyleBackColor = false;
+            btnOgunSil.Click += btnOgunSil_Click;
             // 
             // btnOgunGuncelle
             // 
