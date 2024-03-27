@@ -19,7 +19,7 @@ namespace DietProject.UI
             InitializeComponent();
             KullaniciOgunYemekPorsiyonManager manager = new KullaniciOgunYemekPorsiyonManager();
 
-            dataGridView1.DataSource = manager.GetAllWithIncludes();
+            //dataGridView1.DataSource = manager.GetAllWithIncludes();
             //    dataGridView1.Columns[0].Visible = false;
             //    dataGridView1.Columns[1].Visible = false;
             //    dataGridView1.Columns[2].Visible = false;
@@ -28,7 +28,7 @@ namespace DietProject.UI
 
 
             //admin hashli şifre için adin oluştuma komutu
-           KullaniciManager kullaniciManager = new KullaniciManager();
+            KullaniciManager kullaniciManager = new KullaniciManager();
             KullaniciModel model = new KullaniciModel();
             model.Adi = "kerem";
             model.Soyadi = "ozyon";
