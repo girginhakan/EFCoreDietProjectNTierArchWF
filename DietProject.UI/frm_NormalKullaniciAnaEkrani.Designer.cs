@@ -162,6 +162,7 @@
             Name = "frm_NormalKullaniciAnaEkrani";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form10";
+            Load += frm_NormalKullaniciAnaEkrani_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTuketilenOgunler).EndInit();
             ResumeLayout(false);
             PerformLayout();

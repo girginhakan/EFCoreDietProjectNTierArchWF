@@ -14,6 +14,7 @@ namespace DietProject.BLL.Models
         public int KullaniciId { get; set; }
         public int OgunId { get; set; }
         public int PorsiyonId { get; set; }
+        public double PorsiyonMiktari { get; set; }
         public KullaniciModel Kullanici { get; set; }
         public OgunModel Ogun { get; set; }
         public PorsiyonModel Porsiyon { get; set; }

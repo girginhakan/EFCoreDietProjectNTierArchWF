@@ -43,7 +43,7 @@ namespace DietProject.UI
             cbYemekKategori.ValueMember = "Id";
 
             cbPorsiyonBirimi.DataSource = porsiyonManager.GetAll();
-            cbPorsiyonBirimi.DisplayMember = "PorsiyonAdi";
+            cbPorsiyonBirimi.DisplayMember = "PorsiyonBirim";
             cbPorsiyonBirimi.DisplayMember = "Id";
 
             //cbYemekCesidi.DisplayMember = "YemekAdi";
@@ -89,13 +89,15 @@ namespace DietProject.UI
         private void btnKullaniciYemekKaydet_Click(object sender, EventArgs e)
         {
             KullaniciOgunYemekPorsiyonModel kullaniciOgun= new KullaniciOgunYemekPorsiyonModel();
+
+            kullaniciOgun.KullaniciId = Program.KullaniciModel.Id;
             if (cbYemekCesidi.SelectedText!=null && cbYemekKategori.SelectedText!=null&& cbOgun.SelectedText!=null&& cbPorsiyonBirimi.SelectedText!=null&& txtPorsiyonMiktari.Text!=string.Empty)
             {
                 kullaniciOgun.YemekId = ((YemekModel)cbYemekCesidi.SelectedItem).Id;
                
                 kullaniciOgun.OgunId = ((OgunModel)cbOgun.SelectedItem).Id;
                 kullaniciOgun.PorsiyonId = ((PorsiyonModel)cbPorsiyonBirimi.SelectedItem).Id;
-                //kullaniciOgun.Yemek. = int.Parse(txtPorsiyonMiktari.Text);
+                kullaniciOgun.PorsiyonMiktari = int.Parse(txtPorsiyonMiktari.Text);
 
                 KullaniciOgunYemekPorsiyonManager kullaniciOgunYemekPorsiyon = new KullaniciOgunYemekPorsiyonManager();
                 kullaniciOgunYemekPorsiyon.Add(kullaniciOgun);
