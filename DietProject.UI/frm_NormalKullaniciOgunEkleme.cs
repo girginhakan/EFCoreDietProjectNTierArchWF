@@ -91,14 +91,15 @@ namespace DietProject.UI
             KullaniciOgunYemekPorsiyonModel kullaniciOgun= new KullaniciOgunYemekPorsiyonModel();
             if (cbYemekCesidi.SelectedText!=null && cbYemekKategori.SelectedText!=null&& cbOgun.SelectedText!=null&& cbPorsiyonBirimi.SelectedText!=null&& txtPorsiyonMiktari.Text!=string.Empty)
             {
-                kullaniciOgun.Yemek.YemekAdi = cbYemekCesidi.SelectedItem.ToString();
-                kullaniciOgun.Yemek.Kategori.KategoriAdi = cbYemekKategori.SelectedItem.ToString();
-                kullaniciOgun.Ogun.OgunAdi = cbOgun.SelectedText;
-                kullaniciOgun.Porsiyon.PorsiyonBirim = cbPorsiyonBirimi.SelectedItem.ToString();
-                kullaniciOgun.Yemek.PorsiyonMiktari = int.Parse(txtPorsiyonMiktari.Text);
+                kullaniciOgun.YemekId = ((YemekModel)cbYemekCesidi.SelectedItem).Id;
+               
+                kullaniciOgun.OgunId = ((OgunModel)cbOgun.SelectedItem).Id;
+                kullaniciOgun.PorsiyonId = ((PorsiyonModel)cbPorsiyonBirimi.SelectedItem).Id;
+                //kullaniciOgun.Yemek. = int.Parse(txtPorsiyonMiktari.Text);
 
                 KullaniciOgunYemekPorsiyonManager kullaniciOgunYemekPorsiyon = new KullaniciOgunYemekPorsiyonManager();
                 kullaniciOgunYemekPorsiyon.Add(kullaniciOgun);
+                MessageBox.Show("İlgili Öğün başarıyla profilinize eklnmiştir");
                 frm_NormalKullaniciAnaEkrani kullaniciAnaEkrani = new frm_NormalKullaniciAnaEkrani();
                 this.Close();
                 kullaniciAnaEkrani.Show();
