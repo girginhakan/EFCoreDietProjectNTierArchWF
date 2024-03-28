@@ -1,7 +1,6 @@
 ﻿using DietProject.BLL.Manager.Concrete;
 using DietProject.BLL.Models;
 using DietProject.DAL.Context;
-using DietProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +15,9 @@ namespace DietProject.UI
 {
     public partial class frm_YemekKategoriIslemleri : Form
     {
-        DietProjectDbContext db = new DietProjectDbContext();
         KategoriManager kategoriManager = new KategoriManager();
         KategoriModel secilenKategori = new KategoriModel();
+        KategoriModel eklenenKategori;
         public frm_YemekKategoriIslemleri()
         {
             InitializeComponent();
@@ -41,11 +40,13 @@ namespace DietProject.UI
         {
             if (txtKategoriAdi.Text != string.Empty && txtAciklama.Text != string.Empty)
             {
-                secilenKategori.KategoriAdi = txtKategoriAdi.Text;
-                secilenKategori.Aciklama = txtAciklama.Text;
-                kategoriManager.Add(secilenKategori);
+                KategoriModel kategori = new KategoriModel();
+                kategori.KategoriAdi = txtKategoriAdi.Text;
+                kategori.Aciklama = txtAciklama.Text;
+                kategoriManager.Add(kategori);
                 dgvMevcutYemekKategorileri.DataSource = kategoriManager.GetAll();
                 MessageBox.Show("Kategoriler Eklenmiştir.");
+                eklenenKategori = kategori;
                 KategorileriGoster();
             }
             else
@@ -57,9 +58,9 @@ namespace DietProject.UI
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (secilenKategori!=null&&secilenKategori.KategoriAdi != null && secilenKategori.Aciklama != null)
+            if (secilenKategori != null && secilenKategori.KategoriAdi != null && secilenKategori.Aciklama != null)
             {
-               kategoriManager.Remove(secilenKategori);
+                kategoriManager.Remove(secilenKategori);
 
                 MessageBox.Show("kategori silinmiştir");
                 KategorileriGoster();
@@ -67,8 +68,9 @@ namespace DietProject.UI
                 txtKategoriAdi.Text = "";
                 txtAciklama.Text = "";
 
-                //secilenKategori = null;
                 lblSecilen.Text = "Seçilen kategori: ";
+                secilenKategori = null;
+                return;
 
             }
             else
@@ -76,7 +78,7 @@ namespace DietProject.UI
                 MessageBox.Show("Silmek için kategori seçiniz!");
                 return;
             }
-               
+
         }
 
         private void dgvMevcutYemekKategorileri_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -88,12 +90,14 @@ namespace DietProject.UI
 
         }
 
-        private void btnGuncelle_Click(object sender, EventArgs e) //hata veriyor kontrol edilmeli.
+        private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            if (secilenKategori.KategoriAdi != null && secilenKategori.Aciklama != null)
+                //kategoriManager.GetById(secilenKategori.Id);
+            if (secilenKategori != null && secilenKategori.KategoriAdi != null && secilenKategori.Aciklama != null)
             {
                 secilenKategori.KategoriAdi = txtKategoriAdi.Text;
                 secilenKategori.Aciklama = txtAciklama.Text;
+
 
                 kategoriManager.Update(secilenKategori);
                 MessageBox.Show("Kategori güncellenmiştir");
@@ -102,8 +106,9 @@ namespace DietProject.UI
                 txtKategoriAdi.Text = "";
                 txtAciklama.Text = "";
 
-                //secilenKategori = null;
                 lblSecilen.Text = "Seçilen kategori: ";
+                secilenKategori = null;
+                return;
 
             }
             else

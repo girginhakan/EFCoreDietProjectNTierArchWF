@@ -27,6 +27,7 @@ namespace DietProject.DAL.Repositories.Abstract
             entity.CreatedDate = DateTime.Now;
             entities.Add(entity);
             _db.SaveChanges();
+
         }
 
         public void Delete(T entity)
@@ -39,7 +40,9 @@ namespace DietProject.DAL.Repositories.Abstract
         public void Remove(T entity)
         {
             entities.Remove(entity);
+            //_db.Entry(entity).State = EntityState.Detached;
             _db.SaveChanges();
+
         }
         public IQueryable<T> GetAll()
         {
@@ -66,8 +69,17 @@ namespace DietProject.DAL.Repositories.Abstract
             if (entity.EntityStatus!=EntityStatus.Deleted)
                 entity.EntityStatus = EntityStatus.Updated;
 
-            entities.Update(entity);
+
+            //_db.Entry(entity).State = EntityState.Modified;
+            //var x = _db.ChangeTracker.Entries();
+            //if (!x.Any(e => e.Entity.GetType() == entity.GetType()))
+            //{
+               
+            //}
+                entities.Update(entity);
             _db.SaveChanges();
+           
+            
         }
 
         public IQueryable<T> GetAllWithIncludes()

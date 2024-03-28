@@ -16,7 +16,6 @@ namespace DietProject.UI
 {
     public partial class frm_PorsiyonIslemleri : Form
     {
-        DietProjectDbContext db = new DietProjectDbContext();
         PorsiyonManager porsiyonManager = new PorsiyonManager();
         PorsiyonModel seciliPorsiyon = new PorsiyonModel();
 
@@ -43,9 +42,9 @@ namespace DietProject.UI
         {
             if (txtPorsiyonBirim.Text != string.Empty)
             {
-
-                seciliPorsiyon.PorsiyonBirim = txtPorsiyonBirim.Text;
-                porsiyonManager.Add(seciliPorsiyon);
+                PorsiyonModel eklenenPorsiyon = new PorsiyonModel();
+                eklenenPorsiyon.PorsiyonBirim = txtPorsiyonBirim.Text;
+                porsiyonManager.Add(eklenenPorsiyon);
                 dgvMevcutPorsiyonlar.DataSource = porsiyonManager.GetAll();
                 MessageBox.Show("Porsiyon Bilgileri Eklenmiştir.");
                 PorsiyonGoster();
@@ -78,6 +77,7 @@ namespace DietProject.UI
 
                 //seciliPorsiyon = null;
                 lblSecilen1.Text = "Seçilen porsiyon: ";
+                seciliPorsiyon = null;
 
             }
             else
@@ -103,6 +103,7 @@ namespace DietProject.UI
 
                 //secilenPorsiyon = null;
                 lblSecilen1.Text = "Seçilen porsiyon: ";
+
 
             }
             else

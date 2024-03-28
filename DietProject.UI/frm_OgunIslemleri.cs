@@ -44,9 +44,10 @@ namespace DietProject.UI
 
             if (txtOgunAdi.Text != string.Empty && txtAciklama.Text != string.Empty)
             {
-                secilenOgun.OgunAdi = txtOgunAdi.Text;
-                secilenOgun.Aciklama = txtAciklama.Text;
-                ogunManager.Add(secilenOgun);
+                OgunModel eklenenOgun= new OgunModel();
+                eklenenOgun.OgunAdi = txtOgunAdi.Text;
+                eklenenOgun.Aciklama = txtAciklama.Text;
+                ogunManager.Add(eklenenOgun);
                 dgvMevcutOgunler.DataSource = ogunManager.GetAll();
                 MessageBox.Show("Öğünler Eklenmiştir.");
                 OgunleriGoster();
@@ -70,7 +71,7 @@ namespace DietProject.UI
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            if (secilenOgun.OgunAdi != null && secilenOgun.Aciklama != null)
+            if (secilenOgun!=null&& secilenOgun.OgunAdi != null && secilenOgun.Aciklama != null)
             {
                 secilenOgun.OgunAdi = txtOgunAdi.Text;
                 secilenOgun.Aciklama = txtAciklama.Text;
@@ -87,6 +88,7 @@ namespace DietProject.UI
                 MessageBox.Show("Güncellemek için öğün seçiniz!");
                 return;
             }
+            secilenOgun = null;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -109,6 +111,7 @@ namespace DietProject.UI
                 MessageBox.Show("Silmek için öğün seçiniz!");
                 return;
             }
+            secilenOgun = null;
 
         }
 

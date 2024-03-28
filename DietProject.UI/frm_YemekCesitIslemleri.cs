@@ -1,4 +1,4 @@
-﻿using DietProject.BLL.Manager.Concrete;
+﻿    using DietProject.BLL.Manager.Concrete;
 using DietProject.BLL.Models;
 using DietProject.DAL.Context;
 using System;
@@ -56,17 +56,18 @@ namespace DietProject.UI
         {
             if (txtYemekAdi.Text != string.Empty && txtAciklama.Text != string.Empty && txtKalori.Text != string.Empty && cbKategori.Text != null)
             {
-                secilenYemek.Kalori = int.Parse(txtKalori.Text.ToString());
+                YemekModel eklenenYemek = new YemekModel();
+                eklenenYemek.Kalori = int.Parse(txtKalori.Text.ToString());
 
                 KategoriModel selectedKategori = (KategoriModel)cbKategori.SelectedItem;
 
-                secilenYemek.YemekAdi = txtYemekAdi.Text;
-                secilenYemek.Aciklama = txtAciklama.Text;
+                eklenenYemek.YemekAdi = txtYemekAdi.Text;
+                eklenenYemek.Aciklama = txtAciklama.Text;
 
                 if (selectedKategori != null)
                 {
 
-                    secilenYemek.KategoriId = selectedKategori.Id;
+                    eklenenYemek.KategoriId = selectedKategori.Id;
                 }
                 else
                 {
@@ -79,7 +80,7 @@ namespace DietProject.UI
 
                 //secilenYemek.Kategori.KategoriAdi = cbKategori.SelectedItem.ToString();
 
-                yemekManager.Add(secilenYemek);
+                yemekManager.Add(eklenenYemek);
                 dgvMevcutYemekCesitleri.DataSource = yemekManager.GetAllWithIncludes();
                 MessageBox.Show("Yemekler eklenmiştir.");
                 YemekleriGoster();
