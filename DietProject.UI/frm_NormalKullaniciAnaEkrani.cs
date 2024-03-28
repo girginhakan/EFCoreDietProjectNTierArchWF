@@ -24,7 +24,12 @@ namespace DietProject.UI
         public frm_NormalKullaniciAnaEkrani()
         {
             InitializeComponent();
+            YemekListesi();
 
+        }
+
+        private void YemekListesi()
+        {
             List<KullaniciOgunYemekPorsiyonModel> model = kullaniciYemekleri.GetAllWithIncludes().Where(ky => ky.KullaniciId == Program.KullaniciModel.Id).ToList();
 
             List<TuketilenOgunlerViewModel> viewModel = new List<TuketilenOgunlerViewModel>();
@@ -37,19 +42,14 @@ namespace DietProject.UI
                 row.PorsiyonBirimi = item.Porsiyon.PorsiyonBirim;
                 row.YemekAdi = item.Yemek.YemekAdi;
                 row.OgunAdi = item.Ogun.OgunAdi;
+                row.Id = item.Id;
 
                 viewModel.Add(row);
             }
 
             dgvTuketilenOgunler.DataSource = viewModel;
             dgvTuketilenOgunler.Columns[0].Visible = false;
-
-
-
-
         }
-
-
 
         private void panel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -80,9 +80,13 @@ namespace DietProject.UI
 
         private void dgvTuketilenOgunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridView dgvTuketilenOgunler = (DataGridView)sender;
+
             var seciliTuketikenYemek = (TuketilenOgunlerViewModel)dgvTuketilenOgunler.SelectedRows[0].DataBoundItem;
 
             secilenTuketikenYemek = kullaniciYemekleri.Search((x => x.Id == seciliTuketikenYemek.Id)).FirstOrDefault();
+
+            Program.kullaniciOgunYemekPorsiyonModel = secilenTuketikenYemek;
 
 
         }
@@ -99,6 +103,7 @@ namespace DietProject.UI
                 kullaniciYemekleri.Remove(secilenTuketikenYemek);
 
                 MessageBox.Show("Öğün silinmiştir.");
+                YemekListesi();
 
             }
             else

@@ -14,7 +14,7 @@ namespace DietProject.UI
 {
     public partial class frm_NormalKullaniciOgunEkleme : Form
     {
-        public KullaniciOgunYemekPorsiyonModel GelenOgun { get; set; }
+        KullaniciOgunYemekPorsiyonModel seciliYemekGuncelle;
         OgunManager ogunManager = new OgunManager();
         PorsiyonManager porsiyonManager = new PorsiyonManager();
         YemekManager yemekManager = new YemekManager();
@@ -25,16 +25,17 @@ namespace DietProject.UI
         {
             InitializeComponent();
 
-            var seciliYemekGuncelle = GelenOgun;
+            seciliYemekGuncelle = Program.kullaniciOgunYemekPorsiyonModel;
 
             if (seciliYemekGuncelle != null)
             {
-                
+                btnGuncelle.Visible = true;
+                btnKullaniciYemekKaydet.Visible = false;
             }
             else
             {
-                btnGuncelle.Visible = true;
-                btnKullaniciYemekKaydet.Visible = false;
+                btnGuncelle.Visible=false;
+                btnKullaniciYemekKaydet.Visible = true;
 
             }
 
@@ -121,18 +122,21 @@ namespace DietProject.UI
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
 
-            if (Program.SecilenYemek != null)
+            if (Program.kullaniciOgunYemekPorsiyonModel!= null)
             {
 
-                Program.SecilenYemek.Id = Program.KullaniciModel.Id;
-
-                GelenOgun.YemekId= ((YemekModel)(cbYemekCesidi.SelectedItem)).Id;
-                GelenOgun.OgunId= ((OgunModel)cbOgun.SelectedItem).Id;
-                GelenOgun.PorsiyonId = ((PorsiyonModel)(cbPorsiyonBirimi.SelectedItem)).Id;
-                GelenOgun.PorsiyonMiktari = double.Parse(txtPorsiyonMiktari.Text);
-                kullaniciOgunYemekPorsiyon.Update(GelenOgun);
+                //Program.SecilenYemek.Id = Program.KullaniciModel.Id;
+                
+                seciliYemekGuncelle.YemekId= ((YemekModel)(cbYemekCesidi.SelectedItem)).Id;
+                seciliYemekGuncelle.OgunId= ((OgunModel)cbOgun.SelectedItem).Id;
+                seciliYemekGuncelle.PorsiyonId = ((PorsiyonModel)(cbPorsiyonBirimi.SelectedItem)).Id;
+                seciliYemekGuncelle.PorsiyonMiktari = double.Parse(txtPorsiyonMiktari.Text);
+                kullaniciOgunYemekPorsiyon.Update(seciliYemekGuncelle);
 
                 MessageBox.Show("Öğün guncellenmistir");
+                frm_NormalKullaniciAnaEkrani kullaniciAnaEkrani= new frm_NormalKullaniciAnaEkrani();
+                kullaniciAnaEkrani.Show();
+                this.Close();
 
             }
             else
