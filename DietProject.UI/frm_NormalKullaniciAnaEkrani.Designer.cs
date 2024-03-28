@@ -44,7 +44,7 @@
             // 
             lblTuketilenOgunler.AutoSize = true;
             lblTuketilenOgunler.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblTuketilenOgunler.Location = new Point(46, 128);
+            lblTuketilenOgunler.Location = new Point(119, 54);
             lblTuketilenOgunler.Name = "lblTuketilenOgunler";
             lblTuketilenOgunler.Size = new Size(136, 20);
             lblTuketilenOgunler.TabIndex = 0;
@@ -56,7 +56,7 @@
             dgvTuketilenOgunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTuketilenOgunler.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvTuketilenOgunler.GridColor = Color.LavenderBlush;
-            dgvTuketilenOgunler.Location = new Point(50, 163);
+            dgvTuketilenOgunler.Location = new Point(123, 89);
             dgvTuketilenOgunler.Name = "dgvTuketilenOgunler";
             dgvTuketilenOgunler.RowHeadersWidth = 51;
             dgvTuketilenOgunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -68,7 +68,7 @@
             // 
             lblToplamKalori.AutoSize = true;
             lblToplamKalori.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblToplamKalori.Location = new Point(75, 403);
+            lblToplamKalori.Location = new Point(129, 420);
             lblToplamKalori.Name = "lblToplamKalori";
             lblToplamKalori.Size = new Size(357, 20);
             lblToplamKalori.TabIndex = 2;
@@ -77,7 +77,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(454, 403);
+            label3.Location = new Point(521, 420);
             label3.Name = "label3";
             label3.Size = new Size(50, 20);
             label3.TabIndex = 3;
@@ -85,12 +85,12 @@
             // 
             // btnOgunEkle
             // 
-            btnOgunEkle.BackColor = Color.FromArgb(255, 128, 0);
+            btnOgunEkle.BackColor = Color.DarkKhaki;
             btnOgunEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnOgunEkle.ForeColor = SystemColors.ActiveCaptionText;
-            btnOgunEkle.Location = new Point(54, 44);
+            btnOgunEkle.Location = new Point(299, 334);
             btnOgunEkle.Name = "btnOgunEkle";
-            btnOgunEkle.Size = new Size(139, 53);
+            btnOgunEkle.Size = new Size(140, 50);
             btnOgunEkle.TabIndex = 4;
             btnOgunEkle.Text = "EKLE";
             btnOgunEkle.UseVisualStyleBackColor = false;
@@ -98,12 +98,12 @@
             // 
             // btnOgunSil
             // 
-            btnOgunSil.BackColor = Color.Red;
+            btnOgunSil.BackColor = Color.Coral;
             btnOgunSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnOgunSil.ForeColor = SystemColors.ActiveCaptionText;
-            btnOgunSil.Location = new Point(405, 44);
+            btnOgunSil.Location = new Point(469, 334);
             btnOgunSil.Name = "btnOgunSil";
-            btnOgunSil.Size = new Size(139, 53);
+            btnOgunSil.Size = new Size(140, 50);
             btnOgunSil.TabIndex = 4;
             btnOgunSil.Text = "SİL";
             btnOgunSil.UseVisualStyleBackColor = false;
@@ -111,12 +111,12 @@
             // 
             // btnOgunGuncelle
             // 
-            btnOgunGuncelle.BackColor = Color.FromArgb(128, 128, 255);
+            btnOgunGuncelle.BackColor = Color.Goldenrod;
             btnOgunGuncelle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnOgunGuncelle.ForeColor = SystemColors.ActiveCaptionText;
-            btnOgunGuncelle.Location = new Point(229, 44);
+            btnOgunGuncelle.Location = new Point(127, 334);
             btnOgunGuncelle.Name = "btnOgunGuncelle";
-            btnOgunGuncelle.Size = new Size(139, 53);
+            btnOgunGuncelle.Size = new Size(140, 50);
             btnOgunGuncelle.TabIndex = 4;
             btnOgunGuncelle.Text = "GÜNCELLE";
             btnOgunGuncelle.UseVisualStyleBackColor = false;
@@ -126,9 +126,9 @@
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(75, 433);
+            btnGeri.Location = new Point(129, 469);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(442, 48);
+            btnGeri.Size = new Size(480, 48);
             btnGeri.TabIndex = 9;
             btnGeri.Text = "Geri";
             btnGeri.UseVisualStyleBackColor = false;
@@ -136,11 +136,11 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(583, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 10;
             panel.MouseDown += panel_MouseDown;
             // 
@@ -148,8 +148,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(192, 255, 192);
-            ClientSize = new Size(583, 493);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(panel);
             Controls.Add(btnGeri);
             Controls.Add(btnOgunGuncelle);

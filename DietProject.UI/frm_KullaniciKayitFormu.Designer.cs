@@ -54,7 +54,7 @@
             // 
             lblAd.AutoSize = true;
             lblAd.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblAd.Location = new Point(29, 103);
+            lblAd.Location = new Point(72, 135);
             lblAd.Name = "lblAd";
             lblAd.Size = new Size(32, 20);
             lblAd.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             lblSoyad.AutoSize = true;
             lblSoyad.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblSoyad.Location = new Point(29, 168);
+            lblSoyad.Location = new Point(72, 198);
             lblSoyad.Name = "lblSoyad";
             lblSoyad.Size = new Size(55, 20);
             lblSoyad.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             lblEposta.AutoSize = true;
             lblEposta.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblEposta.Location = new Point(29, 233);
+            lblEposta.Location = new Point(72, 263);
             lblEposta.Name = "lblEposta";
             lblEposta.Size = new Size(58, 20);
             lblEposta.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             lblSifre.AutoSize = true;
             lblSifre.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblSifre.Location = new Point(29, 284);
+            lblSifre.Location = new Point(72, 331);
             lblSifre.Name = "lblSifre";
             lblSifre.Size = new Size(44, 20);
             lblSifre.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             lblDT.AutoSize = true;
             lblDT.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblDT.Location = new Point(287, 99);
+            lblDT.Location = new Point(337, 133);
             lblDT.Name = "lblDT";
             lblDT.Size = new Size(106, 20);
             lblDT.TabIndex = 4;
@@ -103,39 +103,39 @@
             // 
             // txtAd
             // 
-            txtAd.Location = new Point(85, 99);
+            txtAd.Location = new Point(136, 132);
             txtAd.Name = "txtAd";
             txtAd.Size = new Size(125, 27);
             txtAd.TabIndex = 5;
             // 
             // txtSoyad
             // 
-            txtSoyad.Location = new Point(85, 164);
+            txtSoyad.Location = new Point(136, 198);
             txtSoyad.Name = "txtSoyad";
             txtSoyad.Size = new Size(125, 27);
             txtSoyad.TabIndex = 6;
             // 
             // txtEposta
             // 
-            txtEposta.Location = new Point(85, 229);
+            txtEposta.Location = new Point(136, 260);
             txtEposta.Name = "txtEposta";
             txtEposta.Size = new Size(125, 27);
             txtEposta.TabIndex = 7;
             // 
             // txtSifre
             // 
-            txtSifre.Location = new Point(85, 280);
+            txtSifre.Location = new Point(136, 331);
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(125, 27);
             txtSifre.TabIndex = 8;
             // 
             // btnKullaniciKaydet
             // 
-            btnKullaniciKaydet.BackColor = Color.Lime;
+            btnKullaniciKaydet.BackColor = Color.DarkKhaki;
             btnKullaniciKaydet.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnKullaniciKaydet.Location = new Point(369, 436);
+            btnKullaniciKaydet.Location = new Point(448, 449);
             btnKullaniciKaydet.Name = "btnKullaniciKaydet";
-            btnKullaniciKaydet.Size = new Size(98, 36);
+            btnKullaniciKaydet.Size = new Size(100, 50);
             btnKullaniciKaydet.TabIndex = 10;
             btnKullaniciKaydet.Text = "KAYDET";
             btnKullaniciKaydet.UseVisualStyleBackColor = false;
@@ -143,11 +143,11 @@
             // 
             // btnKullaniciKayitİptal
             // 
-            btnKullaniciKayitİptal.BackColor = Color.Crimson;
+            btnKullaniciKayitİptal.BackColor = Color.Khaki;
             btnKullaniciKayitİptal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnKullaniciKayitİptal.Location = new Point(473, 436);
+            btnKullaniciKayitİptal.Location = new Point(567, 449);
             btnKullaniciKayitİptal.Name = "btnKullaniciKayitİptal";
-            btnKullaniciKayitİptal.Size = new Size(98, 36);
+            btnKullaniciKayitİptal.Size = new Size(100, 50);
             btnKullaniciKayitİptal.TabIndex = 11;
             btnKullaniciKayitİptal.Text = "İPTAL";
             btnKullaniciKayitİptal.UseVisualStyleBackColor = false;
@@ -157,7 +157,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label6.Location = new Point(22, 33);
+            label6.Location = new Point(72, 67);
             label6.Name = "label6";
             label6.Size = new Size(233, 31);
             label6.TabIndex = 12;
@@ -165,16 +165,16 @@
             // 
             // txtBoy
             // 
-            txtBoy.Location = new Point(395, 229);
+            txtBoy.Location = new Point(464, 198);
             txtBoy.Name = "txtBoy";
-            txtBoy.Size = new Size(125, 27);
+            txtBoy.Size = new Size(190, 27);
             txtBoy.TabIndex = 14;
             // 
             // lblBoy
             // 
             lblBoy.AutoSize = true;
             lblBoy.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblBoy.Location = new Point(287, 229);
+            lblBoy.Location = new Point(337, 198);
             lblBoy.Name = "lblBoy";
             lblBoy.Size = new Size(39, 20);
             lblBoy.TabIndex = 13;
@@ -182,16 +182,16 @@
             // 
             // txtKilo
             // 
-            txtKilo.Location = new Point(395, 295);
+            txtKilo.Location = new Point(464, 267);
             txtKilo.Name = "txtKilo";
-            txtKilo.Size = new Size(125, 27);
+            txtKilo.Size = new Size(190, 27);
             txtKilo.TabIndex = 16;
             // 
             // lblKilo
             // 
             lblKilo.AutoSize = true;
             lblKilo.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblKilo.Location = new Point(287, 295);
+            lblKilo.Location = new Point(337, 267);
             lblKilo.Name = "lblKilo";
             lblKilo.Size = new Size(39, 20);
             lblKilo.TabIndex = 15;
@@ -201,7 +201,7 @@
             // 
             cbYıl.DropDownStyle = ComboBoxStyle.DropDownList;
             cbYıl.FormattingEnabled = true;
-            cbYıl.Location = new Point(433, 145);
+            cbYıl.Location = new Point(567, 132);
             cbYıl.Margin = new Padding(3, 4, 3, 4);
             cbYıl.Name = "cbYıl";
             cbYıl.Size = new Size(87, 28);
@@ -211,7 +211,7 @@
             // 
             cbAy.DropDownStyle = ComboBoxStyle.DropDownList;
             cbAy.FormattingEnabled = true;
-            cbAy.Location = new Point(382, 145);
+            cbAy.Location = new Point(516, 132);
             cbAy.Margin = new Padding(3, 4, 3, 4);
             cbAy.Name = "cbAy";
             cbAy.Size = new Size(44, 28);
@@ -221,7 +221,7 @@
             // 
             cbGün.DropDownStyle = ComboBoxStyle.DropDownList;
             cbGün.FormattingEnabled = true;
-            cbGün.Location = new Point(330, 145);
+            cbGün.Location = new Point(464, 132);
             cbGün.Margin = new Padding(3, 4, 3, 4);
             cbGün.Name = "cbGün";
             cbGün.Size = new Size(44, 28);
@@ -229,11 +229,11 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(583, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 20;
             panel.MouseDown += panel_MouseDown;
             // 
@@ -241,8 +241,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Moccasin;
-            ClientSize = new Size(583, 493);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(panel);
             Controls.Add(cbGün);
             Controls.Add(cbAy);

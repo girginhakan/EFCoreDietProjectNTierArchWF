@@ -45,11 +45,11 @@
             // 
             // btnGuncelle
             // 
-            btnGuncelle.BackColor = Color.FromArgb(255, 128, 0);
+            btnGuncelle.BackColor = Color.Goldenrod;
             btnGuncelle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGuncelle.Location = new Point(569, 376);
+            btnGuncelle.Location = new Point(421, 373);
             btnGuncelle.Name = "btnGuncelle";
-            btnGuncelle.Size = new Size(149, 76);
+            btnGuncelle.Size = new Size(140, 50);
             btnGuncelle.TabIndex = 8;
             btnGuncelle.Text = "GÜNCELLE";
             btnGuncelle.UseVisualStyleBackColor = false;
@@ -57,11 +57,11 @@
             // 
             // btnSil
             // 
-            btnSil.BackColor = Color.Crimson;
+            btnSil.BackColor = Color.Coral;
             btnSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnSil.Location = new Point(724, 376);
+            btnSil.Location = new Point(421, 456);
             btnSil.Name = "btnSil";
-            btnSil.Size = new Size(149, 76);
+            btnSil.Size = new Size(140, 50);
             btnSil.TabIndex = 9;
             btnSil.Text = "SİL";
             btnSil.UseVisualStyleBackColor = false;
@@ -69,11 +69,11 @@
             // 
             // btnEkle
             // 
-            btnEkle.BackColor = Color.Lime;
+            btnEkle.BackColor = Color.DarkKhaki;
             btnEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnEkle.Location = new Point(404, 376);
+            btnEkle.Location = new Point(581, 373);
             btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(149, 76);
+            btnEkle.Size = new Size(140, 50);
             btnEkle.TabIndex = 10;
             btnEkle.Text = "EKLE";
             btnEkle.UseVisualStyleBackColor = false;
@@ -84,11 +84,11 @@
             dgvMevcutOgunler.BackgroundColor = Color.LightGray;
             dgvMevcutOgunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMevcutOgunler.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dgvMevcutOgunler.Location = new Point(38, 84);
+            dgvMevcutOgunler.Location = new Point(49, 85);
             dgvMevcutOgunler.Name = "dgvMevcutOgunler";
             dgvMevcutOgunler.RowHeadersWidth = 51;
             dgvMevcutOgunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMevcutOgunler.Size = new Size(331, 424);
+            dgvMevcutOgunler.Size = new Size(350, 420);
             dgvMevcutOgunler.TabIndex = 7;
             dgvMevcutOgunler.CellClick += dgvMevcutOgunler_CellClick;
             // 
@@ -96,7 +96,7 @@
             // 
             lblMevcutOgunler.AutoSize = true;
             lblMevcutOgunler.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            lblMevcutOgunler.Location = new Point(120, 44);
+            lblMevcutOgunler.Location = new Point(131, 45);
             lblMevcutOgunler.Name = "lblMevcutOgunler";
             lblMevcutOgunler.Size = new Size(120, 20);
             lblMevcutOgunler.TabIndex = 6;
@@ -104,16 +104,16 @@
             // 
             // txtOgunAdi
             // 
-            txtOgunAdi.Location = new Point(404, 130);
+            txtOgunAdi.Location = new Point(421, 171);
             txtOgunAdi.Margin = new Padding(3, 4, 3, 4);
             txtOgunAdi.Name = "txtOgunAdi";
-            txtOgunAdi.Size = new Size(375, 27);
+            txtOgunAdi.Size = new Size(299, 27);
             txtOgunAdi.TabIndex = 11;
             // 
             // lblOgunAdi
             // 
             lblOgunAdi.AutoSize = true;
-            lblOgunAdi.Location = new Point(404, 95);
+            lblOgunAdi.Location = new Point(421, 136);
             lblOgunAdi.Name = "lblOgunAdi";
             lblOgunAdi.Size = new Size(79, 20);
             lblOgunAdi.TabIndex = 12;
@@ -122,7 +122,7 @@
             // lblAciklama
             // 
             lblAciklama.AutoSize = true;
-            lblAciklama.Location = new Point(404, 220);
+            lblAciklama.Location = new Point(421, 252);
             lblAciklama.Name = "lblAciklama";
             lblAciklama.Size = new Size(70, 20);
             lblAciklama.TabIndex = 13;
@@ -130,15 +130,15 @@
             // 
             // txtAciklama
             // 
-            txtAciklama.Location = new Point(406, 257);
+            txtAciklama.Location = new Point(423, 289);
             txtAciklama.Name = "txtAciklama";
-            txtAciklama.Size = new Size(371, 27);
+            txtAciklama.Size = new Size(297, 27);
             txtAciklama.TabIndex = 14;
             // 
             // lblSecilen
             // 
             lblSecilen.AutoSize = true;
-            lblSecilen.Location = new Point(403, 44);
+            lblSecilen.Location = new Point(421, 85);
             lblSecilen.Name = "lblSecilen";
             lblSecilen.Size = new Size(50, 20);
             lblSecilen.TabIndex = 15;
@@ -148,9 +148,9 @@
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(403, 458);
+            btnGeri.Location = new Point(581, 456);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(470, 50);
+            btnGeri.Size = new Size(140, 50);
             btnGeri.TabIndex = 16;
             btnGeri.Text = "GERİ";
             btnGeri.UseVisualStyleBackColor = false;
@@ -158,11 +158,11 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(891, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 17;
             panel.MouseDown += panel_MouseDown;
             // 
@@ -170,8 +170,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MistyRose;
-            ClientSize = new Size(891, 539);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(panel);
             Controls.Add(btnGeri);
             Controls.Add(lblSecilen);
@@ -188,6 +188,7 @@
             Name = "frm_OgunIslemleri";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Öğün İşlemleri";
+            Load += frm_OgunIslemleri_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMevcutOgunler).EndInit();
             ResumeLayout(false);
             PerformLayout();

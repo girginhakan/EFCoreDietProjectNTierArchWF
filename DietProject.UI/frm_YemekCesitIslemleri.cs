@@ -131,7 +131,7 @@ namespace DietProject.UI
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (secilenYemek!=null&&secilenYemek.YemekAdi != null && secilenYemek.Aciklama != null && secilenYemek.Kalori != null && cbKategori.Text != null)
+            if (secilenYemek != null && secilenYemek.YemekAdi != null && secilenYemek.Aciklama != null && secilenYemek.Kalori != null && cbKategori.Text != null)
             {
                 yemekManager.Remove(secilenYemek);
 
@@ -143,7 +143,7 @@ namespace DietProject.UI
                 txtKalori.Text = "";
 
                 lblSecilen.Text = "Seçilen yemek: ";
-                
+
 
             }
             else
@@ -156,16 +156,21 @@ namespace DietProject.UI
 
         private void dgvMevcutYemekCesitleri_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbKategori.SelectedText=string.Empty;
+            cbKategori.SelectedText = string.Empty;
             secilenYemek = (YemekModel)dgvMevcutYemekCesitleri.SelectedRows[0].DataBoundItem;
             lblSecilen.Text = "Seçilen Yemek: " + secilenYemek.YemekAdi + " Açıklama: " + secilenYemek.Aciklama + " Kalor" + secilenYemek.Kalori;
 
             //secilenYemek.Kalori=int.Parse(txtKalori.Text.ToString()) ;
-            txtKalori.Text=secilenYemek.Kalori.ToString();
+            txtKalori.Text = secilenYemek.Kalori.ToString();
             txtYemekAdi.Text = secilenYemek.YemekAdi;
             txtAciklama.Text = secilenYemek.Aciklama;
             KategoriModel selectedKategori = (KategoriModel)cbKategori.SelectedItem;
             cbKategori.SelectedText = selectedKategori.ToString();
+
+        }
+
+        private void frm_YemekCesitIslemleri_Load(object sender, EventArgs e)
+        {
 
         }
     }

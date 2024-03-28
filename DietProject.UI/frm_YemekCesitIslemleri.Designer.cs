@@ -66,17 +66,17 @@
             dgvMevcutYemekCesitleri.Name = "dgvMevcutYemekCesitleri";
             dgvMevcutYemekCesitleri.RowHeadersWidth = 51;
             dgvMevcutYemekCesitleri.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMevcutYemekCesitleri.Size = new Size(332, 389);
+            dgvMevcutYemekCesitleri.Size = new Size(350, 420);
             dgvMevcutYemekCesitleri.TabIndex = 2;
             dgvMevcutYemekCesitleri.CellClick += dgvMevcutYemekCesitleri_CellClick;
             // 
             // btnGuncelle
             // 
-            btnGuncelle.BackColor = Color.FromArgb(255, 128, 0);
+            btnGuncelle.BackColor = Color.Goldenrod;
             btnGuncelle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGuncelle.Location = new Point(408, 345);
+            btnGuncelle.Location = new Point(405, 376);
             btnGuncelle.Name = "btnGuncelle";
-            btnGuncelle.Size = new Size(148, 61);
+            btnGuncelle.Size = new Size(140, 50);
             btnGuncelle.TabIndex = 3;
             btnGuncelle.Text = "GÜNCELLE";
             btnGuncelle.UseVisualStyleBackColor = false;
@@ -84,11 +84,11 @@
             // 
             // btnSil
             // 
-            btnSil.BackColor = Color.Crimson;
+            btnSil.BackColor = Color.Coral;
             btnSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnSil.Location = new Point(738, 345);
+            btnSil.Location = new Point(405, 454);
             btnSil.Name = "btnSil";
-            btnSil.Size = new Size(148, 61);
+            btnSil.Size = new Size(140, 50);
             btnSil.TabIndex = 4;
             btnSil.Text = "SİL";
             btnSil.UseVisualStyleBackColor = false;
@@ -96,11 +96,11 @@
             // 
             // btnEkle
             // 
-            btnEkle.BackColor = Color.Lime;
+            btnEkle.BackColor = Color.DarkKhaki;
             btnEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnEkle.Location = new Point(575, 345);
+            btnEkle.Location = new Point(567, 376);
             btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(148, 61);
+            btnEkle.Size = new Size(140, 50);
             btnEkle.TabIndex = 5;
             btnEkle.Text = "EKLE";
             btnEkle.UseVisualStyleBackColor = false;
@@ -110,9 +110,9 @@
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(408, 424);
+            btnGeri.Location = new Point(567, 454);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(478, 50);
+            btnGeri.Size = new Size(140, 50);
             btnGeri.TabIndex = 26;
             btnGeri.Text = "GERİ";
             btnGeri.UseVisualStyleBackColor = false;
@@ -120,18 +120,18 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(1002, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 27;
             panel.MouseDown += panel_MouseDown;
             // 
             // lblSecilen
             // 
             lblSecilen.AutoSize = true;
-            lblSecilen.Location = new Point(454, 50);
+            lblSecilen.Location = new Point(405, 41);
             lblSecilen.Name = "lblSecilen";
             lblSecilen.Size = new Size(50, 20);
             lblSecilen.TabIndex = 28;
@@ -140,7 +140,7 @@
             // lblYemekAdi
             // 
             lblYemekAdi.AutoSize = true;
-            lblYemekAdi.Location = new Point(454, 85);
+            lblYemekAdi.Location = new Point(405, 85);
             lblYemekAdi.Name = "lblYemekAdi";
             lblYemekAdi.Size = new Size(82, 20);
             lblYemekAdi.TabIndex = 29;
@@ -149,7 +149,7 @@
             // lblAciklama
             // 
             lblAciklama.AutoSize = true;
-            lblAciklama.Location = new Point(454, 166);
+            lblAciklama.Location = new Point(405, 159);
             lblAciklama.Name = "lblAciklama";
             lblAciklama.Size = new Size(73, 20);
             lblAciklama.TabIndex = 30;
@@ -158,7 +158,7 @@
             // lblKalori
             // 
             lblKalori.AutoSize = true;
-            lblKalori.Location = new Point(454, 243);
+            lblKalori.Location = new Point(405, 243);
             lblKalori.Name = "lblKalori";
             lblKalori.Size = new Size(51, 20);
             lblKalori.TabIndex = 31;
@@ -166,38 +166,38 @@
             // 
             // txtYemekAdi
             // 
-            txtYemekAdi.Location = new Point(454, 119);
+            txtYemekAdi.Location = new Point(405, 119);
             txtYemekAdi.Name = "txtYemekAdi";
-            txtYemekAdi.Size = new Size(176, 27);
+            txtYemekAdi.Size = new Size(115, 27);
             txtYemekAdi.TabIndex = 32;
             // 
             // txtAciklama
             // 
-            txtAciklama.Location = new Point(454, 200);
+            txtAciklama.Location = new Point(405, 193);
             txtAciklama.Name = "txtAciklama";
-            txtAciklama.Size = new Size(363, 27);
+            txtAciklama.Size = new Size(302, 27);
             txtAciklama.TabIndex = 33;
             // 
             // txtKalori
             // 
-            txtKalori.Location = new Point(454, 279);
+            txtKalori.Location = new Point(405, 279);
             txtKalori.Name = "txtKalori";
-            txtKalori.Size = new Size(363, 27);
+            txtKalori.Size = new Size(302, 27);
             txtKalori.TabIndex = 34;
             // 
             // cbKategori
             // 
             cbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cbKategori.FormattingEnabled = true;
-            cbKategori.Location = new Point(666, 118);
+            cbKategori.Location = new Point(585, 118);
             cbKategori.Name = "cbKategori";
-            cbKategori.Size = new Size(151, 28);
+            cbKategori.Size = new Size(122, 28);
             cbKategori.TabIndex = 35;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(666, 85);
+            label1.Location = new Point(585, 85);
             label1.Name = "label1";
             label1.Size = new Size(79, 20);
             label1.TabIndex = 36;
@@ -207,8 +207,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MistyRose;
-            ClientSize = new Size(1002, 494);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(label1);
             Controls.Add(cbKategori);
             Controls.Add(txtKalori);
@@ -229,6 +229,7 @@
             Name = "frm_YemekCesitIslemleri";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Yemek Çeşidi İşlemleri";
+            Load += frm_YemekCesitIslemleri_Load;
             ((System.ComponentModel.ISupportInitialize)dgvMevcutYemekCesitleri).EndInit();
             ResumeLayout(false);
             PerformLayout();

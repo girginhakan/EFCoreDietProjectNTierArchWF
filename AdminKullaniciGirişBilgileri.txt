@@ -1,0 +1,5 @@
+Seed data olarak sisteme kullanmanız için admin ekledik.
+Admin olarak giriş yapmak için programı çalıştırdıktan sonra;
+Kullanıcı adınız:admin
+Şifreniz:1234
+girerek sisteme admin olarak giriş yapabilirsiniz.

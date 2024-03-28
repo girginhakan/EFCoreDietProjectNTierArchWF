@@ -42,7 +42,7 @@ namespace DietProject.UI
         private void btnEkle_Click(object sender, EventArgs e)
         {
 
-            if (txtOgunAdi.Text!=string.Empty&&txtAciklama.Text!=string.Empty)
+            if (txtOgunAdi.Text != string.Empty && txtAciklama.Text != string.Empty)
             {
                 secilenOgun.OgunAdi = txtOgunAdi.Text;
                 secilenOgun.Aciklama = txtAciklama.Text;
@@ -56,7 +56,7 @@ namespace DietProject.UI
                 MessageBox.Show("Öğün adı ve açıklama boş geçilemez");
                 return;
             }
-            
+
 
         }
 
@@ -91,7 +91,7 @@ namespace DietProject.UI
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            if (secilenOgun!=null&&secilenOgun.OgunAdi != null && secilenOgun.Aciklama != null)
+            if (secilenOgun != null && secilenOgun.OgunAdi != null && secilenOgun.Aciklama != null)
             {
                 ogunManager.Remove(secilenOgun);
                 MessageBox.Show("Öğün silinmiştir");
@@ -117,6 +117,11 @@ namespace DietProject.UI
             this.Close();
             frm_AdminAnaEkrani adminAnaEkrani = new frm_AdminAnaEkrani();
             adminAnaEkrani.Show();
+        }
+
+        private void frm_OgunIslemleri_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
