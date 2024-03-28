@@ -35,16 +35,15 @@
             btnİptal = new Button();
             btnGiris = new Button();
             label3 = new Label();
-            cbSifreGoster = new CheckBox();
-            linklSifremiUnuttum = new LinkLabel();
             panel = new Panel();
+            cbSifreGoster = new CheckBox();
             SuspendLayout();
             // 
             // lblEposta
             // 
             lblEposta.AutoSize = true;
             lblEposta.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblEposta.Location = new Point(171, 171);
+            lblEposta.Location = new Point(200, 181);
             lblEposta.Name = "lblEposta";
             lblEposta.Size = new Size(58, 20);
             lblEposta.TabIndex = 0;
@@ -54,7 +53,7 @@
             // 
             lblSifre.AutoSize = true;
             lblSifre.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblSifre.Location = new Point(174, 241);
+            lblSifre.Location = new Point(203, 251);
             lblSifre.Name = "lblSifre";
             lblSifre.Size = new Size(44, 20);
             lblSifre.TabIndex = 1;
@@ -62,25 +61,25 @@
             // 
             // txtEposta
             // 
-            txtEposta.Location = new Point(251, 171);
+            txtEposta.Location = new Point(280, 181);
             txtEposta.Name = "txtEposta";
-            txtEposta.Size = new Size(163, 27);
+            txtEposta.Size = new Size(234, 27);
             txtEposta.TabIndex = 2;
             // 
             // txtSifre
             // 
-            txtSifre.Location = new Point(251, 237);
+            txtSifre.Location = new Point(280, 247);
             txtSifre.Name = "txtSifre";
-            txtSifre.Size = new Size(163, 27);
+            txtSifre.Size = new Size(234, 27);
             txtSifre.TabIndex = 3;
             // 
             // btnİptal
             // 
-            btnİptal.BackColor = Color.Crimson;
+            btnİptal.BackColor = Color.Khaki;
             btnİptal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnİptal.Location = new Point(473, 445);
+            btnİptal.Location = new Point(416, 374);
             btnİptal.Name = "btnİptal";
-            btnİptal.Size = new Size(98, 36);
+            btnİptal.Size = new Size(100, 50);
             btnİptal.TabIndex = 13;
             btnİptal.Text = "İPTAL";
             btnİptal.UseVisualStyleBackColor = false;
@@ -88,11 +87,11 @@
             // 
             // btnGiris
             // 
-            btnGiris.BackColor = Color.Lime;
+            btnGiris.BackColor = Color.DarkKhaki;
             btnGiris.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGiris.Location = new Point(369, 445);
+            btnGiris.Location = new Point(280, 374);
             btnGiris.Name = "btnGiris";
-            btnGiris.Size = new Size(98, 36);
+            btnGiris.Size = new Size(100, 50);
             btnGiris.TabIndex = 12;
             btnGiris.Text = "GİRİŞ";
             btnGiris.UseVisualStyleBackColor = false;
@@ -102,16 +101,26 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label3.Location = new Point(24, 35);
+            label3.Location = new Point(71, 69);
             label3.Name = "label3";
             label3.Size = new Size(176, 31);
             label3.TabIndex = 14;
             label3.Text = "Kullanıcı Girişi ";
             // 
+            // panel
+            // 
+            panel.BackColor = Color.SandyBrown;
+            panel.Dock = DockStyle.Top;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(750, 29);
+            panel.TabIndex = 17;
+            panel.MouseDown += panel_MouseDown;
+            // 
             // cbSifreGoster
             // 
             cbSifreGoster.AutoSize = true;
-            cbSifreGoster.Location = new Point(201, 296);
+            cbSifreGoster.Location = new Point(280, 307);
             cbSifreGoster.Margin = new Padding(3, 4, 3, 4);
             cbSifreGoster.Name = "cbSifreGoster";
             cbSifreGoster.Size = new Size(124, 24);
@@ -120,35 +129,13 @@
             cbSifreGoster.UseVisualStyleBackColor = true;
             cbSifreGoster.CheckedChanged += cbSifreGoster_CheckedChanged;
             // 
-            // linklSifremiUnuttum
-            // 
-            linklSifremiUnuttum.AutoSize = true;
-            linklSifremiUnuttum.Location = new Point(339, 296);
-            linklSifremiUnuttum.Name = "linklSifremiUnuttum";
-            linklSifremiUnuttum.Size = new Size(117, 20);
-            linklSifremiUnuttum.TabIndex = 16;
-            linklSifremiUnuttum.TabStop = true;
-            linklSifremiUnuttum.Text = "Şifremi Unuttum";
-            linklSifremiUnuttum.LinkClicked += linklSifremiUnuttum_LinkClicked;
-            // 
-            // panel
-            // 
-            panel.BackColor = Color.LightCoral;
-            panel.Dock = DockStyle.Top;
-            panel.Location = new Point(0, 0);
-            panel.Name = "panel";
-            panel.Size = new Size(583, 29);
-            panel.TabIndex = 17;
-            panel.MouseDown += panel_MouseDown;
-            // 
             // frm_KullaniciGirisEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Moccasin;
-            ClientSize = new Size(583, 493);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(panel);
-            Controls.Add(linklSifremiUnuttum);
             Controls.Add(cbSifreGoster);
             Controls.Add(label3);
             Controls.Add(btnİptal);
@@ -175,8 +162,7 @@
         private Button btnİptal;
         private Button btnGiris;
         private Label label3;
-        private CheckBox cbSifreGoster;
-        private LinkLabel linklSifremiUnuttum;
         private Panel panel;
+        private CheckBox cbSifreGoster;
     }
 }

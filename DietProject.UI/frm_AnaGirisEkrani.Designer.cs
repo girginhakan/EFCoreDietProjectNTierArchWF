@@ -39,9 +39,9 @@
             // 
             btnKayitOl.BackColor = Color.SandyBrown;
             btnKayitOl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnKayitOl.Location = new Point(75, 149);
+            btnKayitOl.Location = new Point(97, 192);
             btnKayitOl.Name = "btnKayitOl";
-            btnKayitOl.Size = new Size(213, 139);
+            btnKayitOl.Size = new Size(200, 150);
             btnKayitOl.TabIndex = 0;
             btnKayitOl.Text = "Kayıt Ol ";
             btnKayitOl.UseVisualStyleBackColor = false;
@@ -49,11 +49,11 @@
             // 
             // btnGirisYap
             // 
-            btnGirisYap.BackColor = Color.GreenYellow;
+            btnGirisYap.BackColor = Color.DarkKhaki;
             btnGirisYap.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnGirisYap.Location = new Point(303, 149);
+            btnGirisYap.Location = new Point(444, 192);
             btnGirisYap.Name = "btnGirisYap";
-            btnGirisYap.Size = new Size(214, 139);
+            btnGirisYap.Size = new Size(200, 150);
             btnGirisYap.TabIndex = 1;
             btnGirisYap.Text = "Giriş Yap";
             btnGirisYap.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             lblBaslik.AutoSize = true;
             lblBaslik.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblBaslik.ForeColor = SystemColors.ControlText;
-            lblBaslik.Location = new Point(75, 49);
+            lblBaslik.Location = new Point(139, 84);
             lblBaslik.Name = "lblBaslik";
             lblBaslik.Size = new Size(476, 38);
             lblBaslik.TabIndex = 2;
@@ -74,9 +74,9 @@
             // 
             btnCikisYap.BackColor = Color.Khaki;
             btnCikisYap.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnCikisYap.Location = new Point(75, 322);
+            btnCikisYap.Location = new Point(97, 407);
             btnCikisYap.Name = "btnCikisYap";
-            btnCikisYap.Size = new Size(442, 48);
+            btnCikisYap.Size = new Size(547, 78);
             btnCikisYap.TabIndex = 8;
             btnCikisYap.Text = "Programı Kapat";
             btnCikisYap.UseVisualStyleBackColor = false;
@@ -84,11 +84,11 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(583, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 9;
             panel.MouseDown += panel_MouseDown;
             // 
@@ -96,8 +96,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MistyRose;
-            ClientSize = new Size(583, 395);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(panel);
             Controls.Add(btnCikisYap);
             Controls.Add(lblBaslik);

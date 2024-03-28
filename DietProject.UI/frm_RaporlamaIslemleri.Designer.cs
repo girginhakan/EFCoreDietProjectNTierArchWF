@@ -50,9 +50,9 @@
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(62, 420);
+            btnGeri.Location = new Point(522, 430);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(149, 40);
+            btnGeri.Size = new Size(140, 50);
             btnGeri.TabIndex = 27;
             btnGeri.Text = "GERİ";
             btnGeri.UseVisualStyleBackColor = false;
@@ -60,11 +60,11 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(1119, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 28;
             panel.Paint += panel_Paint;
             panel.MouseDown += panel_MouseDown;
@@ -78,7 +78,7 @@
             tbEnCokTuketilenYemek.Margin = new Padding(3, 4, 3, 4);
             tbEnCokTuketilenYemek.Name = "tbEnCokTuketilenYemek";
             tbEnCokTuketilenYemek.SelectedIndex = 0;
-            tbEnCokTuketilenYemek.Size = new Size(857, 325);
+            tbEnCokTuketilenYemek.Size = new Size(600, 324);
             tbEnCokTuketilenYemek.TabIndex = 29;
             // 
             // tabPage1
@@ -88,7 +88,7 @@
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(849, 292);
+            tabPage1.Size = new Size(592, 291);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "En Çok Tüketilen Yemek Rapor";
             tabPage1.UseVisualStyleBackColor = true;
@@ -96,11 +96,11 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(57, 37);
+            dataGridView2.Location = new Point(46, 27);
             dataGridView2.Margin = new Padding(3, 4, 3, 4);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(715, 200);
+            dataGridView2.Size = new Size(500, 200);
             dataGridView2.TabIndex = 0;
             // 
             // tabPage2
@@ -151,8 +151,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MistyRose;
-            ClientSize = new Size(1119, 493);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(tbEnCokTuketilenYemek);
             Controls.Add(panel);
             Controls.Add(btnGeri);

@@ -40,11 +40,11 @@
             // 
             // btnYemekKategoriCRUD
             // 
-            btnYemekKategoriCRUD.BackColor = Color.Pink;
+            btnYemekKategoriCRUD.BackColor = Color.BurlyWood;
             btnYemekKategoriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnYemekKategoriCRUD.Location = new Point(82, 129);
+            btnYemekKategoriCRUD.Location = new Point(29, 131);
             btnYemekKategoriCRUD.Name = "btnYemekKategoriCRUD";
-            btnYemekKategoriCRUD.Size = new Size(191, 100);
+            btnYemekKategoriCRUD.Size = new Size(252, 100);
             btnYemekKategoriCRUD.TabIndex = 0;
             btnYemekKategoriCRUD.Text = "Yemek Kategori İşlemleri";
             btnYemekKategoriCRUD.UseVisualStyleBackColor = false;
@@ -52,11 +52,11 @@
             // 
             // btnYemekCesidiCRUD
             // 
-            btnYemekCesidiCRUD.BackColor = Color.Thistle;
+            btnYemekCesidiCRUD.BackColor = Color.Khaki;
             btnYemekCesidiCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnYemekCesidiCRUD.Location = new Point(306, 129);
+            btnYemekCesidiCRUD.Location = new Point(444, 131);
             btnYemekCesidiCRUD.Name = "btnYemekCesidiCRUD";
-            btnYemekCesidiCRUD.Size = new Size(191, 100);
+            btnYemekCesidiCRUD.Size = new Size(250, 100);
             btnYemekCesidiCRUD.TabIndex = 1;
             btnYemekCesidiCRUD.Text = "Yemek Çeşidi İşlemleri";
             btnYemekCesidiCRUD.UseVisualStyleBackColor = false;
@@ -64,11 +64,11 @@
             // 
             // btnOgunİslemleriCRUD
             // 
-            btnOgunİslemleriCRUD.BackColor = Color.Plum;
+            btnOgunİslemleriCRUD.BackColor = Color.DarkGoldenrod;
             btnOgunİslemleriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnOgunİslemleriCRUD.Location = new Point(82, 269);
+            btnOgunİslemleriCRUD.Location = new Point(29, 271);
             btnOgunİslemleriCRUD.Name = "btnOgunİslemleriCRUD";
-            btnOgunİslemleriCRUD.Size = new Size(191, 95);
+            btnOgunİslemleriCRUD.Size = new Size(252, 95);
             btnOgunİslemleriCRUD.TabIndex = 2;
             btnOgunİslemleriCRUD.Text = "Öğün İşlemleri";
             btnOgunİslemleriCRUD.UseVisualStyleBackColor = false;
@@ -76,11 +76,11 @@
             // 
             // btnPorsiyonİslemleriCRUD
             // 
-            btnPorsiyonİslemleriCRUD.BackColor = Color.FromArgb(255, 192, 255);
+            btnPorsiyonİslemleriCRUD.BackColor = Color.SandyBrown;
             btnPorsiyonİslemleriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnPorsiyonİslemleriCRUD.Location = new Point(306, 269);
+            btnPorsiyonİslemleriCRUD.Location = new Point(444, 271);
             btnPorsiyonİslemleriCRUD.Name = "btnPorsiyonİslemleriCRUD";
-            btnPorsiyonİslemleriCRUD.Size = new Size(191, 95);
+            btnPorsiyonİslemleriCRUD.Size = new Size(250, 95);
             btnPorsiyonİslemleriCRUD.TabIndex = 3;
             btnPorsiyonİslemleriCRUD.Text = "Porsiyon İşlemleri";
             btnPorsiyonİslemleriCRUD.UseVisualStyleBackColor = false;
@@ -90,7 +90,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(146, 59);
+            label1.Location = new Point(219, 71);
             label1.Name = "label1";
             label1.Size = new Size(320, 23);
             label1.TabIndex = 4;
@@ -98,11 +98,11 @@
             // 
             // btnRaporlama
             // 
-            btnRaporlama.BackColor = Color.RosyBrown;
+            btnRaporlama.BackColor = Color.Orange;
             btnRaporlama.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnRaporlama.Location = new Point(82, 403);
+            btnRaporlama.Location = new Point(153, 408);
             btnRaporlama.Name = "btnRaporlama";
-            btnRaporlama.Size = new Size(415, 95);
+            btnRaporlama.Size = new Size(415, 85);
             btnRaporlama.TabIndex = 5;
             btnRaporlama.Text = "Raporlama İşlemleri";
             btnRaporlama.UseVisualStyleBackColor = false;
@@ -110,9 +110,9 @@
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.Khaki;
+            btnGeri.BackColor = Color.Pink;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(82, 504);
+            btnGeri.Location = new Point(244, 541);
             btnGeri.Name = "btnGeri";
             btnGeri.Size = new Size(415, 57);
             btnGeri.TabIndex = 8;
@@ -122,11 +122,11 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(586, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 10;
             panel.MouseDown += panel_MouseDown;
             // 
@@ -134,8 +134,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MistyRose;
-            ClientSize = new Size(586, 573);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(panel);
             Controls.Add(btnGeri);
             Controls.Add(btnRaporlama);

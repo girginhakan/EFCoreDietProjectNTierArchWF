@@ -61,17 +61,17 @@
             dgvMevcutYemekKategorileri.Name = "dgvMevcutYemekKategorileri";
             dgvMevcutYemekKategorileri.RowHeadersWidth = 51;
             dgvMevcutYemekKategorileri.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMevcutYemekKategorileri.Size = new Size(331, 415);
+            dgvMevcutYemekKategorileri.Size = new Size(350, 420);
             dgvMevcutYemekKategorileri.TabIndex = 1;
             dgvMevcutYemekKategorileri.CellClick += dgvMevcutYemekKategorileri_CellClick;
             // 
             // btnEkle
             // 
-            btnEkle.BackColor = Color.Lime;
+            btnEkle.BackColor = Color.DarkKhaki;
             btnEkle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnEkle.Location = new Point(402, 366);
+            btnEkle.Location = new Point(582, 375);
             btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(149, 76);
+            btnEkle.Size = new Size(140, 50);
             btnEkle.TabIndex = 2;
             btnEkle.Text = "EKLE";
             btnEkle.UseVisualStyleBackColor = false;
@@ -79,11 +79,11 @@
             // 
             // btnSil
             // 
-            btnSil.BackColor = Color.Crimson;
+            btnSil.BackColor = Color.Coral;
             btnSil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnSil.Location = new Point(753, 366);
+            btnSil.Location = new Point(408, 452);
             btnSil.Name = "btnSil";
-            btnSil.Size = new Size(149, 76);
+            btnSil.Size = new Size(140, 50);
             btnSil.TabIndex = 2;
             btnSil.Text = "SİL";
             btnSil.UseVisualStyleBackColor = false;
@@ -91,11 +91,11 @@
             // 
             // btnGuncelle
             // 
-            btnGuncelle.BackColor = Color.FromArgb(255, 128, 0);
+            btnGuncelle.BackColor = Color.Goldenrod;
             btnGuncelle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGuncelle.Location = new Point(581, 366);
+            btnGuncelle.Location = new Point(408, 375);
             btnGuncelle.Name = "btnGuncelle";
-            btnGuncelle.Size = new Size(149, 76);
+            btnGuncelle.Size = new Size(140, 50);
             btnGuncelle.TabIndex = 2;
             btnGuncelle.Text = "GÜNCELLE";
             btnGuncelle.UseVisualStyleBackColor = false;
@@ -103,24 +103,24 @@
             // 
             // txtKategoriAdi
             // 
-            txtKategoriAdi.Location = new Point(402, 144);
+            txtKategoriAdi.Location = new Point(408, 143);
             txtKategoriAdi.Margin = new Padding(3, 4, 3, 4);
             txtKategoriAdi.Name = "txtKategoriAdi";
-            txtKategoriAdi.Size = new Size(345, 27);
+            txtKategoriAdi.Size = new Size(314, 27);
             txtKategoriAdi.TabIndex = 3;
             // 
             // txtAciklama
             // 
-            txtAciklama.Location = new Point(402, 255);
+            txtAciklama.Location = new Point(408, 252);
             txtAciklama.Margin = new Padding(3, 4, 3, 4);
             txtAciklama.Name = "txtAciklama";
-            txtAciklama.Size = new Size(345, 27);
+            txtAciklama.Size = new Size(314, 27);
             txtAciklama.TabIndex = 4;
             // 
             // lblKategoriAdı
             // 
             lblKategoriAdı.AutoSize = true;
-            lblKategoriAdı.Location = new Point(402, 104);
+            lblKategoriAdı.Location = new Point(408, 103);
             lblKategoriAdı.Name = "lblKategoriAdı";
             lblKategoriAdı.Size = new Size(96, 20);
             lblKategoriAdı.TabIndex = 5;
@@ -129,7 +129,7 @@
             // lblAcıklama
             // 
             lblAcıklama.AutoSize = true;
-            lblAcıklama.Location = new Point(402, 217);
+            lblAcıklama.Location = new Point(408, 211);
             lblAcıklama.Name = "lblAcıklama";
             lblAcıklama.Size = new Size(73, 20);
             lblAcıklama.TabIndex = 6;
@@ -139,9 +139,9 @@
             // 
             btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(402, 450);
+            btnGeri.Location = new Point(582, 452);
             btnGeri.Name = "btnGeri";
-            btnGeri.Size = new Size(500, 46);
+            btnGeri.Size = new Size(140, 50);
             btnGeri.TabIndex = 7;
             btnGeri.Text = "GERİ";
             btnGeri.UseVisualStyleBackColor = false;
@@ -150,7 +150,7 @@
             // lblSecilen
             // 
             lblSecilen.AutoSize = true;
-            lblSecilen.Location = new Point(402, 64);
+            lblSecilen.Location = new Point(408, 40);
             lblSecilen.Name = "lblSecilen";
             lblSecilen.Size = new Size(50, 20);
             lblSecilen.TabIndex = 8;
@@ -158,11 +158,11 @@
             // 
             // panel
             // 
-            panel.BackColor = Color.LightCoral;
+            panel.BackColor = Color.SandyBrown;
             panel.Dock = DockStyle.Top;
             panel.Location = new Point(0, 0);
             panel.Name = "panel";
-            panel.Size = new Size(1015, 29);
+            panel.Size = new Size(750, 29);
             panel.TabIndex = 10;
             panel.MouseDown += panel_MouseDown;
             // 
@@ -170,8 +170,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MistyRose;
-            ClientSize = new Size(1015, 525);
+            BackColor = Color.PeachPuff;
+            ClientSize = new Size(750, 550);
             Controls.Add(panel);
             Controls.Add(lblSecilen);
             Controls.Add(btnGeri);

@@ -1,6 +1,5 @@
 ﻿using DietProject.BLL.Manager.Concrete;
 using DietProject.BLL.Models;
-using DietProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,9 +40,24 @@ namespace DietProject.UI
 
             var EnCokTuketilen = yemekListesi.GroupBy(y => y.YemekAdi).Select(g => new { YemekAdi = g.Key, ToplamTuketim = g.Count() }).OrderByDescending(g => g.ToplamTuketim).FirstOrDefault();
 
+            //var Encoktuketilen2 = kullaniciModel.KullaniciOgunYemekPorsiyonlar
+            //                    .GroupBy(n => n.Yemek)
+            //                    .OrderByDescending(g => g.Count())
+            //                    .ToList();
+            //if (Encoktuketilen2.Any()) // En çok tüketilen yemekler varsa
+            //{
+            //    dataGridView2.DataSource = Encoktuketilen2;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Kullanıcı bulunamadı veya hiç yemek tüketilmemiş!");
+            //}
+
             dataGridView2.DataSource = EnCokTuketilen;
 
         }
+
+       
         private void panel_MouseDown(object sender, MouseEventArgs e)
         {
             Metodlar.ReleaseCapture();
@@ -64,7 +78,6 @@ namespace DietProject.UI
 
         private void frm_RaporlamaIslemleri_Load(object sender, EventArgs e)
         {
-            dgvRapor();
         }
     }
 }
