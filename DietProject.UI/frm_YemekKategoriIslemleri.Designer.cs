@@ -57,6 +57,7 @@
             // 
             dgvMevcutYemekKategorileri.BackgroundColor = Color.LightGray;
             dgvMevcutYemekKategorileri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMevcutYemekKategorileri.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvMevcutYemekKategorileri.Location = new Point(27, 81);
             dgvMevcutYemekKategorileri.Name = "dgvMevcutYemekKategorileri";
             dgvMevcutYemekKategorileri.RowHeadersWidth = 51;

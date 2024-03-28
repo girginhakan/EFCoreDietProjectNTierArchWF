@@ -12,11 +12,14 @@ using System.Threading.Tasks;
 
 namespace DietProject.BLL.Manager.Concrete
 {
-    public class KategoriManager : Manager<KategoriModel,Kategori,KategoriMapProfile>
+    public class KategoriManager :   Manager<KategoriModel,Kategori,KategoriMapProfile>
     {
         public KategoriManager()
         {
+
             _repository = new KategoriRepository(new DietProjectDbContext());
         }
+
+       
     }
 }

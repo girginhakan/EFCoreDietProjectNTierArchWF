@@ -66,7 +66,7 @@
             // 
             btnOgunİslemleriCRUD.BackColor = Color.DarkGoldenrod;
             btnOgunİslemleriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnOgunİslemleriCRUD.Location = new Point(29, 271);
+            btnOgunİslemleriCRUD.Location = new Point(29, 256);
             btnOgunİslemleriCRUD.Name = "btnOgunİslemleriCRUD";
             btnOgunİslemleriCRUD.Size = new Size(252, 95);
             btnOgunİslemleriCRUD.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             btnPorsiyonİslemleriCRUD.BackColor = Color.SandyBrown;
             btnPorsiyonİslemleriCRUD.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnPorsiyonİslemleriCRUD.Location = new Point(444, 271);
+            btnPorsiyonİslemleriCRUD.Location = new Point(444, 256);
             btnPorsiyonİslemleriCRUD.Name = "btnPorsiyonİslemleriCRUD";
             btnPorsiyonİslemleriCRUD.Size = new Size(250, 95);
             btnPorsiyonİslemleriCRUD.TabIndex = 3;
@@ -100,9 +100,9 @@
             // 
             btnRaporlama.BackColor = Color.Orange;
             btnRaporlama.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnRaporlama.Location = new Point(153, 408);
+            btnRaporlama.Location = new Point(153, 388);
             btnRaporlama.Name = "btnRaporlama";
-            btnRaporlama.Size = new Size(415, 85);
+            btnRaporlama.Size = new Size(415, 65);
             btnRaporlama.TabIndex = 5;
             btnRaporlama.Text = "Raporlama İşlemleri";
             btnRaporlama.UseVisualStyleBackColor = false;
@@ -110,9 +110,9 @@
             // 
             // btnGeri
             // 
-            btnGeri.BackColor = Color.Pink;
+            btnGeri.BackColor = Color.Khaki;
             btnGeri.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            btnGeri.Location = new Point(244, 541);
+            btnGeri.Location = new Point(153, 459);
             btnGeri.Name = "btnGeri";
             btnGeri.Size = new Size(415, 57);
             btnGeri.TabIndex = 8;
